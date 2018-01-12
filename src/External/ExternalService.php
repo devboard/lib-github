@@ -30,10 +30,7 @@ abstract class ExternalService
 
     public function serialize(): array
     {
-        return [
-            'context'   => $this->context->getValue(),
-            'className' => get_class($this),
-        ];
+        return ['context' => $this->context->getValue(), 'className' => get_class($this)];
     }
 
     public static function deserialize(array $data): self

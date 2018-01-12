@@ -53,10 +53,7 @@ class RepoFullName
 
     public function serialize(): array
     {
-        return [
-            'owner'    => $this->owner->serialize(),
-            'repoName' => $this->repoName->serialize(),
-        ];
+        return ['owner' => $this->owner->serialize(), 'repoName' => $this->repoName->serialize()];
     }
 
     public static function deserialize(array $data): self

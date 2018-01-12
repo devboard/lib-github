@@ -38,10 +38,7 @@ class CommitTree implements CommitTreeInterface
 
     public function serialize(): array
     {
-        return [
-            'sha'    => $this->sha->serialize(),
-            'apiUrl' => $this->apiUrl->serialize(),
-        ];
+        return ['sha' => $this->sha->serialize(), 'apiUrl' => $this->apiUrl->serialize()];
     }
 
     public static function deserialize(array $data): self

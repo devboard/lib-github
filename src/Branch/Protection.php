@@ -36,10 +36,7 @@ class Protection
 
     public function serialize(): array
     {
-        return [
-            'enabled'              => $this->enabled,
-            'requiredStatusChecks' => $this->requiredStatusChecks->serialize(),
-        ];
+        return ['enabled' => $this->enabled, 'requiredStatusChecks' => $this->requiredStatusChecks->serialize()];
     }
 
     public static function deserialize(array $data): self
