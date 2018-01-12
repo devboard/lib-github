@@ -34,10 +34,7 @@ class RepoParent
 
     public function serialize(): array
     {
-        return [
-            'id'       => $this->id->serialize(),
-            'fullName' => $this->fullName->serialize(),
-        ];
+        return ['id' => $this->id->serialize(), 'fullName' => $this->fullName->serialize()];
     }
 
     public static function deserialize(array $data): self
