@@ -1,0 +1,31 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Tests\DevboardLib\GitHub\Installation;
+
+use DevboardLib\GitHub\Installation\InstallationRepositorySelectionFactory;
+use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+use PHPUnit\Framework\TestCase;
+
+/**
+ * @covers \DevboardLib\GitHub\Installation\InstallationRepositorySelectionFactory
+ * @group  todo
+ */
+class InstallationRepositorySelectionFactoryTest extends TestCase
+{
+    use MockeryPHPUnitIntegration;
+
+    /** @var InstallationRepositorySelectionFactory */
+    private $installationRepositorySelectionFactory;
+
+    public function setUp()
+    {
+        $this->installationRepositorySelectionFactory = new InstallationRepositorySelectionFactory();
+    }
+
+    public function testCreate()
+    {
+        $this->markTestSkipped('Skipping');
+    }
+}
