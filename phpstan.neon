@@ -1,0 +1,13 @@
+parameters:
+	bootstrap: tests/bootstrap.php
+	ignoreErrors:
+	    - '#Call to an undefined static method DevboardLib\\GitHub\\Account\\AccountType::#'
+	    - '#Parameter .* Mockery\\MockInterface given.#'
+	    - '#Call to an undefined method .*|Mockery\\MockInterface\:\:shouldReceive\(\).#'
+	includes:
+	    - vendor/phpstan/phpstan-phpunit/extension.neon
+	    - vendor/phpstan/phpstan-phpunit/rules.neon
+
+
+
+
