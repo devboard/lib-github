@@ -40,4 +40,14 @@ class RepoAccessPermissions
     {
         return $this->pullAllowed;
     }
+
+    public function serialize(): array
+    {
+        return ['admin' => $this->admin, 'pushAllowed' => $this->pushAllowed, 'pullAllowed' => $this->pullAllowed];
+    }
+
+    public static function deserialize(array $data): self
+    {
+        return new self($data['admin'], $data['pushAllowed'], $data['pullAllowed']);
+    }
 }
