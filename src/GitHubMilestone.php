@@ -35,7 +35,7 @@ class GitHubMilestone
     /** @var MilestoneDescription */
     private $description;
 
-    /** @var MilestoneDueOn */
+    /** @var MilestoneDueOn|null */
     private $dueOn;
 
     /** @var MilestoneState */
@@ -66,7 +66,7 @@ class GitHubMilestone
         MilestoneId $id,
         MilestoneTitle $title,
         MilestoneDescription $description,
-        MilestoneDueOn $dueOn,
+        ?MilestoneDueOn $dueOn,
         MilestoneState $state,
         MilestoneNumber $number,
         MilestoneCreator $creator,
@@ -105,7 +105,7 @@ class GitHubMilestone
         return $this->description;
     }
 
-    public function getDueOn(): MilestoneDueOn
+    public function getDueOn(): ?MilestoneDueOn
     {
         return $this->dueOn;
     }
@@ -150,6 +150,15 @@ class GitHubMilestone
         return $this->updatedAt;
     }
 
+    public function hasDueOn(): bool
+    {
+        if (null === $this->dueOn) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function hasClosedAt(): bool
     {
         if (null === $this->closedAt) {
@@ -161,6 +170,12 @@ class GitHubMilestone
 
     public function serialize(): array
     {
+        if (null === $this->dueOn) {
+            $dueOn = null;
+        } else {
+            $dueOn = $this->dueOn->serialize();
+        }
+
         if (null === $this->closedAt) {
             $closedAt = null;
         } else {
@@ -171,7 +186,7 @@ class GitHubMilestone
             'id'          => $this->id->serialize(),
             'title'       => $this->title->serialize(),
             'description' => $this->description->serialize(),
-            'dueOn'       => $this->dueOn->serialize(),
+            'dueOn'       => $dueOn,
             'state'       => $this->state->serialize(),
             'number'      => $this->number->serialize(),
             'creator'     => $this->creator->serialize(),
@@ -185,6 +200,12 @@ class GitHubMilestone
 
     public static function deserialize(array $data): self
     {
+        if (null === $data['dueOn']) {
+            $dueOn = null;
+        } else {
+            $dueOn = MilestoneDueOn::deserialize($data['dueOn']);
+        }
+
         if (null === $data['closedAt']) {
             $closedAt = null;
         } else {
@@ -195,7 +216,7 @@ class GitHubMilestone
             MilestoneId::deserialize($data['id']),
             MilestoneTitle::deserialize($data['title']),
             MilestoneDescription::deserialize($data['description']),
-            MilestoneDueOn::deserialize($data['dueOn']),
+            $dueOn,
             MilestoneState::deserialize($data['state']),
             MilestoneNumber::deserialize($data['number']),
             MilestoneCreator::deserialize($data['creator']),
