@@ -177,6 +177,11 @@ class GitHubMilestoneTest extends TestCase
         self::assertTrue($this->sut->hasClosedAt());
     }
 
+    public function testHasDueOn()
+    {
+        self::assertTrue($this->sut->hasDueOn());
+    }
+
     public function testSerialize()
     {
         $expected = [

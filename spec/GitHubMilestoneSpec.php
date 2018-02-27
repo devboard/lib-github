@@ -125,6 +125,11 @@ class GitHubMilestoneSpec extends ObjectBehavior
         $this->hasClosedAt()->shouldReturn(true);
     }
 
+    public function it_has_due_on()
+    {
+        $this->hasDueOn()->shouldReturn(true);
+    }
+
     public function it_can_be_serialized(
         MilestoneId $id,
         MilestoneTitle $title,
