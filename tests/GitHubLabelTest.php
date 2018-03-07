@@ -72,13 +72,7 @@ class GitHubLabelTest extends TestCase
 
     public function testSerialize()
     {
-        $expected = [
-            'id'      => 1,
-            'name'    => 'value',
-            'color'   => 'color',
-            'default' => true,
-            'apiUrl'  => 'apiUrl',
-        ];
+        $expected = ['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true, 'apiUrl' => 'apiUrl'];
 
         self::assertSame($expected, $this->sut->serialize());
     }

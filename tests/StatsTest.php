@@ -26,9 +26,6 @@ abstract class StatsTest extends TestCase
 
     public function provideValues()
     {
-        return [
-            [0],
-            [1],
-        ];
+        return [[0], [1]];
     }
 }

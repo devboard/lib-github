@@ -45,10 +45,7 @@ class RepoParentTest extends TestCase
 
     public function testSerialize()
     {
-        $expected = [
-            'id'       => 1296269,
-            'fullName' => ['owner' => 'devboard-test', 'repoName' => 'Hello-World'],
-        ];
+        $expected = ['id' => 1296269, 'fullName' => ['owner' => 'devboard-test', 'repoName' => 'Hello-World']];
 
         self::assertSame($expected, $this->sut->serialize());
     }

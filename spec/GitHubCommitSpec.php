@@ -158,9 +158,7 @@ class GitHubCommitSpec extends ObjectBehavior
             ]
         );
         $parents->serialize()->shouldBeCalled()->willReturn(
-            [
-                ['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3', 'apiUrl' => 'apiUrl', 'htmlUrl' => 'htmlUrl'],
-            ]
+            [['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3', 'apiUrl' => 'apiUrl', 'htmlUrl' => 'htmlUrl']]
         );
         $verification->serialize()->shouldBeCalled()->willReturn(
             [
