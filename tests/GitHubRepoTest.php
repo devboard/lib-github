@@ -159,6 +159,16 @@ class GitHubRepoTest extends TestCase
         self::assertSame($this->fullName, $this->sut->getFullName());
     }
 
+    public function testGetRepoOwnerName()
+    {
+        self::assertEquals(new AccountLogin('devboard-test'), $this->sut->getRepoOwnerName());
+    }
+
+    public function testGetRepoName()
+    {
+        self::assertEquals(new RepoName('Hello-World'), $this->sut->getRepoName());
+    }
+
     public function testGetOwner()
     {
         self::assertSame($this->owner, $this->sut->getOwner());

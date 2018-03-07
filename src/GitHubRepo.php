@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub;
 
 use DevboardLib\Git\Branch\BranchName;
+use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Repo\RepoDescription;
 use DevboardLib\GitHub\Repo\RepoEndpoints;
 use DevboardLib\GitHub\Repo\RepoFullName;
@@ -12,6 +13,7 @@ use DevboardLib\GitHub\Repo\RepoHomepage;
 use DevboardLib\GitHub\Repo\RepoId;
 use DevboardLib\GitHub\Repo\RepoLanguage;
 use DevboardLib\GitHub\Repo\RepoMirrorUrl;
+use DevboardLib\GitHub\Repo\RepoName;
 use DevboardLib\GitHub\Repo\RepoOwner;
 use DevboardLib\GitHub\Repo\RepoParent;
 use DevboardLib\GitHub\Repo\RepoStats;
@@ -113,6 +115,16 @@ class GitHubRepo
     public function getFullName(): RepoFullName
     {
         return $this->fullName;
+    }
+
+    public function getRepoOwnerName(): AccountLogin
+    {
+        return $this->fullName->getOwner();
+    }
+
+    public function getRepoName(): RepoName
+    {
+        return $this->fullName->getRepoName();
     }
 
     public function getOwner(): RepoOwner
