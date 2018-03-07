@@ -33,9 +33,6 @@ class PullRequestStateTest extends TestCase
 
     public function provideStates(): array
     {
-        return [
-            ['open'],
-            ['closed'],
-        ];
+        return [['open'], ['closed']];
     }
 }

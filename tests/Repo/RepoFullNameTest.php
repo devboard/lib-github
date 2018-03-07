@@ -43,10 +43,7 @@ class RepoFullNameTest extends TestCase
 
     public function testSerialize()
     {
-        $expected = [
-            'owner'    => 'octocat',
-            'repoName' => 'linguist',
-        ];
+        $expected = ['owner' => 'octocat', 'repoName' => 'linguist'];
 
         self::assertSame($expected, $this->sut->serialize());
     }

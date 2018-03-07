@@ -45,10 +45,7 @@ class RequiredStatusChecksTest extends TestCase
 
     public function testSerialize()
     {
-        $expected = [
-            'enforcementLevel' => 'enforcementLevel',
-            'contexts'         => [1],
-        ];
+        $expected = ['enforcementLevel' => 'enforcementLevel', 'contexts' => [1]];
 
         self::assertSame($expected, $this->sut->serialize());
     }
