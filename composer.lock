@@ -3685,16 +3685,16 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "4.5.1",
+            "version": "4.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "174135533894560bb26b77a912c0e37f0b173c27"
+                "reference": "1e609159241fa90d5a429f185b2ea9b881340a7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/174135533894560bb26b77a912c0e37f0b173c27",
-                "reference": "174135533894560bb26b77a912c0e37f0b173c27",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/1e609159241fa90d5a429f185b2ea9b881340a7c",
+                "reference": "1e609159241fa90d5a429f185b2ea9b881340a7c",
                 "shasum": ""
             },
             "require": {
@@ -3721,7 +3721,7 @@
                 "MIT"
             ],
             "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
-            "time": "2018-03-06T08:10:30+00:00"
+            "time": "2018-03-08T08:14:33+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
