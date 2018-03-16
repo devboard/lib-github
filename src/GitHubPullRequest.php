@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
+use DevboardLib\GitHub\Milestone\MilestoneId;
 use DevboardLib\GitHub\PullRequest\PullRequestApiUrl;
 use DevboardLib\GitHub\PullRequest\PullRequestAssignee;
 use DevboardLib\GitHub\PullRequest\PullRequestAssigneeCollection;
@@ -164,6 +165,15 @@ class GitHubPullRequest
     public function getMilestone(): ?GitHubMilestone
     {
         return $this->milestone;
+    }
+
+    public function getMilestoneId(): ?MilestoneId
+    {
+        if (null === $this->milestone) {
+            return null;
+        }
+
+        return $this->milestone->getId();
     }
 
     public function getClosedAt(): ?PullRequestClosedAt
