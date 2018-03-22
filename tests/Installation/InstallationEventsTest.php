@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Installation\InstallationEvents
- * @group  todo
+ * @group  unit
  */
 class InstallationEventsTest extends TestCase
 {

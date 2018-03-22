@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\Issue\IssueAssigneeCollection
- * @group  todo
+ * @group  unit
  */
 class IssueAssigneeCollectionTest extends TestCase
 {

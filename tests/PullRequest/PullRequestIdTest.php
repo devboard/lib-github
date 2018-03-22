@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\PullRequest\PullRequestId
- * @group  todo
+ * @group  unit
  */
 class PullRequestIdTest extends TestCase
 {

@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\IssueComment\IssueCommentAuthor
- * @group  todo
+ * @group  unit
  */
 class IssueCommentAuthorTest extends TestCase
 {

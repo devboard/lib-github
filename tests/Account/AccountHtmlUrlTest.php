@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Account\AccountHtmlUrl
- * @group  todo
+ * @group  unit
  */
 class AccountHtmlUrlTest extends TestCase
 {

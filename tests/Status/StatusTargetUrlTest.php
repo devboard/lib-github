@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Status\StatusTargetUrl
- * @group  todo
+ * @group  unit
  */
 class StatusTargetUrlTest extends TestCase
 {

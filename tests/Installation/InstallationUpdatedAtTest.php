@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Installation\InstallationUpdatedAt
- * @group  todo
+ * @group  unit
  */
 class InstallationUpdatedAtTest extends TestCase
 {

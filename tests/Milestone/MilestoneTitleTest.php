@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Milestone\MilestoneTitle
- * @group  todo
+ * @group  unit
  */
 class MilestoneTitleTest extends TestCase
 {

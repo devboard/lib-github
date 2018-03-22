@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Installation\InstallationRepositoriesUrl
- * @group  todo
+ * @group  unit
  */
 class InstallationRepositoriesUrlTest extends TestCase
 {

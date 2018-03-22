@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Branch\BranchProtectionUrl
- * @group  todo
+ * @group  unit
  */
 class BranchProtectionUrlTest extends TestCase
 {

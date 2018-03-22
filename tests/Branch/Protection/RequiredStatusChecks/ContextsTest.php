@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Contexts
- * @group  todo
+ * @group  unit
  */
 class ContextsTest extends TestCase
 {

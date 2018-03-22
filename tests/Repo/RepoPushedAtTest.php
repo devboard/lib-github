@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Repo\RepoPushedAt
- * @group  todo
+ * @group  unit
  */
 class RepoPushedAtTest extends TestCase
 {

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\PullRequest\PullRequestHtmlUrl
- * @group  todo
+ * @group  unit
  */
 class PullRequestHtmlUrlTest extends TestCase
 {

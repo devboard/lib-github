@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Installation\InstallationRepositorySelection\InstallationRepositoryAll
- * @group  todo
+ * @group  unit
  */
 class InstallationRepositoryAllTest extends TestCase
 {

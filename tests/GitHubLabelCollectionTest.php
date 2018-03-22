@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\GitHubLabelCollection
- * @group  todo
+ * @group  unit
  */
 class GitHubLabelCollectionTest extends TestCase
 {

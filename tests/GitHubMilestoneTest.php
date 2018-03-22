@@ -30,7 +30,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\GitHubMilestone
- * @group  todo
+ * @group  unit
  */
 class GitHubMilestoneTest extends TestCase
 {

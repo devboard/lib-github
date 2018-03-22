@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Installation\InstallationPermissions
- * @group  todo
+ * @group  unit
  */
 class InstallationPermissionsTest extends TestCase
 {

@@ -22,7 +22,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\Commit\CommitCommitter
- * @group  todo
+ * @group  unit
  */
 class CommitCommitterTest extends TestCase
 {

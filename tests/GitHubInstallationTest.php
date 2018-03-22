@@ -30,7 +30,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\GitHubInstallation
- * @group  todo
+ * @group  unit
  */
 class GitHubInstallationTest extends TestCase
 {

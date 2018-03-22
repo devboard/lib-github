@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Branch\Protection
- * @group  todo
+ * @group  unit
  */
 class ProtectionTest extends TestCase
 {

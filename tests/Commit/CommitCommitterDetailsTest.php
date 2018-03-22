@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Commit\CommitCommitterDetails
- * @group  todo
+ * @group  unit
  */
 class CommitCommitterDetailsTest extends TestCase
 {

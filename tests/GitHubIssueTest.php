@@ -50,7 +50,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\GitHubIssue
- * @group  todo
+ * @group  unit
  */
 class GitHubIssueTest extends TestCase
 {

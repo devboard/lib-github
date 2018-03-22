@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Installation\InstallationAccount
- * @group  todo
+ * @group  unit
  */
 class InstallationAccountTest extends TestCase
 {

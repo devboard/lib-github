@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Milestone\MilestoneApiUrl
- * @group  todo
+ * @group  unit
  */
 class MilestoneApiUrlTest extends TestCase
 {

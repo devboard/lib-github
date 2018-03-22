@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Account\AccountApiUrl
- * @group  todo
+ * @group  unit
  */
 class AccountApiUrlTest extends TestCase
 {

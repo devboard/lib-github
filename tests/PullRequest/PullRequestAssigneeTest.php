@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\PullRequest\PullRequestAssignee
- * @group  todo
+ * @group  unit
  */
 class PullRequestAssigneeTest extends TestCase
 {

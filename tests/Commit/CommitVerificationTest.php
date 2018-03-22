@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Commit\CommitVerification
- * @group  todo
+ * @group  unit
  */
 class CommitVerificationTest extends TestCase
 {

@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\IssueComment\IssueCommentUpdatedAt
- * @group  todo
+ * @group  unit
  */
 class IssueCommentUpdatedAtTest extends TestCase
 {

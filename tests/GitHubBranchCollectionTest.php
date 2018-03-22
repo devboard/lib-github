@@ -48,7 +48,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\GitHubBranchCollection
- * @group  todo
+ * @group  unit
  */
 class GitHubBranchCollectionTest extends TestCase
 {

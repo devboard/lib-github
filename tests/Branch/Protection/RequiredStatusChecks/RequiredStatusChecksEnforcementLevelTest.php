@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\RequiredStatusChecksEnforcementLevel
- * @group  todo
+ * @group  unit
  */
 class RequiredStatusChecksEnforcementLevelTest extends TestCase
 {

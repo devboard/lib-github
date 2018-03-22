@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Status\StatusCreator
- * @group  todo
+ * @group  unit
  */
 class StatusCreatorTest extends TestCase
 {

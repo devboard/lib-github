@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Issue\IssueState
- * @group  todo
+ * @group  unit
  */
 class IssueStateTest extends TestCase
 {

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Status\StatusDescription
- * @group  todo
+ * @group  unit
  */
 class StatusDescriptionTest extends TestCase
 {
