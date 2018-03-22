@@ -14,8 +14,6 @@ class PullRequestReviewState extends Enum
 {
     const PENDING = 'pending';
 
-    const OPEN = 'open';
-
     const APPROVED = 'approved';
 
     const CHANGES_REQUESTED = 'changes_requested';
