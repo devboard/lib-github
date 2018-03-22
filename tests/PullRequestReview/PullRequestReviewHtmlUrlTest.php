@@ -9,44 +9,44 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\PullRequestReview\PullRequestReviewHtmlUrl
- * @group  unit
+ * @group  todo
  */
 class PullRequestReviewHtmlUrlTest extends TestCase
 {
     /** @var string */
-    private $apiUrl;
+    private $htmlUrl;
 
     /** @var PullRequestReviewHtmlUrl */
     private $sut;
 
     public function setUp()
     {
-        $this->apiUrl = 'apiUrl';
-        $this->sut    = new PullRequestReviewHtmlUrl($this->apiUrl);
+        $this->htmlUrl = 'htmlUrl';
+        $this->sut     = new PullRequestReviewHtmlUrl($this->htmlUrl);
     }
 
-    public function testGetApiUrl()
+    public function testGetHtmlUrl()
     {
-        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
+        self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
     }
 
     public function testGetValue()
     {
-        self::assertSame($this->apiUrl, $this->sut->getValue());
+        self::assertSame($this->htmlUrl, $this->sut->getValue());
     }
 
     public function testToString()
     {
-        self::assertSame($this->apiUrl, $this->sut->__toString());
+        self::assertSame($this->htmlUrl, $this->sut->__toString());
     }
 
     public function testSerialize()
     {
-        self::assertEquals($this->apiUrl, $this->sut->serialize());
+        self::assertEquals($this->htmlUrl, $this->sut->serialize());
     }
 
     public function testDeserialize()
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->apiUrl));
+        self::assertEquals($this->sut, $this->sut->deserialize($this->htmlUrl));
     }
 }

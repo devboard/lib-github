@@ -5,7 +5,7 @@ definition:
   interfaces: {  }
   traits: {  }
   constructor:
-    apiUrl:
+    htmlUrl:
       instanceOf: string
       nullable: false
       hasDefault: false

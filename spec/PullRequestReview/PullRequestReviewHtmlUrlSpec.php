@@ -11,7 +11,7 @@ class PullRequestReviewHtmlUrlSpec extends ObjectBehavior
 {
     public function let()
     {
-        $this->beConstructedWith($apiUrl = 'apiUrl');
+        $this->beConstructedWith($htmlUrl = 'htmlUrl');
     }
 
     public function it_is_initializable()
@@ -19,29 +19,29 @@ class PullRequestReviewHtmlUrlSpec extends ObjectBehavior
         $this->shouldHaveType(PullRequestReviewHtmlUrl::class);
     }
 
-    public function it_exposes_api_url()
+    public function it_exposes_html_url()
     {
-        $this->getApiUrl()->shouldReturn('apiUrl');
+        $this->getHtmlUrl()->shouldReturn('htmlUrl');
     }
 
     public function it_exposes_value()
     {
-        $this->getValue()->shouldReturn('apiUrl');
+        $this->getValue()->shouldReturn('htmlUrl');
     }
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('apiUrl');
+        $this->__toString()->shouldReturn('htmlUrl');
     }
 
     public function it_can_be_serialized()
     {
-        $this->serialize()->shouldReturn('apiUrl');
+        $this->serialize()->shouldReturn('htmlUrl');
     }
 
     public function it_can_be_deserialized()
     {
-        $input = 'apiUrl';
+        $input = 'htmlUrl';
 
         $this->deserialize($input)->shouldReturnAnInstanceOf(PullRequestReviewHtmlUrl::class);
     }

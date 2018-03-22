@@ -11,35 +11,35 @@ namespace DevboardLib\GitHub\PullRequestReview;
 class PullRequestReviewHtmlUrl
 {
     /** @var string */
-    private $apiUrl;
+    private $htmlUrl;
 
-    public function __construct(string $apiUrl)
+    public function __construct(string $htmlUrl)
     {
-        $this->apiUrl = $apiUrl;
+        $this->htmlUrl = $htmlUrl;
     }
 
-    public function getApiUrl(): string
+    public function getHtmlUrl(): string
     {
-        return $this->apiUrl;
+        return $this->htmlUrl;
     }
 
     public function getValue(): string
     {
-        return $this->apiUrl;
+        return $this->htmlUrl;
     }
 
     public function __toString(): string
     {
-        return $this->apiUrl;
+        return $this->htmlUrl;
     }
 
     public function serialize(): string
     {
-        return $this->apiUrl;
+        return $this->htmlUrl;
     }
 
-    public static function deserialize(string $apiUrl): self
+    public static function deserialize(string $htmlUrl): self
     {
-        return new self($apiUrl);
+        return new self($htmlUrl);
     }
 }
