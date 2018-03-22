@@ -10,4 +10,4 @@ definition:
       nullable: false
       hasDefault: false
       default: null
-      examples: ['open','approved','changes_requested','commented']
+      examples: ['approved','changes_requested','commented']

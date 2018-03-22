@@ -21,7 +21,7 @@ class PullRequestReviewStateTest extends TestCase
 
     public function setUp()
     {
-        $this->value = 'open';
+        $this->value = 'approved';
         $this->sut   = new PullRequestReviewState($this->value);
     }
 
