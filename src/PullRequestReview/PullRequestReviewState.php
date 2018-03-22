@@ -4,29 +4,23 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\PullRequestReview;
 
+use MyCLabs\Enum\Enum;
+
 /**
  * @see \spec\DevboardLib\GitHub\PullRequestReview\PullRequestReviewStateSpec
  * @see \Tests\DevboardLib\GitHub\PullRequestReview\PullRequestReviewStateTest
  */
-class PullRequestReviewState
+class PullRequestReviewState extends Enum
 {
-    /** @var string */
-    private $value;
+    const PENDING = 'pending';
 
-    public function __construct(string $value)
-    {
-        $this->value = $value;
-    }
+    const OPEN = 'open';
 
-    public function getValue(): string
-    {
-        return $this->value;
-    }
+    const APPROVED = 'approved';
 
-    public function __toString(): string
-    {
-        return $this->value;
-    }
+    const CHANGES_REQUESTED = 'changes_requested';
+
+    const COMMENTED = 'commented';
 
     public function serialize(): string
     {
