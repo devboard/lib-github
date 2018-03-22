@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Commit\CommitParentCollection
- * @group  todo
+ * @group  unit
  */
 class CommitParentCollectionTest extends TestCase
 {

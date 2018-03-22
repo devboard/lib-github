@@ -41,7 +41,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\GitHubCommit
- * @group  todo
+ * @group  unit
  */
 class GitHubCommitTest extends TestCase
 {

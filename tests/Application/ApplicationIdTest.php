@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Application\ApplicationId
- * @group  todo
+ * @group  unit
  */
 class ApplicationIdTest extends TestCase
 {

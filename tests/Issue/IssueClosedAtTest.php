@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Issue\IssueClosedAt
- * @group  todo
+ * @group  unit
  */
 class IssueClosedAtTest extends TestCase
 {

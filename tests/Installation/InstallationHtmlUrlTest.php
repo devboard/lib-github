@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Installation\InstallationHtmlUrl
- * @group  todo
+ * @group  unit
  */
 class InstallationHtmlUrlTest extends TestCase
 {

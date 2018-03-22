@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Account\AccountLogin
- * @group  todo
+ * @group  unit
  */
 class AccountLoginTest extends TestCase
 {

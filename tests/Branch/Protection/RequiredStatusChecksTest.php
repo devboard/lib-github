@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks
- * @group  todo
+ * @group  unit
  */
 class RequiredStatusChecksTest extends TestCase
 {

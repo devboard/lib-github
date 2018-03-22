@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Issue\IssueId
- * @group  todo
+ * @group  unit
  */
 class IssueIdTest extends TestCase
 {

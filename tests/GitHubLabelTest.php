@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\GitHubLabel
- * @group  todo
+ * @group  unit
  */
 class GitHubLabelTest extends TestCase
 {

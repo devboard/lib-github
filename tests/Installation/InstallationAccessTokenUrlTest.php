@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Installation\InstallationAccessTokenUrl
- * @group  todo
+ * @group  unit
  */
 class InstallationAccessTokenUrlTest extends TestCase
 {

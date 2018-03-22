@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Context\ContextId
- * @group  todo
+ * @group  unit
  */
 class ContextIdTest extends TestCase
 {

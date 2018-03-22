@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Label\LabelApiUrl
- * @group  todo
+ * @group  unit
  */
 class LabelApiUrlTest extends TestCase
 {

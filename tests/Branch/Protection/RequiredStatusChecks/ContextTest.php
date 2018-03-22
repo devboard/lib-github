@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Context
- * @group  todo
+ * @group  unit
  */
 class ContextTest extends TestCase
 {

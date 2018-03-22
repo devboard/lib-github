@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Milestone\MilestoneUpdatedAt
- * @group  todo
+ * @group  unit
  */
 class MilestoneUpdatedAtTest extends TestCase
 {

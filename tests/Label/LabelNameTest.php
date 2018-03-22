@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Label\LabelName
- * @group  todo
+ * @group  unit
  */
 class LabelNameTest extends TestCase
 {

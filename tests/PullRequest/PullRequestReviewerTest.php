@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\PullRequest\PullRequestReviewer
- * @group  todo
+ * @group  unit
  */
 class PullRequestReviewerTest extends TestCase
 {

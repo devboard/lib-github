@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Milestone\MilestoneCreator
- * @group  todo
+ * @group  unit
  */
 class MilestoneCreatorTest extends TestCase
 {

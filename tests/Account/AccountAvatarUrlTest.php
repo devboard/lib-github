@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Account\AccountAvatarUrl
- * @group  todo
+ * @group  unit
  */
 class AccountAvatarUrlTest extends TestCase
 {

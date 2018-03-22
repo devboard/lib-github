@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\IssueComment\IssueCommentBody
- * @group  todo
+ * @group  unit
  */
 class IssueCommentBodyTest extends TestCase
 {

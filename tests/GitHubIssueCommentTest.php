@@ -27,7 +27,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\GitHubIssueComment
- * @group  todo
+ * @group  unit
  */
 class GitHubIssueCommentTest extends TestCase
 {

@@ -46,7 +46,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\GitHubTag
- * @group  todo
+ * @group  unit
  */
 class GitHubTagTest extends TestCase
 {

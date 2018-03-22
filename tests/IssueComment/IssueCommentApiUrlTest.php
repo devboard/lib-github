@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\IssueComment\IssueCommentApiUrl
- * @group  todo
+ * @group  unit
  */
 class IssueCommentApiUrlTest extends TestCase
 {

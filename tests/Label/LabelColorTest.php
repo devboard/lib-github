@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Label\LabelColor
- * @group  todo
+ * @group  unit
  */
 class LabelColorTest extends TestCase
 {

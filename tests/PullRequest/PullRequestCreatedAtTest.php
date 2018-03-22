@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\PullRequest\PullRequestCreatedAt
- * @group  todo
+ * @group  unit
  */
 class PullRequestCreatedAtTest extends TestCase
 {

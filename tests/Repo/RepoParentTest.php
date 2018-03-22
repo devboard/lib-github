@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\Repo\RepoParent
- * @group  todo
+ * @group  unit
  */
 class RepoParentTest extends TestCase
 {

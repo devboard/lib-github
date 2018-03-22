@@ -39,7 +39,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\GitHubRepo
- * @group  todo
+ * @group  unit
  */
 class GitHubRepoTest extends TestCase
 {
