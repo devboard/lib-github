@@ -12,3 +12,7 @@
 
 #Ignoring MacDS_Store files
 .DS_Store
+
+#Ignore phar files in root
+/*.phar
+
