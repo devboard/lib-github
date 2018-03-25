@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Commit\CommitCommentCount
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    commentCount:
+      instanceOf: int
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [73]

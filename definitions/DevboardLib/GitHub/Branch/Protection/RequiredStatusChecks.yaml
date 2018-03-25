@@ -1,0 +1,18 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    enforcementLevel:
+      instanceOf: DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\RequiredStatusChecksEnforcementLevel
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    contexts:
+      instanceOf: DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Contexts
+      nullable: false
+      hasDefault: false
+      default: null

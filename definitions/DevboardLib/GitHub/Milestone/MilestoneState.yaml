@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Milestone\MilestoneState
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    value:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['open','closed']

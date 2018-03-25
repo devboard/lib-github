@@ -1,0 +1,19 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Repo\RepoFullName
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    owner:
+      instanceOf: DevboardLib\GitHub\Account\AccountLogin
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['octocat']
+    repoName:
+      instanceOf: DevboardLib\GitHub\Repo\RepoName
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['linguist','Hello-World']

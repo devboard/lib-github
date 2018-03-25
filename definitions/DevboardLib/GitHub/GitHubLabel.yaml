@@ -1,0 +1,37 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\GitHubLabel
+  parent: null
+  interfaces: []
+  traits: {  }
+  constructor:
+    id:
+      instanceOf: DevboardLib\GitHub\Label\LabelId
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    name:
+      instanceOf: DevboardLib\GitHub\Label\LabelName
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    color:
+      instanceOf: DevboardLib\GitHub\Label\LabelColor
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    default:
+      instanceOf: bool
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    apiUrl:
+      instanceOf: DevboardLib\GitHub\Label\LabelApiUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

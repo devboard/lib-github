@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Milestone\MilestoneNumber
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    value:
+      instanceOf: int
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Repo\RepoEndpoints\RepoSshUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    sshUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['git@github.com:octocat/linguist.git']

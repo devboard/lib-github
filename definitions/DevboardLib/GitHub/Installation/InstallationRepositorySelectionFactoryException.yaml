@@ -1,0 +1,7 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Installation\InstallationRepositorySelectionFactoryException
+  parent: Exception
+  interfaces: {  }
+  traits: {  }
+  constructor: []

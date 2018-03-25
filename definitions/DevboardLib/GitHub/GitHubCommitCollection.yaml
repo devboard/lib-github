@@ -1,0 +1,16 @@
+definition:
+  type: SimpleCollection
+  instanceOf: DevboardLib\GitHub\GitHubCommitCollection
+  parent: null
+  interfaces: []
+  traits: {  }
+  constructor:
+    elements:
+      instanceOf: array
+      nullable: false
+      hasDefault: true
+      default: []
+  collectionOf:
+    instanceOf: DevboardLib\GitHub\GitHubCommit
+    accessor: getSha
+    has: DevboardLib\Git\Commit\CommitSha

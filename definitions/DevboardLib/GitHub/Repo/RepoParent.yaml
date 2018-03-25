@@ -1,0 +1,19 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Repo\RepoParent
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    id:
+      instanceOf: DevboardLib\GitHub\Repo\RepoId
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    fullName:
+      instanceOf: DevboardLib\GitHub\Repo\RepoFullName
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

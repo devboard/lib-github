@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Status\StatusTargetUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    targetUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['https://circleci.com/gh/msvrtan/generator/231?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link']

@@ -1,0 +1,16 @@
+definition:
+  type: SimpleCollection
+  instanceOf: DevboardLib\GitHub\GitHubLabelCollection
+  parent: null
+  interfaces: []
+  traits: {  }
+  constructor:
+    elements:
+      instanceOf: array
+      nullable: false
+      hasDefault: true
+      default: []
+  collectionOf:
+    instanceOf: DevboardLib\GitHub\GitHubLabel
+    accessor: getId
+    has: DevboardLib\GitHub\Label\LabelId

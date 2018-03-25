@@ -1,0 +1,31 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Repo\RepoEndpoints
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    htmlUrl:
+      instanceOf: DevboardLib\GitHub\Repo\RepoEndpoints\RepoHtmlUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['https://github.com/octocat/Hello-World']
+    apiUrl:
+      instanceOf: DevboardLib\GitHub\Repo\RepoEndpoints\RepoApiUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['https://api.github.com/repos/octocat/Hello-World']
+    gitUrl:
+      instanceOf: DevboardLib\GitHub\Repo\RepoEndpoints\RepoGitUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['git://github.com/octocat/Hello-World.git']
+    sshUrl:
+      instanceOf: DevboardLib\GitHub\Repo\RepoEndpoints\RepoSshUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['git@github.com:octocat/Hello-World.git']

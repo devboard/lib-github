@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Branch\BranchProtectionUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    protectionUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

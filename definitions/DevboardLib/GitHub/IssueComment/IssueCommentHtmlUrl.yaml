@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentHtmlUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    htmlUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

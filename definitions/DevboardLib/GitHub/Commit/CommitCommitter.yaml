@@ -1,0 +1,31 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Commit\CommitCommitter
+  parent: null
+  interfaces:
+    CommitCommitterInterface: Git\Commit\CommitCommitter
+  traits: {  }
+  constructor:
+    name:
+      instanceOf: DevboardLib\Git\Commit\Committer\CommitterName
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['Jane Johnson']
+    email:
+      instanceOf: DevboardLib\Generix\EmailAddress
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['jane@example.com']
+    commitDate:
+      instanceOf: DevboardLib\Git\Commit\CommitDate
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['2018-01-02T20:21:22+00:00']
+    committerDetails:
+      instanceOf: DevboardLib\GitHub\Commit\CommitCommitterDetails
+      nullable: true
+      hasDefault: false
+      default: null

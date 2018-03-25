@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Commit\CommitCommentsUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    commentsUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

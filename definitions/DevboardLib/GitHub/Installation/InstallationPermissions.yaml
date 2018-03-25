@@ -1,0 +1,13 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Installation\InstallationPermissions
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    values:
+      instanceOf: array
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [['some-installation-permission','another-installation-permission']]

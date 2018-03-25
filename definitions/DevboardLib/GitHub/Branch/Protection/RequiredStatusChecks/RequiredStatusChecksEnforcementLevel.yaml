@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\RequiredStatusChecksEnforcementLevel
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    enforcementLevel:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

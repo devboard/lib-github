@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Commit\CommitParent\ParentApiUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    apiUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['https://api.github.com/repos/baxterandthehackers/new-repository']

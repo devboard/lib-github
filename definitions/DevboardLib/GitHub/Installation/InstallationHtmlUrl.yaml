@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Installation\InstallationHtmlUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    installationHtmlUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

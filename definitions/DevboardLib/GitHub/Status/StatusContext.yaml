@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Status\StatusContext
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    description:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['ci/circleci']
