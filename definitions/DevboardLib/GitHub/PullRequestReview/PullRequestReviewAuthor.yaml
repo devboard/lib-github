@@ -23,6 +23,9 @@ definition:
       hasDefault: false
       default: null
       examples: ['User']
+    association:
+      instanceOf: DevboardLib\GitHub\PullRequestReview\PullRequestReviewAuthorAssociation
+      nullable: true
     avatarUrl:
       instanceOf: DevboardLib\GitHub\Account\AccountAvatarUrl
       nullable: false
