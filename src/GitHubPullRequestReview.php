@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub;
 
 use DevboardLib\Git\Commit\CommitSha;
+use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\PullRequestReview\PullRequestReviewAuthor;
 use DevboardLib\GitHub\PullRequestReview\PullRequestReviewBody;
 use DevboardLib\GitHub\PullRequestReview\PullRequestReviewId;
@@ -64,6 +65,11 @@ class GitHubPullRequestReview
     public function getAuthor(): PullRequestReviewAuthor
     {
         return $this->author;
+    }
+
+    public function getAuthorId(): AccountId
+    {
+        return $this->author->getUserId();
     }
 
     public function getState(): PullRequestReviewState
