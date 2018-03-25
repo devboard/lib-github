@@ -18,6 +18,8 @@ class PullRequestAuthorAssociation extends Enum
 
     const CONTRIBUTOR = 'CONTRIBUTOR';
 
+    const MEMBER = 'MEMBER';
+
     const NONE = 'NONE';
 
     public function serialize(): string
