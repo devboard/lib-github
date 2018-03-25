@@ -12,11 +12,14 @@ use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\PullRequest\PullRequestAuthor;
+use DevboardLib\GitHub\PullRequest\PullRequestAuthorAssociation;
 use PHPUnit\Framework\TestCase;
 
 /**
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\PullRequest\PullRequestAuthor
- * @group  unit
+ * @group  todo
  */
 class PullRequestAuthorTest extends TestCase
 {
@@ -28,6 +31,9 @@ class PullRequestAuthorTest extends TestCase
 
     /** @var AccountType */
     private $type;
+
+    /** @var PullRequestAuthorAssociation|null */
+    private $association;
 
     /** @var AccountAvatarUrl */
     private $avatarUrl;
@@ -49,18 +55,20 @@ class PullRequestAuthorTest extends TestCase
 
     public function setUp()
     {
-        $this->userId     = new AccountId(583231);
-        $this->login      = new AccountLogin('octocat');
-        $this->type       = new AccountType('User');
-        $this->avatarUrl  = new AccountAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4');
-        $this->gravatarId = new GravatarId('');
-        $this->htmlUrl    = new AccountHtmlUrl('https://github.com/octocat');
-        $this->apiUrl     = new AccountApiUrl('https://api.github.com/users/octocat');
-        $this->siteAdmin  = false;
-        $this->sut        = new PullRequestAuthor(
+        $this->userId      = new AccountId(583231);
+        $this->login       = new AccountLogin('octocat');
+        $this->type        = new AccountType('User');
+        $this->association = new PullRequestAuthorAssociation('NONE');
+        $this->avatarUrl   = new AccountAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4');
+        $this->gravatarId  = new GravatarId('');
+        $this->htmlUrl     = new AccountHtmlUrl('https://github.com/octocat');
+        $this->apiUrl      = new AccountApiUrl('https://api.github.com/users/octocat');
+        $this->siteAdmin   = false;
+        $this->sut         = new PullRequestAuthor(
             $this->userId,
             $this->login,
             $this->type,
+            $this->association,
             $this->avatarUrl,
             $this->gravatarId,
             $this->htmlUrl,
@@ -82,6 +90,11 @@ class PullRequestAuthorTest extends TestCase
     public function testGetType()
     {
         self::assertSame($this->type, $this->sut->getType());
+    }
+
+    public function testGetAssociation()
+    {
+        self::assertSame($this->association, $this->sut->getAssociation());
     }
 
     public function testGetAvatarUrl()
@@ -109,17 +122,23 @@ class PullRequestAuthorTest extends TestCase
         self::assertSame($this->siteAdmin, $this->sut->isSiteAdmin());
     }
 
+    public function testHasAssociation()
+    {
+        self::assertTrue($this->sut->hasAssociation());
+    }
+
     public function testSerialize()
     {
         $expected = [
-            'userId'     => 583231,
-            'login'      => 'octocat',
-            'type'       => 'User',
-            'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-            'gravatarId' => '',
-            'htmlUrl'    => 'https://github.com/octocat',
-            'apiUrl'     => 'https://api.github.com/users/octocat',
-            'siteAdmin'  => false,
+            'userId'      => 583231,
+            'login'       => 'octocat',
+            'type'        => 'User',
+            'association' => 'NONE',
+            'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+            'gravatarId'  => '',
+            'htmlUrl'     => 'https://github.com/octocat',
+            'apiUrl'      => 'https://api.github.com/users/octocat',
+            'siteAdmin'   => false,
         ];
 
         self::assertSame($expected, $this->sut->serialize());

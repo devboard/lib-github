@@ -12,21 +12,27 @@ use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\PullRequest\PullRequestAuthor;
+use DevboardLib\GitHub\PullRequest\PullRequestAuthorAssociation;
 use PhpSpec\ObjectBehavior;
 
+/**
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+ */
 class PullRequestAuthorSpec extends ObjectBehavior
 {
     public function let(
         AccountId $userId,
         AccountLogin $login,
         AccountType $type,
+        PullRequestAuthorAssociation $association,
         AccountAvatarUrl $avatarUrl,
         GravatarId $gravatarId,
         AccountHtmlUrl $htmlUrl,
         AccountApiUrl $apiUrl
     ) {
         $this->beConstructedWith(
-            $userId, $login, $type, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, $siteAdmin = false
+            $userId, $login, $type, $association, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, $siteAdmin = false
         );
     }
 
@@ -48,6 +54,11 @@ class PullRequestAuthorSpec extends ObjectBehavior
     public function it_exposes_type(AccountType $type)
     {
         $this->getType()->shouldReturn($type);
+    }
+
+    public function it_exposes_association(PullRequestAuthorAssociation $association)
+    {
+        $this->getAssociation()->shouldReturn($association);
     }
 
     public function it_exposes_avatar_url(AccountAvatarUrl $avatarUrl)
@@ -75,10 +86,16 @@ class PullRequestAuthorSpec extends ObjectBehavior
         $this->isSiteAdmin()->shouldReturn(false);
     }
 
+    public function it_has_association()
+    {
+        $this->hasAssociation()->shouldReturn(true);
+    }
+
     public function it_can_be_serialized(
         AccountId $userId,
         AccountLogin $login,
         AccountType $type,
+        PullRequestAuthorAssociation $association,
         AccountAvatarUrl $avatarUrl,
         GravatarId $gravatarId,
         AccountHtmlUrl $htmlUrl,
@@ -87,20 +104,22 @@ class PullRequestAuthorSpec extends ObjectBehavior
         $userId->serialize()->shouldBeCalled()->willReturn(583231);
         $login->serialize()->shouldBeCalled()->willReturn('octocat');
         $type->serialize()->shouldBeCalled()->willReturn('User');
+        $association->serialize()->shouldBeCalled()->willReturn('NONE');
         $avatarUrl->serialize()->shouldBeCalled()->willReturn('https://avatars3.githubusercontent.com/u/583231?v=4');
         $gravatarId->serialize()->shouldBeCalled()->willReturn('');
         $htmlUrl->serialize()->shouldBeCalled()->willReturn('https://github.com/octocat');
         $apiUrl->serialize()->shouldBeCalled()->willReturn('https://api.github.com/users/octocat');
         $this->serialize()->shouldReturn(
             [
-                'userId'     => 583231,
-                'login'      => 'octocat',
-                'type'       => 'User',
-                'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-                'gravatarId' => '',
-                'htmlUrl'    => 'https://github.com/octocat',
-                'apiUrl'     => 'https://api.github.com/users/octocat',
-                'siteAdmin'  => false,
+                'userId'      => 583231,
+                'login'       => 'octocat',
+                'type'        => 'User',
+                'association' => 'NONE',
+                'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+                'gravatarId'  => '',
+                'htmlUrl'     => 'https://github.com/octocat',
+                'apiUrl'      => 'https://api.github.com/users/octocat',
+                'siteAdmin'   => false,
             ]
         );
     }
@@ -108,14 +127,15 @@ class PullRequestAuthorSpec extends ObjectBehavior
     public function it_can_be_deserialized()
     {
         $input = [
-            'userId'     => 583231,
-            'login'      => 'octocat',
-            'type'       => 'User',
-            'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-            'gravatarId' => '',
-            'htmlUrl'    => 'https://github.com/octocat',
-            'apiUrl'     => 'https://api.github.com/users/octocat',
-            'siteAdmin'  => false,
+            'userId'      => 583231,
+            'login'       => 'octocat',
+            'type'        => 'User',
+            'association' => 'NONE',
+            'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+            'gravatarId'  => '',
+            'htmlUrl'     => 'https://github.com/octocat',
+            'apiUrl'      => 'https://api.github.com/users/octocat',
+            'siteAdmin'   => false,
         ];
 
         $this->deserialize($input)->shouldReturnAnInstanceOf(PullRequestAuthor::class);
