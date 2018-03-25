@@ -3,6 +3,7 @@ parameters:
 	ignoreErrors:
 	    - '#Call to an undefined static method DevboardLib\\GitHub\\Account\\AccountType::#'
 	    - '#Call to an undefined static method DevboardLib\\GitHub\\PullRequest\\PullRequestAuthorAssociation::#'
+	    - '#Call to an undefined static method DevboardLib\\GitHub\\PullRequestReview\\PullRequestReviewAuthorAssociation::#'
 	    - '#Parameter .* Mockery\\MockInterface given.#'
 	    - '#Call to an undefined method .*|Mockery\\MockInterface\:\:shouldReceive\(\).#'
 	includes:
