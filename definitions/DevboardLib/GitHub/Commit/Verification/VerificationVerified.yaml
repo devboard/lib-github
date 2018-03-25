@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Commit\Verification\VerificationVerified
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    verified:
+      instanceOf: bool
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [true, false]

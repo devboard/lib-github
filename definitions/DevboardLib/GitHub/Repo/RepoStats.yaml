@@ -1,0 +1,43 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Repo\RepoStats
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    networkCount:
+      instanceOf: int
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [11]
+    watchersCount:
+      instanceOf: int
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [12]
+    stargazersCount:
+      instanceOf: int
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [13]
+    subscribersCount:
+      instanceOf: int
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [14]
+    openIssuesCount:
+      instanceOf: int
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [15]
+    size:
+      instanceOf: DevboardLib\GitHub\Repo\RepoStats\RepoSize
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [16]

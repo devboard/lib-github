@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Commit\Verification\VerificationPayload
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    payload:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['tree 691272480426f78a0138979dd3ce63b77f706feb\n...']

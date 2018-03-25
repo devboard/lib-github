@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Label\LabelColor
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    color:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

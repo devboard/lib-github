@@ -1,0 +1,13 @@
+definition:
+  type: DateTimeValueObject
+  instanceOf: DevboardLib\GitHub\Milestone\MilestoneUpdatedAt
+  parent: DateTime
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    value:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['2016-08-02T17:35:14+00:00']

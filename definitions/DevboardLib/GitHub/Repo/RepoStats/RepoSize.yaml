@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Repo\RepoStats\RepoSize
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    size:
+      instanceOf: int
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [32899]

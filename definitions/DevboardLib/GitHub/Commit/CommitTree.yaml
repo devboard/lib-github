@@ -1,0 +1,20 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Commit\CommitTree
+  parent: null
+  interfaces:
+    CommitTreeInterface: Git\Commit\CommitTree
+  traits: {  }
+  constructor:
+    sha:
+      instanceOf: DevboardLib\Git\Commit\CommitSha
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['02b49ad0ba4f1acd9f06531b21e16a4ac5d341d0']
+    apiUrl:
+      instanceOf: DevboardLib\GitHub\Commit\Tree\TreeApiUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['https://api.github.com/repos/baxterthehacker/public-repo/git/trees/02b49ad0ba4f1acd9f06531b21e16a4ac5d341d0']

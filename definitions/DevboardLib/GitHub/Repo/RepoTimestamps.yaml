@@ -1,0 +1,25 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Repo\RepoTimestamps
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    createdAt:
+      instanceOf: DevboardLib\GitHub\Repo\RepoCreatedAt
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ["2011-01-26T19:01:12+00:00"]
+    updatedAt:
+      instanceOf: DevboardLib\GitHub\Repo\RepoUpdatedAt
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ["2017-11-16T09:16:48+00:00"]
+    pushedAt:
+      instanceOf: DevboardLib\GitHub\Repo\RepoPushedAt
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ["2017-11-04T22:17:54+00:00"]

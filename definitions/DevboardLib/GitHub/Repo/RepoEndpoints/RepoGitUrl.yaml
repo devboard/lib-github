@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Repo\RepoEndpoints\RepoGitUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    gitUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['git://github.com/octocat/linguist.git']

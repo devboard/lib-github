@@ -1,0 +1,68 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\GitHubCommit
+  parent: null
+  interfaces:
+    - Git\Commit
+  traits: {  }
+  constructor:
+    sha:
+      instanceOf: DevboardLib\Git\Commit\CommitSha
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    message:
+      instanceOf: DevboardLib\Git\Commit\CommitMessage
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    commitDate:
+      instanceOf: DevboardLib\Git\Commit\CommitDate
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    author:
+      instanceOf: DevboardLib\GitHub\Commit\CommitAuthor
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    committer:
+      instanceOf: DevboardLib\GitHub\Commit\CommitCommitter
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    tree:
+      instanceOf: DevboardLib\GitHub\Commit\CommitTree
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    parents:
+      instanceOf: DevboardLib\GitHub\Commit\CommitParentCollection
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    verification:
+      instanceOf: DevboardLib\GitHub\Commit\CommitVerification
+      nullable: true
+      hasDefault: true
+      default: null
+      examples: []
+    apiUrl:
+      instanceOf: DevboardLib\GitHub\Commit\CommitApiUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    htmlUrl:
+      instanceOf: DevboardLib\GitHub\Commit\CommitHtmlUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

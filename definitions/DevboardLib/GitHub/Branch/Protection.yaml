@@ -1,0 +1,19 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Branch\Protection
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    enabled:
+      instanceOf: bool
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    requiredStatusChecks:
+      instanceOf: DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

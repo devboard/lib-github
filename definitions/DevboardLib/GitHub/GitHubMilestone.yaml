@@ -1,0 +1,80 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\GitHubMilestone
+  parent: null
+  interfaces: []
+  traits: {  }
+  constructor:
+    id:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneId
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    title:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneTitle
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    description:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneDescription
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    dueOn:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneDueOn
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    state:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneState
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    number:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneNumber
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    creator:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneCreator
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    htmlUrl:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneHtmlUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    apiUrl:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneApiUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    closedAt:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneClosedAt
+      nullable: true
+      hasDefault: false
+      default: null
+      examples: []
+    createdAt:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneCreatedAt
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    updatedAt:
+      instanceOf: DevboardLib\GitHub\Milestone\MilestoneUpdatedAt
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+

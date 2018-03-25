@@ -1,0 +1,97 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\GitHubRepo
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    id:
+      instanceOf: DevboardLib\GitHub\Repo\RepoId
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    fullName:
+      instanceOf: DevboardLib\GitHub\Repo\RepoFullName
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    owner:
+      instanceOf: DevboardLib\GitHub\Repo\RepoOwner
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    private:
+      instanceOf: bool
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    defaultBranch:
+      instanceOf: DevboardLib\Git\Branch\BranchName
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    fork:
+      instanceOf: bool
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    parent:
+      instanceOf: DevboardLib\GitHub\Repo\RepoParent
+      nullable: true
+      hasDefault: false
+      default: null
+      examples: []
+    description:
+      instanceOf: DevboardLib\GitHub\Repo\RepoDescription
+      nullable: true
+      hasDefault: false
+      default: null
+      examples: []
+    homepage:
+      instanceOf: DevboardLib\GitHub\Repo\RepoHomepage
+      nullable: true
+      hasDefault: false
+      default: null
+      examples: []
+    language:
+      instanceOf: DevboardLib\GitHub\Repo\RepoLanguage
+      nullable: true
+      hasDefault: false
+      default: null
+      examples: []
+    mirrorUrl:
+      instanceOf: DevboardLib\GitHub\Repo\RepoMirrorUrl
+      nullable: true
+      hasDefault: false
+      default: null
+      examples: []
+    archived:
+      instanceOf: bool
+      nullable: true
+      hasDefault: false
+      default: null
+      examples: []
+    endpoints:
+      instanceOf: DevboardLib\GitHub\Repo\RepoEndpoints
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    stats:
+      instanceOf: DevboardLib\GitHub\Repo\RepoStats
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    timestamps:
+      instanceOf: DevboardLib\GitHub\Repo\RepoTimestamps
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Commit\CommitHtmlUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    htmlUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47']

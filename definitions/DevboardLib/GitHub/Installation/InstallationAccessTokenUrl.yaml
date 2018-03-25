@@ -1,0 +1,13 @@
+definition:
+  type: SimpleIdentifier
+  instanceOf: DevboardLib\GitHub\Installation\InstallationAccessTokenUrl
+  parent: ~
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    accessTokenUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['access-token-url']

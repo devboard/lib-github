@@ -1,0 +1,13 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Installation\InstallationEvents
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    values:
+      instanceOf: array
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [['some-installation-event','another-installation-event']]

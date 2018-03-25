@@ -1,0 +1,55 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\Commit\CommitCommitterDetails
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    userId:
+      instanceOf: DevboardLib\GitHub\User\UserId
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [6752317]
+    login:
+      instanceOf: DevboardLib\GitHub\User\UserLogin
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['baxterthehacker']
+    type:
+      instanceOf: DevboardLib\GitHub\Account\AccountType
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['User']
+    avatarUrl:
+      instanceOf: DevboardLib\GitHub\User\UserAvatarUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['https://avatars.githubusercontent.com/u/6752317?v=3']
+    gravatarId:
+      instanceOf: DevboardLib\Generix\GravatarId
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    htmlUrl:
+      instanceOf: DevboardLib\GitHub\User\UserHtmlUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['https://github.com/baxterthehacker']
+    apiUrl:
+      instanceOf: DevboardLib\GitHub\User\UserApiUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['https://api.github.com/users/baxterthehacker']
+    siteAdmin:
+      instanceOf: bool
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: [false, true]

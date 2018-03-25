@@ -1,0 +1,16 @@
+definition:
+  type: SimpleCollection
+  instanceOf: DevboardLib\GitHub\GitHubRepoCollection
+  parent: null
+  interfaces: []
+  traits: {  }
+  constructor:
+    elements:
+      instanceOf: array
+      nullable: false
+      hasDefault: true
+      default: []
+  collectionOf:
+    instanceOf: DevboardLib\GitHub\GitHubRepo
+    accessor: getFullName
+    has: DevboardLib\GitHub\Repo\RepoFullName

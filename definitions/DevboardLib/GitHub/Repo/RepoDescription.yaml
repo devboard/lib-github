@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Repo\RepoDescription
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    description:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['Language Savant. If your repository language is being reported incorrectly, send us a pull request!']

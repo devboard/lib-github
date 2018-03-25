@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Repo\RepoHomepage
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    homepage:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['http://www.example.com/']

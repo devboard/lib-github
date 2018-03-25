@@ -1,0 +1,38 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\GitHubBranch
+  parent: null
+  interfaces:
+    - Git\Reference
+  traits: {  }
+  constructor:
+    repoFullName:
+      instanceOf: DevboardLib\GitHub\Repo\RepoFullName
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    name:
+      instanceOf: DevboardLib\Git\Branch\BranchName
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['master','dev']
+    commit:
+      instanceOf: DevboardLib\GitHub\GitHubCommit
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    protected:
+      instanceOf: bool
+      nullable: true
+      hasDefault: true
+      default: null
+      examples: [false, true]
+    protectionUrl:
+      instanceOf: DevboardLib\GitHub\Branch\BranchProtectionUrl
+      nullable: true
+      hasDefault: true
+      default: null
+      examples: []

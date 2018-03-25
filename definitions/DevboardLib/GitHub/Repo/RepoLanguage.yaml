@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Repo\RepoLanguage
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    language:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: ['CSS','Ruby','PHP','HTML']

@@ -1,0 +1,61 @@
+definition:
+  type: SimpleEntity
+  instanceOf: DevboardLib\GitHub\GitHubIssueComment
+  parent: null
+  interfaces: []
+  traits: {  }
+  constructor:
+    id:
+      instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentId
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    issueId:
+      instanceOf: DevboardLib\GitHub\Issue\IssueId
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    body:
+      instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentBody
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    author:
+      instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentAuthor
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    htmlUrl:
+      instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentHtmlUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    apiUrl:
+      instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentApiUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    issueApiUrl:
+      instanceOf: DevboardLib\GitHub\Issue\IssueApiUrl
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    createdAt:
+      instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentCreatedAt
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []
+    updatedAt:
+      instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentUpdatedAt
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

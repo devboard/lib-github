@@ -1,0 +1,13 @@
+definition:
+  type: SingleValueObject
+  instanceOf: DevboardLib\GitHub\Installation\InstallationRepositoriesUrl
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    installationRepositoriesUrl:
+      instanceOf: string
+      nullable: false
+      hasDefault: false
+      default: null
+      examples: []

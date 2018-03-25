@@ -1,0 +1,16 @@
+definition:
+  type: SimpleCollection
+  instanceOf: DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Contexts
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constructor:
+    elements:
+      instanceOf: array
+      nullable: false
+      hasDefault: true
+      default: []
+  collectionOf:
+    instanceOf: DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Context
+    accessor: getId
+    has: DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Context\ContextId
