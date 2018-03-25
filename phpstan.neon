@@ -2,6 +2,7 @@ parameters:
 	bootstrap: tests/bootstrap.php
 	ignoreErrors:
 	    - '#Call to an undefined static method DevboardLib\\GitHub\\Account\\AccountType::#'
+	    - '#Call to an undefined static method DevboardLib\\GitHub\\PullRequest\\PullRequestAuthorAssociation::#'
 	    - '#Parameter .* Mockery\\MockInterface given.#'
 	    - '#Call to an undefined method .*|Mockery\\MockInterface\:\:shouldReceive\(\).#'
 	includes:

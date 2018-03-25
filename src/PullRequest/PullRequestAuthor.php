@@ -27,6 +27,9 @@ class PullRequestAuthor
     /** @var AccountType */
     private $type;
 
+    /** @var PullRequestAuthorAssociation|null */
+    private $association;
+
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
@@ -46,20 +49,22 @@ class PullRequestAuthor
         AccountId $userId,
         AccountLogin $login,
         AccountType $type,
+        ?PullRequestAuthorAssociation $association,
         AccountAvatarUrl $avatarUrl,
         GravatarId $gravatarId,
         AccountHtmlUrl $htmlUrl,
         AccountApiUrl $apiUrl,
         bool $siteAdmin
     ) {
-        $this->userId     = $userId;
-        $this->login      = $login;
-        $this->type       = $type;
-        $this->avatarUrl  = $avatarUrl;
-        $this->gravatarId = $gravatarId;
-        $this->htmlUrl    = $htmlUrl;
-        $this->apiUrl     = $apiUrl;
-        $this->siteAdmin  = $siteAdmin;
+        $this->userId      = $userId;
+        $this->login       = $login;
+        $this->type        = $type;
+        $this->association = $association;
+        $this->avatarUrl   = $avatarUrl;
+        $this->gravatarId  = $gravatarId;
+        $this->htmlUrl     = $htmlUrl;
+        $this->apiUrl      = $apiUrl;
+        $this->siteAdmin   = $siteAdmin;
     }
 
     public function getUserId(): AccountId
@@ -75,6 +80,11 @@ class PullRequestAuthor
     public function getType(): AccountType
     {
         return $this->type;
+    }
+
+    public function getAssociation(): ?PullRequestAuthorAssociation
+    {
+        return $this->association;
     }
 
     public function getAvatarUrl(): AccountAvatarUrl
@@ -102,26 +112,49 @@ class PullRequestAuthor
         return $this->siteAdmin;
     }
 
+    public function hasAssociation(): bool
+    {
+        if (null === $this->association) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function serialize(): array
     {
+        if (null === $this->association) {
+            $association = null;
+        } else {
+            $association = $this->association->serialize();
+        }
+
         return [
-            'userId'     => $this->userId->serialize(),
-            'login'      => $this->login->serialize(),
-            'type'       => $this->type->serialize(),
-            'avatarUrl'  => $this->avatarUrl->serialize(),
-            'gravatarId' => $this->gravatarId->serialize(),
-            'htmlUrl'    => $this->htmlUrl->serialize(),
-            'apiUrl'     => $this->apiUrl->serialize(),
-            'siteAdmin'  => $this->siteAdmin,
+            'userId'      => $this->userId->serialize(),
+            'login'       => $this->login->serialize(),
+            'type'        => $this->type->serialize(),
+            'association' => $association,
+            'avatarUrl'   => $this->avatarUrl->serialize(),
+            'gravatarId'  => $this->gravatarId->serialize(),
+            'htmlUrl'     => $this->htmlUrl->serialize(),
+            'apiUrl'      => $this->apiUrl->serialize(),
+            'siteAdmin'   => $this->siteAdmin,
         ];
     }
 
     public static function deserialize(array $data): self
     {
+        if (null === $data['association']) {
+            $association = null;
+        } else {
+            $association = PullRequestAuthorAssociation::deserialize($data['association']);
+        }
+
         return new self(
             AccountId::deserialize($data['userId']),
             AccountLogin::deserialize($data['login']),
             AccountType::deserialize($data['type']),
+            $association,
             AccountAvatarUrl::deserialize($data['avatarUrl']),
             GravatarId::deserialize($data['gravatarId']),
             AccountHtmlUrl::deserialize($data['htmlUrl']),
