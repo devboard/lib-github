@@ -16,6 +16,8 @@ class PullRequestState extends Enum
 
     const CLOSED = 'closed';
 
+    const MERGED = 'merged';
+
     public function serialize(): string
     {
         return $this->value;
