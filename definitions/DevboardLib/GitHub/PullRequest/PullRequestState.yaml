@@ -10,4 +10,4 @@ definition:
       nullable: false
       hasDefault: false
       default: null
-      examples: ['open','closed']
+      examples: ['open','closed','merged']
