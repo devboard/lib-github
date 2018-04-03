@@ -12,4 +12,9 @@ class CircleCi extends ExternalService
     {
         return 'CircleCI';
     }
+
+    public function getJobName(): string
+    {
+        return str_replace('ci/circleci: ', '', $this->getContext()->getValue());
+    }
 }

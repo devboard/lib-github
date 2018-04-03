@@ -12,4 +12,9 @@ class CoverallsIo extends ExternalService
     {
         return 'Coveralls.io';
     }
+
+    public function getJobName(): string
+    {
+        return '';
+    }
 }

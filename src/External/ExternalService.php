@@ -23,6 +23,11 @@ abstract class ExternalService
         return $this->getValue();
     }
 
+    public function getJobName(): string
+    {
+        return $this->context->getValue();
+    }
+
     public function getContext(): StatusContext
     {
         return $this->context;

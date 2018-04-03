@@ -12,4 +12,9 @@ class TravisCi extends ExternalService
     {
         return 'TravisCI';
     }
+
+    public function getJobName(): string
+    {
+        return '';
+    }
 }
