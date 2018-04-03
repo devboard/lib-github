@@ -12,4 +12,9 @@ class CodeCovIo extends ExternalService
     {
         return 'CodeCove.io';
     }
+
+    public function getJobName(): string
+    {
+        return str_replace('codecov/', '', $this->getContext()->getValue());
+    }
 }
