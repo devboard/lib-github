@@ -10,7 +10,7 @@ class CodeCovIo extends ExternalService
 {
     public function getValue(): string
     {
-        return 'CodeCove.io';
+        return 'CodecovIO';
     }
 
     public function getJobName(): string

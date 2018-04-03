@@ -33,12 +33,12 @@ class CodeCovIoTest extends TestCase
 
     public function testGetValue()
     {
-        self::assertEquals('CodeCove.io', $this->sut->getValue());
+        self::assertEquals('CodecovIO', $this->sut->getValue());
     }
 
     public function testToString()
     {
-        self::assertEquals('CodeCove.io', $this->sut->__toString());
+        self::assertEquals('CodecovIO', $this->sut->__toString());
     }
 
     public function testGetContext()

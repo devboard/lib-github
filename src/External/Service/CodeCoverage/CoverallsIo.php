@@ -10,7 +10,7 @@ class CoverallsIo extends ExternalService
 {
     public function getValue(): string
     {
-        return 'Coveralls.io';
+        return 'CoverallsIO';
     }
 
     public function getJobName(): string
