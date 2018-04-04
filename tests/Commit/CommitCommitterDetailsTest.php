@@ -32,7 +32,7 @@ class CommitCommitterDetailsTest extends TestCase
     /** @var UserAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId */
+    /** @var GravatarId|null */
     private $gravatarId;
 
     /** @var UserHtmlUrl */
@@ -107,6 +107,11 @@ class CommitCommitterDetailsTest extends TestCase
     public function testIsSiteAdmin()
     {
         self::assertSame($this->siteAdmin, $this->sut->isSiteAdmin());
+    }
+
+    public function testHasGravatarId()
+    {
+        self::assertTrue($this->sut->hasGravatarId());
     }
 
     public function testSerialize()

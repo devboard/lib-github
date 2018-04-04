@@ -75,6 +75,11 @@ class IssueAssigneeSpec extends ObjectBehavior
         $this->isSiteAdmin()->shouldReturn(false);
     }
 
+    public function it_has_gravatar_id()
+    {
+        $this->hasGravatarId()->shouldReturn(true);
+    }
+
     public function it_can_be_serialized(
         AccountId $userId,
         AccountLogin $login,

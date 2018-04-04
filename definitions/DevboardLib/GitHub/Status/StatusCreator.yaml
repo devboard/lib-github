@@ -31,7 +31,7 @@ definition:
       examples: ["https://avatars3.githubusercontent.com/u/583231?v=4"]
     gravatarId:
       instanceOf: DevboardLib\Generix\GravatarId
-      nullable: false
+      nullable: true
       hasDefault: false
       default: null
       examples: []

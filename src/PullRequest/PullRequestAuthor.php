@@ -33,7 +33,7 @@ class PullRequestAuthor
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId */
+    /** @var GravatarId|null */
     private $gravatarId;
 
     /** @var AccountHtmlUrl */
@@ -51,7 +51,7 @@ class PullRequestAuthor
         AccountType $type,
         ?PullRequestAuthorAssociation $association,
         AccountAvatarUrl $avatarUrl,
-        GravatarId $gravatarId,
+        ?GravatarId $gravatarId,
         AccountHtmlUrl $htmlUrl,
         AccountApiUrl $apiUrl,
         bool $siteAdmin
@@ -92,7 +92,7 @@ class PullRequestAuthor
         return $this->avatarUrl;
     }
 
-    public function getGravatarId(): GravatarId
+    public function getGravatarId(): ?GravatarId
     {
         return $this->gravatarId;
     }
@@ -121,6 +121,15 @@ class PullRequestAuthor
         return true;
     }
 
+    public function hasGravatarId(): bool
+    {
+        if (null === $this->gravatarId) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function serialize(): array
     {
         if (null === $this->association) {
@@ -129,13 +138,19 @@ class PullRequestAuthor
             $association = $this->association->serialize();
         }
 
+        if (null === $this->gravatarId) {
+            $gravatarId = null;
+        } else {
+            $gravatarId = $this->gravatarId->serialize();
+        }
+
         return [
             'userId'      => $this->userId->serialize(),
             'login'       => $this->login->serialize(),
             'type'        => $this->type->serialize(),
             'association' => $association,
             'avatarUrl'   => $this->avatarUrl->serialize(),
-            'gravatarId'  => $this->gravatarId->serialize(),
+            'gravatarId'  => $gravatarId,
             'htmlUrl'     => $this->htmlUrl->serialize(),
             'apiUrl'      => $this->apiUrl->serialize(),
             'siteAdmin'   => $this->siteAdmin,
@@ -150,13 +165,19 @@ class PullRequestAuthor
             $association = PullRequestAuthorAssociation::deserialize($data['association']);
         }
 
+        if (null === $data['gravatarId']) {
+            $gravatarId = null;
+        } else {
+            $gravatarId = GravatarId::deserialize($data['gravatarId']);
+        }
+
         return new self(
             AccountId::deserialize($data['userId']),
             AccountLogin::deserialize($data['login']),
             AccountType::deserialize($data['type']),
             $association,
             AccountAvatarUrl::deserialize($data['avatarUrl']),
-            GravatarId::deserialize($data['gravatarId']),
+            $gravatarId,
             AccountHtmlUrl::deserialize($data['htmlUrl']),
             AccountApiUrl::deserialize($data['apiUrl']),
             $data['siteAdmin']
