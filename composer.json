@@ -47,5 +47,10 @@
             "spec\\DevboardLib\\GitHub\\": "spec/",
             "Tests\\DevboardLib\\GitHub\\": "tests/"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.4-dev"
+        }
     }
 }
