@@ -60,7 +60,7 @@ class PullRequestReviewAuthorTest extends TestCase
         $this->type        = new AccountType('User');
         $this->association = new PullRequestReviewAuthorAssociation('NONE');
         $this->avatarUrl   = new AccountAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4');
-        $this->gravatarId  = new GravatarId('');
+        $this->gravatarId  = new GravatarId('45g23r2a');
         $this->htmlUrl     = new AccountHtmlUrl('https://github.com/octocat');
         $this->apiUrl      = new AccountApiUrl('https://api.github.com/users/octocat');
         $this->siteAdmin   = false;
@@ -140,7 +140,7 @@ class PullRequestReviewAuthorTest extends TestCase
             'type'        => 'User',
             'association' => 'NONE',
             'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-            'gravatarId'  => '',
+            'gravatarId'  => '45g23r2a',
             'htmlUrl'     => 'https://github.com/octocat',
             'apiUrl'      => 'https://api.github.com/users/octocat',
             'siteAdmin'   => false,
