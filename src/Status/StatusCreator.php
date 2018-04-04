@@ -30,7 +30,7 @@ class StatusCreator
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId */
+    /** @var GravatarId|null */
     private $gravatarId;
 
     /** @var AccountHtmlUrl */
@@ -47,7 +47,7 @@ class StatusCreator
         AccountLogin $login,
         AccountType $type,
         AccountAvatarUrl $avatarUrl,
-        GravatarId $gravatarId,
+        ?GravatarId $gravatarId,
         AccountHtmlUrl $htmlUrl,
         AccountApiUrl $apiUrl,
         bool $siteAdmin
@@ -82,7 +82,7 @@ class StatusCreator
         return $this->avatarUrl;
     }
 
-    public function getGravatarId(): GravatarId
+    public function getGravatarId(): ?GravatarId
     {
         return $this->gravatarId;
     }
@@ -102,14 +102,29 @@ class StatusCreator
         return $this->siteAdmin;
     }
 
+    public function hasGravatarId(): bool
+    {
+        if (null === $this->gravatarId) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function serialize(): array
     {
+        if (null === $this->gravatarId) {
+            $gravatarId = null;
+        } else {
+            $gravatarId = $this->gravatarId->serialize();
+        }
+
         return [
             'userId'     => $this->userId->serialize(),
             'login'      => $this->login->serialize(),
             'type'       => $this->type->serialize(),
             'avatarUrl'  => $this->avatarUrl->serialize(),
-            'gravatarId' => $this->gravatarId->serialize(),
+            'gravatarId' => $gravatarId,
             'htmlUrl'    => $this->htmlUrl->serialize(),
             'apiUrl'     => $this->apiUrl->serialize(),
             'siteAdmin'  => $this->siteAdmin,
@@ -118,12 +133,18 @@ class StatusCreator
 
     public static function deserialize(array $data): self
     {
+        if (null === $data['gravatarId']) {
+            $gravatarId = null;
+        } else {
+            $gravatarId = GravatarId::deserialize($data['gravatarId']);
+        }
+
         return new self(
             AccountId::deserialize($data['userId']),
             AccountLogin::deserialize($data['login']),
             AccountType::deserialize($data['type']),
             AccountAvatarUrl::deserialize($data['avatarUrl']),
-            GravatarId::deserialize($data['gravatarId']),
+            $gravatarId,
             AccountHtmlUrl::deserialize($data['htmlUrl']),
             AccountApiUrl::deserialize($data['apiUrl']),
             $data['siteAdmin']

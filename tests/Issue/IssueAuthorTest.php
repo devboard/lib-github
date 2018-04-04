@@ -32,7 +32,7 @@ class IssueAuthorTest extends TestCase
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId */
+    /** @var GravatarId|null */
     private $gravatarId;
 
     /** @var AccountHtmlUrl */
@@ -107,6 +107,11 @@ class IssueAuthorTest extends TestCase
     public function testIsSiteAdmin()
     {
         self::assertSame($this->siteAdmin, $this->sut->isSiteAdmin());
+    }
+
+    public function testHasGravatarId()
+    {
+        self::assertTrue($this->sut->hasGravatarId());
     }
 
     public function testSerialize()

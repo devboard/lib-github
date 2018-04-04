@@ -38,7 +38,7 @@ class PullRequestReviewAuthorTest extends TestCase
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId */
+    /** @var GravatarId|null */
     private $gravatarId;
 
     /** @var AccountHtmlUrl */
@@ -125,6 +125,11 @@ class PullRequestReviewAuthorTest extends TestCase
     public function testHasAssociation()
     {
         self::assertTrue($this->sut->hasAssociation());
+    }
+
+    public function testHasGravatarId()
+    {
+        self::assertTrue($this->sut->hasGravatarId());
     }
 
     public function testSerialize()
