@@ -111,7 +111,7 @@ class PullRequestReviewAuthorSpec extends ObjectBehavior
         $type->serialize()->shouldBeCalled()->willReturn('User');
         $association->serialize()->shouldBeCalled()->willReturn('NONE');
         $avatarUrl->serialize()->shouldBeCalled()->willReturn('https://avatars3.githubusercontent.com/u/583231?v=4');
-        $gravatarId->serialize()->shouldBeCalled()->willReturn('');
+        $gravatarId->serialize()->shouldBeCalled()->willReturn('45g23r2a');
         $htmlUrl->serialize()->shouldBeCalled()->willReturn('https://github.com/octocat');
         $apiUrl->serialize()->shouldBeCalled()->willReturn('https://api.github.com/users/octocat');
         $this->serialize()->shouldReturn(
@@ -121,7 +121,7 @@ class PullRequestReviewAuthorSpec extends ObjectBehavior
                 'type'        => 'User',
                 'association' => 'NONE',
                 'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-                'gravatarId' => '45g23r2a',
+                'gravatarId'  => '45g23r2a',
                 'htmlUrl'     => 'https://github.com/octocat',
                 'apiUrl'      => 'https://api.github.com/users/octocat',
                 'siteAdmin'   => false,
@@ -137,7 +137,7 @@ class PullRequestReviewAuthorSpec extends ObjectBehavior
             'type'        => 'User',
             'association' => 'NONE',
             'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-            'gravatarId' => '45g23r2a',
+            'gravatarId'  => '45g23r2a',
             'htmlUrl'     => 'https://github.com/octocat',
             'apiUrl'      => 'https://api.github.com/users/octocat',
             'siteAdmin'   => false,
