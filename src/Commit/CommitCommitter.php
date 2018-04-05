@@ -96,7 +96,7 @@ class CommitCommitter implements CommitCommitterInterface
             return null;
         }
 
-        return $this->committerDetails->getAccountType();
+        return $this->committerDetails->getType();
     }
 
     public function getAvatarUrl(): ?UserAvatarUrl

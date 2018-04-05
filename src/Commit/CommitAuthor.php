@@ -96,7 +96,7 @@ class CommitAuthor implements CommitAuthorInterface
             return null;
         }
 
-        return $this->authorDetails->getAccountType();
+        return $this->authorDetails->getType();
     }
 
     public function getAvatarUrl(): ?UserAvatarUrl
