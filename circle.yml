@@ -19,7 +19,7 @@ jobs:
 
       - run:
           name: Lint all PHP code files
-          command: git diff --name-only --diff-filter=ACMR 687ec5e5e1d31b54ba6901c2158d27e8e7fb10d4 | grep -E "^(spec|src|tests)\/.*php$" | xargs -n1 php -l 1> /dev/null
+          command: git diff --name-only --diff-filter=ACMR ecf1312f7ca93a91d66cdf125e0ebf03b121a371 | grep -E "^(spec|src|tests)\/.*php$" | xargs -n1 php -l 1> /dev/null
 
       - run:
           name: PHPSpec
