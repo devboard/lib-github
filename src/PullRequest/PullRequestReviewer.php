@@ -13,8 +13,8 @@ use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
 
 /**
- * @see PullRequestReviewerSpec
- * @see PullRequestReviewerTest
+ * @see \spec\DevboardLib\GitHub\PullRequest\PullRequestReviewerSpec
+ * @see \Tests\DevboardLib\GitHub\PullRequest\PullRequestReviewerTest
  */
 class PullRequestReviewer
 {
@@ -25,12 +25,12 @@ class PullRequestReviewer
     private $login;
 
     /** @var AccountType */
-    private $gitHubAccountType;
+    private $type;
 
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId */
+    /** @var GravatarId|null */
     private $gravatarId;
 
     /** @var AccountHtmlUrl */
@@ -45,21 +45,21 @@ class PullRequestReviewer
     public function __construct(
         AccountId $userId,
         AccountLogin $login,
-        AccountType $gitHubAccountType,
+        AccountType $type,
         AccountAvatarUrl $avatarUrl,
-        GravatarId $gravatarId,
+        ?GravatarId $gravatarId,
         AccountHtmlUrl $htmlUrl,
         AccountApiUrl $apiUrl,
         bool $siteAdmin
     ) {
-        $this->userId            = $userId;
-        $this->login             = $login;
-        $this->gitHubAccountType = $gitHubAccountType;
-        $this->avatarUrl         = $avatarUrl;
-        $this->gravatarId        = $gravatarId;
-        $this->htmlUrl           = $htmlUrl;
-        $this->apiUrl            = $apiUrl;
-        $this->siteAdmin         = $siteAdmin;
+        $this->userId     = $userId;
+        $this->login      = $login;
+        $this->type       = $type;
+        $this->avatarUrl  = $avatarUrl;
+        $this->gravatarId = $gravatarId;
+        $this->htmlUrl    = $htmlUrl;
+        $this->apiUrl     = $apiUrl;
+        $this->siteAdmin  = $siteAdmin;
     }
 
     public function getUserId(): AccountId
@@ -72,9 +72,9 @@ class PullRequestReviewer
         return $this->login;
     }
 
-    public function getAccountType(): AccountType
+    public function getType(): AccountType
     {
-        return $this->gitHubAccountType;
+        return $this->type;
     }
 
     public function getAvatarUrl(): AccountAvatarUrl
@@ -82,7 +82,7 @@ class PullRequestReviewer
         return $this->avatarUrl;
     }
 
-    public function getGravatarId(): GravatarId
+    public function getGravatarId(): ?GravatarId
     {
         return $this->gravatarId;
     }
@@ -102,28 +102,49 @@ class PullRequestReviewer
         return $this->siteAdmin;
     }
 
+    public function hasGravatarId(): bool
+    {
+        if (null === $this->gravatarId) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function serialize(): array
     {
+        if (null === $this->gravatarId) {
+            $gravatarId = null;
+        } else {
+            $gravatarId = $this->gravatarId->serialize();
+        }
+
         return [
-            'userId'      => $this->userId->serialize(),
-            'login'       => $this->login->serialize(),
-            'accountType' => $this->gitHubAccountType->serialize(),
-            'avatarUrl'   => $this->avatarUrl->serialize(),
-            'gravatarId'  => $this->gravatarId->serialize(),
-            'htmlUrl'     => $this->htmlUrl->serialize(),
-            'apiUrl'      => $this->apiUrl->serialize(),
-            'siteAdmin'   => $this->siteAdmin,
+            'userId'     => $this->userId->serialize(),
+            'login'      => $this->login->serialize(),
+            'type'       => $this->type->serialize(),
+            'avatarUrl'  => $this->avatarUrl->serialize(),
+            'gravatarId' => $gravatarId,
+            'htmlUrl'    => $this->htmlUrl->serialize(),
+            'apiUrl'     => $this->apiUrl->serialize(),
+            'siteAdmin'  => $this->siteAdmin,
         ];
     }
 
     public static function deserialize(array $data): self
     {
+        if (null === $data['gravatarId']) {
+            $gravatarId = null;
+        } else {
+            $gravatarId = GravatarId::deserialize($data['gravatarId']);
+        }
+
         return new self(
             AccountId::deserialize($data['userId']),
             AccountLogin::deserialize($data['login']),
-            AccountType::deserialize($data['accountType']),
+            AccountType::deserialize($data['type']),
             AccountAvatarUrl::deserialize($data['avatarUrl']),
-            GravatarId::deserialize($data['gravatarId']),
+            $gravatarId,
             AccountHtmlUrl::deserialize($data['htmlUrl']),
             AccountApiUrl::deserialize($data['apiUrl']),
             $data['siteAdmin']

@@ -12,60 +12,55 @@ use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\PullRequest\PullRequestReviewer;
-use Mockery;
-use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
-use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\PullRequest\PullRequestReviewer
- * @group  unit
+ * @group  todo
  */
 class PullRequestReviewerTest extends TestCase
 {
-    use MockeryPHPUnitIntegration;
-
-    /** @var MockInterface|AccountId */
+    /** @var AccountId */
     private $userId;
 
-    /** @var MockInterface|AccountLogin */
+    /** @var AccountLogin */
     private $login;
 
-    /** @var MockInterface|AccountType */
-    private $gitHubAccountType;
+    /** @var AccountType */
+    private $type;
 
-    /** @var MockInterface|AccountAvatarUrl */
+    /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var MockInterface|GravatarId */
+    /** @var GravatarId|null */
     private $gravatarId;
 
-    /** @var MockInterface|AccountHtmlUrl */
+    /** @var AccountHtmlUrl */
     private $htmlUrl;
 
-    /** @var MockInterface|AccountApiUrl */
+    /** @var AccountApiUrl */
     private $apiUrl;
 
     /** @var bool */
     private $siteAdmin;
 
     /** @var PullRequestReviewer */
-    private $pullRequestReviewer;
+    private $sut;
 
     public function setUp()
     {
-        $this->userId              = Mockery::mock(AccountId::class);
-        $this->login               = Mockery::mock(AccountLogin::class);
-        $this->gitHubAccountType   = Mockery::mock(AccountType::class);
-        $this->avatarUrl           = Mockery::mock(AccountAvatarUrl::class);
-        $this->gravatarId          = Mockery::mock(GravatarId::class);
-        $this->htmlUrl             = Mockery::mock(AccountHtmlUrl::class);
-        $this->apiUrl              = Mockery::mock(AccountApiUrl::class);
-        $this->siteAdmin           = true;
-        $this->pullRequestReviewer = new PullRequestReviewer(
+        $this->userId     = new AccountId(583231);
+        $this->login      = new AccountLogin('octocat');
+        $this->type       = new AccountType('User');
+        $this->avatarUrl  = new AccountAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4');
+        $this->gravatarId = new GravatarId('45g23r2a');
+        $this->htmlUrl    = new AccountHtmlUrl('https://github.com/octocat');
+        $this->apiUrl     = new AccountApiUrl('https://api.github.com/users/octocat');
+        $this->siteAdmin  = false;
+        $this->sut        = new PullRequestReviewer(
             $this->userId,
             $this->login,
-            $this->gitHubAccountType,
+            $this->type,
             $this->avatarUrl,
             $this->gravatarId,
             $this->htmlUrl,
@@ -76,51 +71,68 @@ class PullRequestReviewerTest extends TestCase
 
     public function testGetUserId()
     {
-        self::assertEquals($this->userId, $this->pullRequestReviewer->getUserId());
+        self::assertSame($this->userId, $this->sut->getUserId());
     }
 
     public function testGetLogin()
     {
-        self::assertEquals($this->login, $this->pullRequestReviewer->getLogin());
+        self::assertSame($this->login, $this->sut->getLogin());
     }
 
-    public function testGetAccountType()
+    public function testGetType()
     {
-        $this->markTestSkipped('Skipping');
+        self::assertSame($this->type, $this->sut->getType());
     }
 
     public function testGetAvatarUrl()
     {
-        self::assertEquals($this->avatarUrl, $this->pullRequestReviewer->getAvatarUrl());
+        self::assertSame($this->avatarUrl, $this->sut->getAvatarUrl());
     }
 
     public function testGetGravatarId()
     {
-        self::assertEquals($this->gravatarId, $this->pullRequestReviewer->getGravatarId());
+        self::assertSame($this->gravatarId, $this->sut->getGravatarId());
     }
 
     public function testGetHtmlUrl()
     {
-        self::assertEquals($this->htmlUrl, $this->pullRequestReviewer->getHtmlUrl());
+        self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
     }
 
     public function testGetApiUrl()
     {
-        self::assertEquals($this->apiUrl, $this->pullRequestReviewer->getApiUrl());
+        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
     }
 
     public function testIsSiteAdmin()
     {
-        self::assertEquals($this->siteAdmin, $this->pullRequestReviewer->isSiteAdmin());
+        self::assertSame($this->siteAdmin, $this->sut->isSiteAdmin());
+    }
+
+    public function testHasGravatarId()
+    {
+        self::assertTrue($this->sut->hasGravatarId());
     }
 
     public function testSerialize()
     {
-        $this->markTestSkipped('Skipping');
+        $expected = [
+            'userId'     => 583231,
+            'login'      => 'octocat',
+            'type'       => 'User',
+            'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+            'gravatarId' => '45g23r2a',
+            'htmlUrl'    => 'https://github.com/octocat',
+            'apiUrl'     => 'https://api.github.com/users/octocat',
+            'siteAdmin'  => false,
+        ];
+
+        self::assertSame($expected, $this->sut->serialize());
     }
 
     public function testDeserialize()
     {
-        $this->markTestSkipped('Skipping');
+        $serialized = json_encode($this->sut->serialize());
+        self::assertEquals($this->sut, PullRequestReviewer::deserialize(json_decode($serialized, true)));
     }
 }
