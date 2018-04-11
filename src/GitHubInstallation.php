@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
+use DevboardLib\GitHub\Account\AccountId;
+use DevboardLib\GitHub\Account\AccountLogin;
+use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\Application\ApplicationId;
 use DevboardLib\GitHub\Installation\InstallationAccessTokenUrl;
 use DevboardLib\GitHub\Installation\InstallationAccount;
@@ -93,6 +96,21 @@ class GitHubInstallation
     public function getInstallationAccount(): InstallationAccount
     {
         return $this->installationAccount;
+    }
+
+    public function getAccountId(): AccountId
+    {
+        return $this->installationAccount->getUserId();
+    }
+
+    public function getAccountLogin(): AccountLogin
+    {
+        return $this->installationAccount->getLogin();
+    }
+
+    public function getAccountType(): AccountType
+    {
+        return $this->installationAccount->getType();
     }
 
     public function getApplicationId(): ApplicationId
