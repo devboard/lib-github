@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Label\LabelApiUrl;
 use DevboardLib\GitHub\Label\LabelColor;
 use DevboardLib\GitHub\Label\LabelId;
 use DevboardLib\GitHub\Label\LabelName;
@@ -27,16 +26,12 @@ class GitHubLabel
     /** @var bool */
     private $default;
 
-    /** @var LabelApiUrl */
-    private $apiUrl;
-
-    public function __construct(LabelId $id, LabelName $name, LabelColor $color, bool $default, LabelApiUrl $apiUrl)
+    public function __construct(LabelId $id, LabelName $name, LabelColor $color, bool $default)
     {
         $this->id      = $id;
         $this->name    = $name;
         $this->color   = $color;
         $this->default = $default;
-        $this->apiUrl  = $apiUrl;
     }
 
     public function getId(): LabelId
@@ -59,11 +54,6 @@ class GitHubLabel
         return $this->default;
     }
 
-    public function getApiUrl(): LabelApiUrl
-    {
-        return $this->apiUrl;
-    }
-
     public function serialize(): array
     {
         return [
@@ -71,7 +61,6 @@ class GitHubLabel
             'name'    => $this->name->serialize(),
             'color'   => $this->color->serialize(),
             'default' => $this->default,
-            'apiUrl'  => $this->apiUrl->serialize(),
         ];
     }
 
@@ -81,8 +70,7 @@ class GitHubLabel
             LabelId::deserialize($data['id']),
             LabelName::deserialize($data['name']),
             LabelColor::deserialize($data['color']),
-            $data['default'],
-            LabelApiUrl::deserialize($data['apiUrl'])
+            $data['default']
         );
     }
 }

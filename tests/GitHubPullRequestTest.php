@@ -12,7 +12,6 @@ use DevboardLib\GitHub\GitHubLabel;
 use DevboardLib\GitHub\GitHubLabelCollection;
 use DevboardLib\GitHub\GitHubMilestone;
 use DevboardLib\GitHub\GitHubPullRequest;
-use DevboardLib\GitHub\Label\LabelApiUrl;
 use DevboardLib\GitHub\Label\LabelColor;
 use DevboardLib\GitHub\Label\LabelId;
 use DevboardLib\GitHub\Label\LabelName;
@@ -127,15 +126,7 @@ class GitHubPullRequestTest extends TestCase
             ]
         );
         $this->labels = new GitHubLabelCollection(
-            [
-                new GitHubLabel(
-                    new LabelId(1),
-                    new LabelName('value'),
-                    new LabelColor('color'),
-                    true,
-                    new LabelApiUrl('apiUrl')
-                ),
-            ]
+            [new GitHubLabel(new LabelId(1), new LabelName('value'), new LabelColor('color'), true)]
         );
         $this->milestone = new GitHubMilestone(
             new MilestoneId(1),
@@ -292,7 +283,7 @@ class GitHubPullRequestTest extends TestCase
                     'siteAdmin' => false,
                 ],
             ],
-            'labels'    => [['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true, 'apiUrl' => 'apiUrl']],
+            'labels'    => [['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true]],
             'milestone' => [
                 'id'          => 1,
                 'title'       => 'value',

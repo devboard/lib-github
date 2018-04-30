@@ -6,7 +6,6 @@ namespace Tests\DevboardLib\GitHub;
 
 use DevboardLib\GitHub\GitHubLabel;
 use DevboardLib\GitHub\GitHubLabelCollection;
-use DevboardLib\GitHub\Label\LabelApiUrl;
 use DevboardLib\GitHub\Label\LabelColor;
 use DevboardLib\GitHub\Label\LabelId;
 use DevboardLib\GitHub\Label\LabelName;
@@ -26,12 +25,8 @@ class GitHubLabelCollectionTest extends TestCase
 
     public function setUp()
     {
-        $this->elements = [
-            new GitHubLabel(
-                new LabelId(1), new LabelName('value'), new LabelColor('color'), true, new LabelApiUrl('apiUrl')
-            ),
-        ];
-        $this->sut = new GitHubLabelCollection($this->elements);
+        $this->elements = [new GitHubLabel(new LabelId(1), new LabelName('value'), new LabelColor('color'), true)];
+        $this->sut      = new GitHubLabelCollection($this->elements);
     }
 
     public function testGetElements()

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace spec\DevboardLib\GitHub;
 
 use DevboardLib\GitHub\GitHubLabel;
-use DevboardLib\GitHub\Label\LabelApiUrl;
 use DevboardLib\GitHub\Label\LabelColor;
 use DevboardLib\GitHub\Label\LabelId;
 use DevboardLib\GitHub\Label\LabelName;
@@ -13,9 +12,9 @@ use PhpSpec\ObjectBehavior;
 
 class GitHubLabelSpec extends ObjectBehavior
 {
-    public function let(LabelId $id, LabelName $name, LabelColor $color, LabelApiUrl $apiUrl)
+    public function let(LabelId $id, LabelName $name, LabelColor $color)
     {
-        $this->beConstructedWith($id, $name, $color, $default = true, $apiUrl);
+        $this->beConstructedWith($id, $name, $color, $default = true);
     }
 
     public function it_is_initializable()
@@ -43,25 +42,17 @@ class GitHubLabelSpec extends ObjectBehavior
         $this->isDefault()->shouldReturn(true);
     }
 
-    public function it_exposes_api_url(LabelApiUrl $apiUrl)
-    {
-        $this->getApiUrl()->shouldReturn($apiUrl);
-    }
-
-    public function it_can_be_serialized(LabelId $id, LabelName $name, LabelColor $color, LabelApiUrl $apiUrl)
+    public function it_can_be_serialized(LabelId $id, LabelName $name, LabelColor $color)
     {
         $id->serialize()->shouldBeCalled()->willReturn(1);
         $name->serialize()->shouldBeCalled()->willReturn('value');
         $color->serialize()->shouldBeCalled()->willReturn('color');
-        $apiUrl->serialize()->shouldBeCalled()->willReturn('apiUrl');
-        $this->serialize()->shouldReturn(
-            ['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true, 'apiUrl' => 'apiUrl']
-        );
+        $this->serialize()->shouldReturn(['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true]);
     }
 
     public function it_can_be_deserialized()
     {
-        $input = ['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true, 'apiUrl' => 'apiUrl'];
+        $input = ['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true];
 
         $this->deserialize($input)->shouldReturnAnInstanceOf(GitHubLabel::class);
     }
