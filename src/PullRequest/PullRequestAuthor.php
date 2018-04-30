@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\PullRequest;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
 use DevboardLib\GitHub\Account\AccountHtmlUrl;
@@ -33,9 +32,6 @@ class PullRequestAuthor
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId|null */
-    private $gravatarId;
-
     /** @var AccountHtmlUrl */
     private $htmlUrl;
 
@@ -51,7 +47,6 @@ class PullRequestAuthor
         AccountType $type,
         ?PullRequestAuthorAssociation $association,
         AccountAvatarUrl $avatarUrl,
-        ?GravatarId $gravatarId,
         AccountHtmlUrl $htmlUrl,
         AccountApiUrl $apiUrl,
         bool $siteAdmin
@@ -61,10 +56,10 @@ class PullRequestAuthor
         $this->type        = $type;
         $this->association = $association;
         $this->avatarUrl   = $avatarUrl;
-        $this->gravatarId  = $gravatarId;
-        $this->htmlUrl     = $htmlUrl;
-        $this->apiUrl      = $apiUrl;
-        $this->siteAdmin   = $siteAdmin;
+
+        $this->htmlUrl   = $htmlUrl;
+        $this->apiUrl    = $apiUrl;
+        $this->siteAdmin = $siteAdmin;
     }
 
     public function getUserId(): AccountId
@@ -92,11 +87,6 @@ class PullRequestAuthor
         return $this->avatarUrl;
     }
 
-    public function getGravatarId(): ?GravatarId
-    {
-        return $this->gravatarId;
-    }
-
     public function getHtmlUrl(): AccountHtmlUrl
     {
         return $this->htmlUrl;
@@ -121,15 +111,6 @@ class PullRequestAuthor
         return true;
     }
 
-    public function hasGravatarId(): bool
-    {
-        if (null === $this->gravatarId) {
-            return false;
-        }
-
-        return true;
-    }
-
     public function serialize(): array
     {
         if (null === $this->association) {
@@ -138,22 +119,16 @@ class PullRequestAuthor
             $association = $this->association->serialize();
         }
 
-        if (null === $this->gravatarId) {
-            $gravatarId = null;
-        } else {
-            $gravatarId = $this->gravatarId->serialize();
-        }
-
         return [
             'userId'      => $this->userId->serialize(),
             'login'       => $this->login->serialize(),
             'type'        => $this->type->serialize(),
             'association' => $association,
             'avatarUrl'   => $this->avatarUrl->serialize(),
-            'gravatarId'  => $gravatarId,
-            'htmlUrl'     => $this->htmlUrl->serialize(),
-            'apiUrl'      => $this->apiUrl->serialize(),
-            'siteAdmin'   => $this->siteAdmin,
+
+            'htmlUrl'   => $this->htmlUrl->serialize(),
+            'apiUrl'    => $this->apiUrl->serialize(),
+            'siteAdmin' => $this->siteAdmin,
         ];
     }
 
@@ -165,19 +140,12 @@ class PullRequestAuthor
             $association = PullRequestAuthorAssociation::deserialize($data['association']);
         }
 
-        if (null === $data['gravatarId']) {
-            $gravatarId = null;
-        } else {
-            $gravatarId = GravatarId::deserialize($data['gravatarId']);
-        }
-
         return new self(
             AccountId::deserialize($data['userId']),
             AccountLogin::deserialize($data['login']),
             AccountType::deserialize($data['type']),
             $association,
             AccountAvatarUrl::deserialize($data['avatarUrl']),
-            $gravatarId,
             AccountHtmlUrl::deserialize($data['htmlUrl']),
             AccountApiUrl::deserialize($data['apiUrl']),
             $data['siteAdmin']

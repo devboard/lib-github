@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\DevboardLib\GitHub\Installation;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
 use DevboardLib\GitHub\Account\AccountHtmlUrl;
@@ -32,9 +31,6 @@ class InstallationAccountTest extends TestCase
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId|null */
-    private $gravatarId;
-
     /** @var AccountHtmlUrl */
     private $htmlUrl;
 
@@ -49,20 +45,18 @@ class InstallationAccountTest extends TestCase
 
     public function setUp()
     {
-        $this->userId     = new AccountId(583231);
-        $this->login      = new AccountLogin('octocat');
-        $this->type       = new AccountType('User');
-        $this->avatarUrl  = new AccountAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4');
-        $this->gravatarId = new GravatarId('45g23r2a');
-        $this->htmlUrl    = new AccountHtmlUrl('https://github.com/octocat');
-        $this->apiUrl     = new AccountApiUrl('https://api.github.com/users/octocat');
-        $this->siteAdmin  = false;
-        $this->sut        = new InstallationAccount(
+        $this->userId    = new AccountId(583231);
+        $this->login     = new AccountLogin('octocat');
+        $this->type      = new AccountType('User');
+        $this->avatarUrl = new AccountAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4');
+        $this->htmlUrl   = new AccountHtmlUrl('https://github.com/octocat');
+        $this->apiUrl    = new AccountApiUrl('https://api.github.com/users/octocat');
+        $this->siteAdmin = false;
+        $this->sut       = new InstallationAccount(
             $this->userId,
             $this->login,
             $this->type,
             $this->avatarUrl,
-            $this->gravatarId,
             $this->htmlUrl,
             $this->apiUrl,
             $this->siteAdmin
@@ -89,11 +83,6 @@ class InstallationAccountTest extends TestCase
         self::assertSame($this->avatarUrl, $this->sut->getAvatarUrl());
     }
 
-    public function testGetGravatarId()
-    {
-        self::assertSame($this->gravatarId, $this->sut->getGravatarId());
-    }
-
     public function testGetHtmlUrl()
     {
         self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
@@ -109,22 +98,17 @@ class InstallationAccountTest extends TestCase
         self::assertSame($this->siteAdmin, $this->sut->isSiteAdmin());
     }
 
-    public function testHasGravatarId()
-    {
-        self::assertTrue($this->sut->hasGravatarId());
-    }
-
     public function testSerialize()
     {
         $expected = [
-            'userId'     => 583231,
-            'login'      => 'octocat',
-            'type'       => 'User',
-            'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-            'gravatarId' => '45g23r2a',
-            'htmlUrl'    => 'https://github.com/octocat',
-            'apiUrl'     => 'https://api.github.com/users/octocat',
-            'siteAdmin'  => false,
+            'userId'    => 583231,
+            'login'     => 'octocat',
+            'type'      => 'User',
+            'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+
+            'htmlUrl'   => 'https://github.com/octocat',
+            'apiUrl'    => 'https://api.github.com/users/octocat',
+            'siteAdmin' => false,
         ];
 
         self::assertSame($expected, $this->sut->serialize());

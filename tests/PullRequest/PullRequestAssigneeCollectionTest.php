@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\DevboardLib\GitHub\PullRequest;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
 use DevboardLib\GitHub\Account\AccountHtmlUrl;
@@ -37,7 +36,6 @@ class PullRequestAssigneeCollectionTest extends TestCase
                 new AccountLogin('devboard-test'),
                 new AccountType('Bot'),
                 new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-                new GravatarId('205e460b479e2e5b48aec07710c08d50'),
                 new AccountHtmlUrl('https://github.com/baxterthehacker'),
                 new AccountApiUrl('https://api.github.com/users/baxterthehacker'),
                 false

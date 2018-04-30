@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\PullRequest;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
 use DevboardLib\GitHub\Account\AccountHtmlUrl;
@@ -21,13 +20,10 @@ class PullRequestReviewerSpec extends ObjectBehavior
         AccountLogin $login,
         AccountType $type,
         AccountAvatarUrl $avatarUrl,
-        GravatarId $gravatarId,
         AccountHtmlUrl $htmlUrl,
         AccountApiUrl $apiUrl
     ) {
-        $this->beConstructedWith(
-            $userId, $login, $type, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, $siteAdmin = false
-        );
+        $this->beConstructedWith($userId, $login, $type, $avatarUrl, $htmlUrl, $apiUrl, $siteAdmin = false);
     }
 
     public function it_is_initializable()
@@ -55,11 +51,6 @@ class PullRequestReviewerSpec extends ObjectBehavior
         $this->getAvatarUrl()->shouldReturn($avatarUrl);
     }
 
-    public function it_exposes_gravatar_id(GravatarId $gravatarId)
-    {
-        $this->getGravatarId()->shouldReturn($gravatarId);
-    }
-
     public function it_exposes_html_url(AccountHtmlUrl $htmlUrl)
     {
         $this->getHtmlUrl()->shouldReturn($htmlUrl);
@@ -75,17 +66,11 @@ class PullRequestReviewerSpec extends ObjectBehavior
         $this->isSiteAdmin()->shouldReturn(false);
     }
 
-    public function it_has_gravatar_id()
-    {
-        $this->hasGravatarId()->shouldReturn(true);
-    }
-
     public function it_can_be_serialized(
         AccountId $userId,
         AccountLogin $login,
         AccountType $type,
         AccountAvatarUrl $avatarUrl,
-        GravatarId $gravatarId,
         AccountHtmlUrl $htmlUrl,
         AccountApiUrl $apiUrl
     ) {
@@ -93,19 +78,19 @@ class PullRequestReviewerSpec extends ObjectBehavior
         $login->serialize()->shouldBeCalled()->willReturn('octocat');
         $type->serialize()->shouldBeCalled()->willReturn('User');
         $avatarUrl->serialize()->shouldBeCalled()->willReturn('https://avatars3.githubusercontent.com/u/583231?v=4');
-        $gravatarId->serialize()->shouldBeCalled()->willReturn('45g23r2a');
+
         $htmlUrl->serialize()->shouldBeCalled()->willReturn('https://github.com/octocat');
         $apiUrl->serialize()->shouldBeCalled()->willReturn('https://api.github.com/users/octocat');
         $this->serialize()->shouldReturn(
             [
-                'userId'     => 583231,
-                'login'      => 'octocat',
-                'type'       => 'User',
-                'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-                'gravatarId' => '45g23r2a',
-                'htmlUrl'    => 'https://github.com/octocat',
-                'apiUrl'     => 'https://api.github.com/users/octocat',
-                'siteAdmin'  => false,
+                'userId'    => 583231,
+                'login'     => 'octocat',
+                'type'      => 'User',
+                'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+
+                'htmlUrl'   => 'https://github.com/octocat',
+                'apiUrl'    => 'https://api.github.com/users/octocat',
+                'siteAdmin' => false,
             ]
         );
     }
@@ -113,14 +98,14 @@ class PullRequestReviewerSpec extends ObjectBehavior
     public function it_can_be_deserialized()
     {
         $input = [
-            'userId'     => 583231,
-            'login'      => 'octocat',
-            'type'       => 'User',
-            'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-            'gravatarId' => '45g23r2a',
-            'htmlUrl'    => 'https://github.com/octocat',
-            'apiUrl'     => 'https://api.github.com/users/octocat',
-            'siteAdmin'  => false,
+            'userId'    => 583231,
+            'login'     => 'octocat',
+            'type'      => 'User',
+            'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+
+            'htmlUrl'   => 'https://github.com/octocat',
+            'apiUrl'    => 'https://api.github.com/users/octocat',
+            'siteAdmin' => false,
         ];
 
         $this->deserialize($input)->shouldReturnAnInstanceOf(PullRequestReviewer::class);

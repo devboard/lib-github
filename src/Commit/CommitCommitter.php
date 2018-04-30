@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Commit;
 
 use DevboardLib\Generix\EmailAddress;
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\Git\Commit\CommitDate;
 use DevboardLib\Git\Commit\Committer\CommitterName;
 use DevboardLib\GitHub\Account\AccountType;
@@ -106,15 +105,6 @@ class CommitCommitter implements CommitCommitterInterface
         }
 
         return $this->committerDetails->getAvatarUrl();
-    }
-
-    public function getGravatarId(): ?GravatarId
-    {
-        if (null === $this->committerDetails) {
-            return null;
-        }
-
-        return $this->committerDetails->getGravatarId();
     }
 
     public function getHtmlUrl(): ?UserHtmlUrl

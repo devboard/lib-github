@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\Commit;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\Commit\CommitAuthorDetails;
 use DevboardLib\GitHub\User\UserApiUrl;
@@ -21,13 +20,10 @@ class CommitAuthorDetailsSpec extends ObjectBehavior
         UserLogin $login,
         AccountType $type,
         UserAvatarUrl $avatarUrl,
-        GravatarId $gravatarId,
         UserHtmlUrl $htmlUrl,
         UserApiUrl $apiUrl
     ) {
-        $this->beConstructedWith(
-            $userId, $login, $type, $avatarUrl, $gravatarId, $htmlUrl, $apiUrl, $siteAdmin = false
-        );
+        $this->beConstructedWith($userId, $login, $type, $avatarUrl, $htmlUrl, $apiUrl, $siteAdmin = false);
     }
 
     public function it_is_initializable()
@@ -55,11 +51,6 @@ class CommitAuthorDetailsSpec extends ObjectBehavior
         $this->getAvatarUrl()->shouldReturn($avatarUrl);
     }
 
-    public function it_exposes_gravatar_id(GravatarId $gravatarId)
-    {
-        $this->getGravatarId()->shouldReturn($gravatarId);
-    }
-
     public function it_exposes_html_url(UserHtmlUrl $htmlUrl)
     {
         $this->getHtmlUrl()->shouldReturn($htmlUrl);
@@ -75,17 +66,11 @@ class CommitAuthorDetailsSpec extends ObjectBehavior
         $this->isSiteAdmin()->shouldReturn(false);
     }
 
-    public function it_has_gravatar_id()
-    {
-        $this->hasGravatarId()->shouldReturn(true);
-    }
-
     public function it_can_be_serialized(
         UserId $userId,
         UserLogin $login,
         AccountType $type,
         UserAvatarUrl $avatarUrl,
-        GravatarId $gravatarId,
         UserHtmlUrl $htmlUrl,
         UserApiUrl $apiUrl
     ) {
@@ -93,19 +78,19 @@ class CommitAuthorDetailsSpec extends ObjectBehavior
         $login->serialize()->shouldBeCalled()->willReturn('baxterthehacker');
         $type->serialize()->shouldBeCalled()->willReturn('User');
         $avatarUrl->serialize()->shouldBeCalled()->willReturn('https://avatars.githubusercontent.com/u/6752317?v=3');
-        $gravatarId->serialize()->shouldBeCalled()->willReturn('205e460b479e2e5b48aec07710c08d50');
+
         $htmlUrl->serialize()->shouldBeCalled()->willReturn('https://github.com/baxterthehacker');
         $apiUrl->serialize()->shouldBeCalled()->willReturn('https://api.github.com/users/baxterthehacker');
         $this->serialize()->shouldReturn(
             [
-                'userId'     => 6752317,
-                'login'      => 'baxterthehacker',
-                'type'       => 'User',
-                'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/baxterthehacker',
-                'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                'siteAdmin'  => false,
+                'userId'    => 6752317,
+                'login'     => 'baxterthehacker',
+                'type'      => 'User',
+                'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                'htmlUrl'   => 'https://github.com/baxterthehacker',
+                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                'siteAdmin' => false,
             ]
         );
     }
@@ -113,14 +98,14 @@ class CommitAuthorDetailsSpec extends ObjectBehavior
     public function it_can_be_deserialized()
     {
         $input = [
-            'userId'     => 6752317,
-            'login'      => 'baxterthehacker',
-            'type'       => 'User',
-            'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-            'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-            'htmlUrl'    => 'https://github.com/baxterthehacker',
-            'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-            'siteAdmin'  => false,
+            'userId'    => 6752317,
+            'login'     => 'baxterthehacker',
+            'type'      => 'User',
+            'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+            'htmlUrl'   => 'https://github.com/baxterthehacker',
+            'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+            'siteAdmin' => false,
         ];
 
         $this->deserialize($input)->shouldReturnAnInstanceOf(CommitAuthorDetails::class);

@@ -83,10 +83,10 @@ class GitHubPullRequestReviewSpec extends ObjectBehavior
                 'type'        => 'User',
                 'association' => 'NONE',
                 'avatarUrl'   => 'avatarUrl',
-                'gravatarId'  => 'id',
-                'htmlUrl'     => 'htmlUrl',
-                'apiUrl'      => 'apiUrl',
-                'siteAdmin'   => true,
+
+                'htmlUrl'   => 'htmlUrl',
+                'apiUrl'    => 'apiUrl',
+                'siteAdmin' => true,
             ]
         );
         $state->serialize()->shouldBeCalled()->willReturn('commented');
@@ -102,10 +102,10 @@ class GitHubPullRequestReviewSpec extends ObjectBehavior
                     'type'        => 'User',
                     'association' => 'NONE',
                     'avatarUrl'   => 'avatarUrl',
-                    'gravatarId'  => 'id',
-                    'htmlUrl'     => 'htmlUrl',
-                    'apiUrl'      => 'apiUrl',
-                    'siteAdmin'   => true,
+
+                    'htmlUrl'   => 'htmlUrl',
+                    'apiUrl'    => 'apiUrl',
+                    'siteAdmin' => true,
                 ],
                 'state'       => 'commented',
                 'commitSha'   => 'sha',
@@ -125,10 +125,10 @@ class GitHubPullRequestReviewSpec extends ObjectBehavior
                 'type'        => 'User',
                 'association' => 'NONE',
                 'avatarUrl'   => 'avatarUrl',
-                'gravatarId'  => 'id',
-                'htmlUrl'     => 'htmlUrl',
-                'apiUrl'      => 'apiUrl',
-                'siteAdmin'   => true,
+
+                'htmlUrl'   => 'htmlUrl',
+                'apiUrl'    => 'apiUrl',
+                'siteAdmin' => true,
             ],
             'state'       => 'commented',
             'commitSha'   => 'sha',

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\DevboardLib\GitHub;
 
 use DevboardLib\Generix\EmailAddress;
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\Git\Commit\Author\AuthorName;
 use DevboardLib\Git\Commit\CommitDate;
 use DevboardLib\Git\Commit\CommitMessage;
@@ -92,7 +91,6 @@ class GitHubCommitTest extends TestCase
                 new UserLogin('octocat'),
                 new AccountType('Bot'),
                 new UserAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4'),
-                new GravatarId('205e460b479e2e5b48aec07710c08d50'),
                 new UserHtmlUrl('https://github.com/octocat'),
                 new UserApiUrl('https://api.github.com/users/octocat'),
                 true
@@ -107,7 +105,6 @@ class GitHubCommitTest extends TestCase
                 new UserLogin('octocat'),
                 new AccountType('Bot'),
                 new UserAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4'),
-                new GravatarId('205e460b479e2e5b48aec07710c08d50'),
                 new UserHtmlUrl('https://github.com/octocat'),
                 new UserApiUrl('https://api.github.com/users/octocat'),
                 true
@@ -220,14 +217,14 @@ class GitHubCommitTest extends TestCase
                 'email'         => 'amy@example.com',
                 'commitDate'    => '2018-01-02T11:12:13+00:00',
                 'authorDetails' => [
-                    'userId'     => 583231,
-                    'login'      => 'octocat',
-                    'type'       => 'Bot',
-                    'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-                    'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                    'htmlUrl'    => 'https://github.com/octocat',
-                    'apiUrl'     => 'https://api.github.com/users/octocat',
-                    'siteAdmin'  => true,
+                    'userId'    => 583231,
+                    'login'     => 'octocat',
+                    'type'      => 'Bot',
+                    'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+
+                    'htmlUrl'   => 'https://github.com/octocat',
+                    'apiUrl'    => 'https://api.github.com/users/octocat',
+                    'siteAdmin' => true,
                 ],
             ],
             'committer' => [
@@ -235,14 +232,14 @@ class GitHubCommitTest extends TestCase
                 'email'            => 'amy@example.com',
                 'commitDate'       => '2018-01-02T11:12:13+00:00',
                 'committerDetails' => [
-                    'userId'     => 583231,
-                    'login'      => 'octocat',
-                    'type'       => 'Bot',
-                    'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-                    'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                    'htmlUrl'    => 'https://github.com/octocat',
-                    'apiUrl'     => 'https://api.github.com/users/octocat',
-                    'siteAdmin'  => true,
+                    'userId'    => 583231,
+                    'login'     => 'octocat',
+                    'type'      => 'Bot',
+                    'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+
+                    'htmlUrl'   => 'https://github.com/octocat',
+                    'apiUrl'    => 'https://api.github.com/users/octocat',
+                    'siteAdmin' => true,
                 ],
             ],
             'tree' => [

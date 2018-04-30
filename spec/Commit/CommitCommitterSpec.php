@@ -59,14 +59,14 @@ class CommitCommitterSpec extends ObjectBehavior
         $commitDate->serialize()->shouldBeCalled()->willReturn('2018-01-02T20:21:22+00:00');
         $committerDetails->serialize()->shouldBeCalled()->willReturn(
             [
-                'userId'     => 583231,
-                'login'      => 'octocat',
-                'type'       => 'Bot',
-                'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/octocat',
-                'apiUrl'     => 'https://api.github.com/users/octocat',
-                'siteAdmin'  => true,
+                'userId'    => 583231,
+                'login'     => 'octocat',
+                'type'      => 'Bot',
+                'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+
+                'htmlUrl'   => 'https://github.com/octocat',
+                'apiUrl'    => 'https://api.github.com/users/octocat',
+                'siteAdmin' => true,
             ]
         );
         $this->serialize()->shouldReturn(
@@ -75,14 +75,14 @@ class CommitCommitterSpec extends ObjectBehavior
                 'email'            => 'jane@example.com',
                 'commitDate'       => '2018-01-02T20:21:22+00:00',
                 'committerDetails' => [
-                    'userId'     => 583231,
-                    'login'      => 'octocat',
-                    'type'       => 'Bot',
-                    'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-                    'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                    'htmlUrl'    => 'https://github.com/octocat',
-                    'apiUrl'     => 'https://api.github.com/users/octocat',
-                    'siteAdmin'  => true,
+                    'userId'    => 583231,
+                    'login'     => 'octocat',
+                    'type'      => 'Bot',
+                    'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+
+                    'htmlUrl'   => 'https://github.com/octocat',
+                    'apiUrl'    => 'https://api.github.com/users/octocat',
+                    'siteAdmin' => true,
                 ],
             ]
         );
@@ -95,14 +95,14 @@ class CommitCommitterSpec extends ObjectBehavior
             'email'            => 'jane@example.com',
             'commitDate'       => '2018-01-02T20:21:22+00:00',
             'committerDetails' => [
-                'userId'     => 583231,
-                'login'      => 'octocat',
-                'type'       => 'Bot',
-                'avatarUrl'  => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/octocat',
-                'apiUrl'     => 'https://api.github.com/users/octocat',
-                'siteAdmin'  => true,
+                'userId'    => 583231,
+                'login'     => 'octocat',
+                'type'      => 'Bot',
+                'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
+
+                'htmlUrl'   => 'https://github.com/octocat',
+                'apiUrl'    => 'https://api.github.com/users/octocat',
+                'siteAdmin' => true,
             ],
         ];
 

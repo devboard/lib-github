@@ -186,14 +186,14 @@ class GitHubRepoSpec extends ObjectBehavior
         $fullName->serialize()->shouldBeCalled()->willReturn(['owner' => 'devboard-test', 'repoName' => 'Hello-World']);
         $owner->serialize()->shouldBeCalled()->willReturn(
             [
-                'userId'     => 6752317,
-                'login'      => 'devboard-test',
-                'type'       => 'Bot',
-                'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/baxterthehacker',
-                'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                'siteAdmin'  => false,
+                'userId'    => 6752317,
+                'login'     => 'devboard-test',
+                'type'      => 'Bot',
+                'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                'htmlUrl'   => 'https://github.com/baxterthehacker',
+                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                'siteAdmin' => false,
             ]
         );
         $defaultBranch->serialize()->shouldBeCalled()->willReturn('production');
@@ -236,14 +236,14 @@ class GitHubRepoSpec extends ObjectBehavior
                 'id'       => 1296269,
                 'fullName' => ['owner' => 'devboard-test', 'repoName' => 'Hello-World'],
                 'owner'    => [
-                    'userId'     => 6752317,
-                    'login'      => 'devboard-test',
-                    'type'       => 'Bot',
-                    'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                    'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                    'htmlUrl'    => 'https://github.com/baxterthehacker',
-                    'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                    'siteAdmin'  => false,
+                    'userId'    => 6752317,
+                    'login'     => 'devboard-test',
+                    'type'      => 'Bot',
+                    'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                    'htmlUrl'   => 'https://github.com/baxterthehacker',
+                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                    'siteAdmin' => false,
                 ],
                 'private'       => true,
                 'defaultBranch' => 'production',
@@ -283,14 +283,14 @@ class GitHubRepoSpec extends ObjectBehavior
             'id'       => 1296269,
             'fullName' => ['owner' => 'devboard-test', 'repoName' => 'Hello-World'],
             'owner'    => [
-                'userId'     => 6752317,
-                'login'      => 'devboard-test',
-                'type'       => 'Bot',
-                'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/baxterthehacker',
-                'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                'siteAdmin'  => false,
+                'userId'    => 6752317,
+                'login'     => 'devboard-test',
+                'type'      => 'Bot',
+                'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                'htmlUrl'   => 'https://github.com/baxterthehacker',
+                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                'siteAdmin' => false,
             ],
             'private'       => true,
             'defaultBranch' => 'production',

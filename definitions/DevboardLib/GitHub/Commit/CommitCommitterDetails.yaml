@@ -29,12 +29,6 @@ definition:
       hasDefault: false
       default: null
       examples: ['https://avatars.githubusercontent.com/u/6752317?v=3']
-    gravatarId:
-      instanceOf: DevboardLib\Generix\GravatarId
-      nullable: true
-      hasDefault: false
-      default: null
-      examples: []
     htmlUrl:
       instanceOf: DevboardLib\GitHub\User\UserHtmlUrl
       nullable: false
