@@ -9,13 +9,11 @@ use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\GitHubMilestone;
-use DevboardLib\GitHub\Milestone\MilestoneApiUrl;
 use DevboardLib\GitHub\Milestone\MilestoneClosedAt;
 use DevboardLib\GitHub\Milestone\MilestoneCreatedAt;
 use DevboardLib\GitHub\Milestone\MilestoneCreator;
 use DevboardLib\GitHub\Milestone\MilestoneDescription;
 use DevboardLib\GitHub\Milestone\MilestoneDueOn;
-use DevboardLib\GitHub\Milestone\MilestoneHtmlUrl;
 use DevboardLib\GitHub\Milestone\MilestoneId;
 use DevboardLib\GitHub\Milestone\MilestoneNumber;
 use DevboardLib\GitHub\Milestone\MilestoneState;
@@ -52,12 +50,6 @@ class GitHubMilestoneTest extends TestCase
     /** @var MilestoneCreator */
     private $creator;
 
-    /** @var MilestoneHtmlUrl */
-    private $htmlUrl;
-
-    /** @var MilestoneApiUrl */
-    private $apiUrl;
-
     /** @var MilestoneClosedAt|null */
     private $closedAt;
 
@@ -85,8 +77,6 @@ class GitHubMilestoneTest extends TestCase
             new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
             false
         );
-        $this->htmlUrl   = new MilestoneHtmlUrl('htmlUrl');
-        $this->apiUrl    = new MilestoneApiUrl('apiUrl');
         $this->closedAt  = new MilestoneClosedAt('2016-08-02T17:35:14+00:00');
         $this->createdAt = new MilestoneCreatedAt('2016-08-02T17:35:14+00:00');
         $this->updatedAt = new MilestoneUpdatedAt('2016-08-02T17:35:14+00:00');
@@ -98,8 +88,6 @@ class GitHubMilestoneTest extends TestCase
             $this->state,
             $this->number,
             $this->creator,
-            $this->htmlUrl,
-            $this->apiUrl,
             $this->closedAt,
             $this->createdAt,
             $this->updatedAt
@@ -183,8 +171,6 @@ class GitHubMilestoneTest extends TestCase
 
                 'siteAdmin' => false,
             ],
-            'htmlUrl'   => 'htmlUrl',
-            'apiUrl'    => 'apiUrl',
             'closedAt'  => '2016-08-02T17:35:14+00:00',
             'createdAt' => '2016-08-02T17:35:14+00:00',
             'updatedAt' => '2016-08-02T17:35:14+00:00',

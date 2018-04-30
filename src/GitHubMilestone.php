@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Milestone\MilestoneApiUrl;
 use DevboardLib\GitHub\Milestone\MilestoneClosedAt;
 use DevboardLib\GitHub\Milestone\MilestoneCreatedAt;
 use DevboardLib\GitHub\Milestone\MilestoneCreator;
 use DevboardLib\GitHub\Milestone\MilestoneDescription;
 use DevboardLib\GitHub\Milestone\MilestoneDueOn;
-use DevboardLib\GitHub\Milestone\MilestoneHtmlUrl;
 use DevboardLib\GitHub\Milestone\MilestoneId;
 use DevboardLib\GitHub\Milestone\MilestoneNumber;
 use DevboardLib\GitHub\Milestone\MilestoneState;
@@ -47,12 +45,6 @@ class GitHubMilestone
     /** @var MilestoneCreator */
     private $creator;
 
-    /** @var MilestoneHtmlUrl */
-    private $htmlUrl;
-
-    /** @var MilestoneApiUrl */
-    private $apiUrl;
-
     /** @var MilestoneClosedAt|null */
     private $closedAt;
 
@@ -70,8 +62,6 @@ class GitHubMilestone
         MilestoneState $state,
         MilestoneNumber $number,
         MilestoneCreator $creator,
-        MilestoneHtmlUrl $htmlUrl,
-        MilestoneApiUrl $apiUrl,
         ?MilestoneClosedAt $closedAt,
         MilestoneCreatedAt $createdAt,
         MilestoneUpdatedAt $updatedAt
@@ -83,8 +73,6 @@ class GitHubMilestone
         $this->state       = $state;
         $this->number      = $number;
         $this->creator     = $creator;
-        $this->htmlUrl     = $htmlUrl;
-        $this->apiUrl      = $apiUrl;
         $this->closedAt    = $closedAt;
         $this->createdAt   = $createdAt;
         $this->updatedAt   = $updatedAt;
@@ -123,16 +111,6 @@ class GitHubMilestone
     public function getCreator(): MilestoneCreator
     {
         return $this->creator;
-    }
-
-    public function getHtmlUrl(): MilestoneHtmlUrl
-    {
-        return $this->htmlUrl;
-    }
-
-    public function getApiUrl(): MilestoneApiUrl
-    {
-        return $this->apiUrl;
     }
 
     public function getClosedAt(): ?MilestoneClosedAt
@@ -190,8 +168,6 @@ class GitHubMilestone
             'state'       => $this->state->serialize(),
             'number'      => $this->number->serialize(),
             'creator'     => $this->creator->serialize(),
-            'htmlUrl'     => $this->htmlUrl->serialize(),
-            'apiUrl'      => $this->apiUrl->serialize(),
             'closedAt'    => $closedAt,
             'createdAt'   => $this->createdAt->serialize(),
             'updatedAt'   => $this->updatedAt->serialize(),
@@ -220,8 +196,6 @@ class GitHubMilestone
             MilestoneState::deserialize($data['state']),
             MilestoneNumber::deserialize($data['number']),
             MilestoneCreator::deserialize($data['creator']),
-            MilestoneHtmlUrl::deserialize($data['htmlUrl']),
-            MilestoneApiUrl::deserialize($data['apiUrl']),
             $closedAt,
             MilestoneCreatedAt::deserialize($data['createdAt']),
             MilestoneUpdatedAt::deserialize($data['updatedAt'])
