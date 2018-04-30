@@ -41,18 +41,6 @@ definition:
       hasDefault: false
       default: null
       examples: []
-    apiUrl:
-      instanceOf: DevboardLib\GitHub\Issue\IssueApiUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
-    htmlUrl:
-      instanceOf: DevboardLib\GitHub\Issue\IssueHtmlUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
     assignee:
       instanceOf: DevboardLib\GitHub\Issue\IssueAssignee
       nullable: true

@@ -7,14 +7,12 @@ namespace spec\DevboardLib\GitHub;
 use DevboardLib\GitHub\GitHubIssue;
 use DevboardLib\GitHub\GitHubLabelCollection;
 use DevboardLib\GitHub\GitHubMilestone;
-use DevboardLib\GitHub\Issue\IssueApiUrl;
 use DevboardLib\GitHub\Issue\IssueAssignee;
 use DevboardLib\GitHub\Issue\IssueAssigneeCollection;
 use DevboardLib\GitHub\Issue\IssueAuthor;
 use DevboardLib\GitHub\Issue\IssueBody;
 use DevboardLib\GitHub\Issue\IssueClosedAt;
 use DevboardLib\GitHub\Issue\IssueCreatedAt;
-use DevboardLib\GitHub\Issue\IssueHtmlUrl;
 use DevboardLib\GitHub\Issue\IssueId;
 use DevboardLib\GitHub\Issue\IssueNumber;
 use DevboardLib\GitHub\Issue\IssueState;
@@ -35,8 +33,6 @@ class GitHubIssueSpec extends ObjectBehavior
         IssueBody $body,
         IssueState $state,
         IssueAuthor $author,
-        IssueApiUrl $apiUrl,
-        IssueHtmlUrl $htmlUrl,
         IssueAssignee $assignee,
         IssueAssigneeCollection $assignees,
         GitHubLabelCollection $labels,
@@ -52,8 +48,6 @@ class GitHubIssueSpec extends ObjectBehavior
             $body,
             $state,
             $author,
-            $apiUrl,
-            $htmlUrl,
             $assignee,
             $assignees,
             $labels,
@@ -97,16 +91,6 @@ class GitHubIssueSpec extends ObjectBehavior
     public function it_exposes_author(IssueAuthor $author)
     {
         $this->getAuthor()->shouldReturn($author);
-    }
-
-    public function it_exposes_api_url(IssueApiUrl $apiUrl)
-    {
-        $this->getApiUrl()->shouldReturn($apiUrl);
-    }
-
-    public function it_exposes_html_url(IssueHtmlUrl $htmlUrl)
-    {
-        $this->getHtmlUrl()->shouldReturn($htmlUrl);
     }
 
     public function it_exposes_assignee(IssueAssignee $assignee)
@@ -166,8 +150,6 @@ class GitHubIssueSpec extends ObjectBehavior
         IssueBody $body,
         IssueState $state,
         IssueAuthor $author,
-        IssueApiUrl $apiUrl,
-        IssueHtmlUrl $htmlUrl,
         IssueAssignee $assignee,
         IssueAssigneeCollection $assignees,
         GitHubLabelCollection $labels,
@@ -191,8 +173,6 @@ class GitHubIssueSpec extends ObjectBehavior
                 'siteAdmin' => false,
             ]
         );
-        $apiUrl->serialize()->shouldBeCalled()->willReturn('apiUrl');
-        $htmlUrl->serialize()->shouldBeCalled()->willReturn('htmlUrl');
         $assignee->serialize()->shouldBeCalled()->willReturn(
             [
                 'userId'    => 6752317,
@@ -259,8 +239,6 @@ class GitHubIssueSpec extends ObjectBehavior
 
                     'siteAdmin' => false,
                 ],
-                'apiUrl'   => 'apiUrl',
-                'htmlUrl'  => 'htmlUrl',
                 'assignee' => [
                     'userId'    => 6752317,
                     'login'     => 'devboard-test',
@@ -326,8 +304,6 @@ class GitHubIssueSpec extends ObjectBehavior
 
                 'siteAdmin' => false,
             ],
-            'apiUrl'   => 'apiUrl',
-            'htmlUrl'  => 'htmlUrl',
             'assignee' => [
                 'userId'    => 6752317,
                 'login'     => 'devboard-test',

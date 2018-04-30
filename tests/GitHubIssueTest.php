@@ -12,14 +12,12 @@ use DevboardLib\GitHub\GitHubIssue;
 use DevboardLib\GitHub\GitHubLabel;
 use DevboardLib\GitHub\GitHubLabelCollection;
 use DevboardLib\GitHub\GitHubMilestone;
-use DevboardLib\GitHub\Issue\IssueApiUrl;
 use DevboardLib\GitHub\Issue\IssueAssignee;
 use DevboardLib\GitHub\Issue\IssueAssigneeCollection;
 use DevboardLib\GitHub\Issue\IssueAuthor;
 use DevboardLib\GitHub\Issue\IssueBody;
 use DevboardLib\GitHub\Issue\IssueClosedAt;
 use DevboardLib\GitHub\Issue\IssueCreatedAt;
-use DevboardLib\GitHub\Issue\IssueHtmlUrl;
 use DevboardLib\GitHub\Issue\IssueId;
 use DevboardLib\GitHub\Issue\IssueNumber;
 use DevboardLib\GitHub\Issue\IssueState;
@@ -69,12 +67,6 @@ class GitHubIssueTest extends TestCase
     /** @var IssueAuthor */
     private $author;
 
-    /** @var IssueApiUrl */
-    private $apiUrl;
-
-    /** @var IssueHtmlUrl */
-    private $htmlUrl;
-
     /** @var IssueAssignee|null */
     private $assignee;
 
@@ -113,8 +105,7 @@ class GitHubIssueTest extends TestCase
             new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
             false
         );
-        $this->apiUrl   = new IssueApiUrl('apiUrl');
-        $this->htmlUrl  = new IssueHtmlUrl('htmlUrl');
+
         $this->assignee = new IssueAssignee(
             new AccountId(6752317),
             new AccountLogin('devboard-test'),
@@ -174,8 +165,6 @@ class GitHubIssueTest extends TestCase
             $this->body,
             $this->state,
             $this->author,
-            $this->apiUrl,
-            $this->htmlUrl,
             $this->assignee,
             $this->assignees,
             $this->labels,
@@ -214,16 +203,6 @@ class GitHubIssueTest extends TestCase
     public function testGetAuthor()
     {
         self::assertSame($this->author, $this->sut->getAuthor());
-    }
-
-    public function testGetApiUrl()
-    {
-        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
-    }
-
-    public function testGetHtmlUrl()
-    {
-        self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
     }
 
     public function testGetAssignee()
@@ -292,8 +271,6 @@ class GitHubIssueTest extends TestCase
 
                 'siteAdmin' => false,
             ],
-            'apiUrl'   => 'apiUrl',
-            'htmlUrl'  => 'htmlUrl',
             'assignee' => [
                 'userId'    => 6752317,
                 'login'     => 'devboard-test',

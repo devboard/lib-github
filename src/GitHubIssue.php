@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Issue\IssueApiUrl;
 use DevboardLib\GitHub\Issue\IssueAssignee;
 use DevboardLib\GitHub\Issue\IssueAssigneeCollection;
 use DevboardLib\GitHub\Issue\IssueAuthor;
 use DevboardLib\GitHub\Issue\IssueBody;
 use DevboardLib\GitHub\Issue\IssueClosedAt;
 use DevboardLib\GitHub\Issue\IssueCreatedAt;
-use DevboardLib\GitHub\Issue\IssueHtmlUrl;
 use DevboardLib\GitHub\Issue\IssueId;
 use DevboardLib\GitHub\Issue\IssueNumber;
 use DevboardLib\GitHub\Issue\IssueState;
@@ -45,12 +43,6 @@ class GitHubIssue
     /** @var IssueAuthor */
     private $author;
 
-    /** @var IssueApiUrl */
-    private $apiUrl;
-
-    /** @var IssueHtmlUrl */
-    private $htmlUrl;
-
     /** @var IssueAssignee|null */
     private $assignee;
 
@@ -79,8 +71,6 @@ class GitHubIssue
         IssueBody $body,
         IssueState $state,
         IssueAuthor $author,
-        IssueApiUrl $apiUrl,
-        IssueHtmlUrl $htmlUrl,
         ?IssueAssignee $assignee,
         IssueAssigneeCollection $assignees,
         GitHubLabelCollection $labels,
@@ -95,8 +85,6 @@ class GitHubIssue
         $this->body      = $body;
         $this->state     = $state;
         $this->author    = $author;
-        $this->apiUrl    = $apiUrl;
-        $this->htmlUrl   = $htmlUrl;
         $this->assignee  = $assignee;
         $this->assignees = $assignees;
         $this->labels    = $labels;
@@ -134,16 +122,6 @@ class GitHubIssue
     public function getAuthor(): IssueAuthor
     {
         return $this->author;
-    }
-
-    public function getApiUrl(): IssueApiUrl
-    {
-        return $this->apiUrl;
-    }
-
-    public function getHtmlUrl(): IssueHtmlUrl
-    {
-        return $this->htmlUrl;
     }
 
     public function getAssignee(): ?IssueAssignee
@@ -235,8 +213,6 @@ class GitHubIssue
             'body'      => $this->body->serialize(),
             'state'     => $this->state->serialize(),
             'author'    => $this->author->serialize(),
-            'apiUrl'    => $this->apiUrl->serialize(),
-            'htmlUrl'   => $this->htmlUrl->serialize(),
             'assignee'  => $assignee,
             'assignees' => $this->assignees->serialize(),
             'labels'    => $this->labels->serialize(),
@@ -274,8 +250,6 @@ class GitHubIssue
             IssueBody::deserialize($data['body']),
             IssueState::deserialize($data['state']),
             IssueAuthor::deserialize($data['author']),
-            IssueApiUrl::deserialize($data['apiUrl']),
-            IssueHtmlUrl::deserialize($data['htmlUrl']),
             $assignee,
             IssueAssigneeCollection::deserialize($data['assignees']),
             GitHubLabelCollection::deserialize($data['labels']),
