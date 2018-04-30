@@ -41,18 +41,6 @@ definition:
       hasDefault: false
       default: null
       examples: []
-    apiUrl:
-      instanceOf: DevboardLib\GitHub\PullRequest\PullRequestApiUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
-    htmlUrl:
-      instanceOf: DevboardLib\GitHub\PullRequest\PullRequestHtmlUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
     assignee:
       instanceOf: DevboardLib\GitHub\PullRequest\PullRequestAssignee
       nullable: true
