@@ -29,18 +29,6 @@ definition:
       hasDefault: false
       default: null
       examples: ["https://avatars3.githubusercontent.com/u/583231?v=4"]
-    htmlUrl:
-      instanceOf: DevboardLib\GitHub\Account\AccountHtmlUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: ["https://github.com/octocat"]
-    apiUrl:
-      instanceOf: DevboardLib\GitHub\Account\AccountApiUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: ["https://api.github.com/users/octocat"]
     siteAdmin:
       instanceOf: bool
       nullable: false

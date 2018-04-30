@@ -41,16 +41,6 @@ class RepoEndpointsTest extends TestCase
         $this->sut     = new RepoEndpoints($this->htmlUrl, $this->apiUrl, $this->gitUrl, $this->sshUrl);
     }
 
-    public function testGetHtmlUrl()
-    {
-        self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
-    }
-
-    public function testGetApiUrl()
-    {
-        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
-    }
-
     public function testGetGitUrl()
     {
         self::assertSame($this->gitUrl, $this->sut->getGitUrl());

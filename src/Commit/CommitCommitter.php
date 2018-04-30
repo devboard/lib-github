@@ -8,9 +8,7 @@ use DevboardLib\Generix\EmailAddress;
 use DevboardLib\Git\Commit\CommitDate;
 use DevboardLib\Git\Commit\Committer\CommitterName;
 use DevboardLib\GitHub\Account\AccountType;
-use DevboardLib\GitHub\User\UserApiUrl;
 use DevboardLib\GitHub\User\UserAvatarUrl;
-use DevboardLib\GitHub\User\UserHtmlUrl;
 use DevboardLib\GitHub\User\UserId;
 use DevboardLib\GitHub\User\UserLogin;
 use Git\Commit\CommitCommitter as CommitCommitterInterface;
@@ -105,24 +103,6 @@ class CommitCommitter implements CommitCommitterInterface
         }
 
         return $this->committerDetails->getAvatarUrl();
-    }
-
-    public function getHtmlUrl(): ?UserHtmlUrl
-    {
-        if (null === $this->committerDetails) {
-            return null;
-        }
-
-        return $this->committerDetails->getHtmlUrl();
-    }
-
-    public function getApiUrl(): ?UserApiUrl
-    {
-        if (null === $this->committerDetails) {
-            return null;
-        }
-
-        return $this->committerDetails->getApiUrl();
     }
 
     public function isSiteAdmin(): ?bool

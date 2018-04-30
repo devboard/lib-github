@@ -64,8 +64,6 @@ class CommitAuthorSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
 
-                'htmlUrl'   => 'https://github.com/octocat',
-                'apiUrl'    => 'https://api.github.com/users/octocat',
                 'siteAdmin' => true,
             ]
         );
@@ -80,8 +78,6 @@ class CommitAuthorSpec extends ObjectBehavior
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
 
-                    'htmlUrl'   => 'https://github.com/octocat',
-                    'apiUrl'    => 'https://api.github.com/users/octocat',
                     'siteAdmin' => true,
                 ],
             ]
@@ -100,8 +96,6 @@ class CommitAuthorSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
 
-                'htmlUrl'   => 'https://github.com/octocat',
-                'apiUrl'    => 'https://api.github.com/users/octocat',
                 'siteAdmin' => true,
             ],
         ];

@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace Tests\DevboardLib\GitHub;
 
 use DevboardLib\Git\Commit\CommitSha;
-use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
-use DevboardLib\GitHub\Account\AccountHtmlUrl;
 use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
@@ -59,8 +57,6 @@ class GitHubPullRequestReviewTest extends TestCase
             AccountType::USER(),
             PullRequestReviewAuthorAssociation::NONE(),
             new AccountAvatarUrl('avatarUrl'),
-            new AccountHtmlUrl('htmlUrl'),
-            new AccountApiUrl('apiUrl'),
             true
         );
         $this->state       = new PullRequestReviewState('commented');
@@ -118,8 +114,6 @@ class GitHubPullRequestReviewTest extends TestCase
                 'association' => 'NONE',
                 'avatarUrl'   => 'avatarUrl',
 
-                'htmlUrl'   => 'htmlUrl',
-                'apiUrl'    => 'apiUrl',
                 'siteAdmin' => true,
             ],
             'state'       => 'commented',

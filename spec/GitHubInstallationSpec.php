@@ -138,8 +138,6 @@ class GitHubInstallationSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ]
         );
@@ -165,8 +163,6 @@ class GitHubInstallationSpec extends ObjectBehavior
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                    'htmlUrl'   => 'https://github.com/baxterthehacker',
-                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                     'siteAdmin' => false,
                 ],
                 'applicationId'       => 177,
@@ -192,8 +188,6 @@ class GitHubInstallationSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ],
             'applicationId'       => 177,

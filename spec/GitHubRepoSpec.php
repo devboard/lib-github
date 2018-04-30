@@ -191,8 +191,6 @@ class GitHubRepoSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ]
         );
@@ -241,8 +239,6 @@ class GitHubRepoSpec extends ObjectBehavior
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                    'htmlUrl'   => 'https://github.com/baxterthehacker',
-                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                     'siteAdmin' => false,
                 ],
                 'private'       => true,
@@ -288,8 +284,6 @@ class GitHubRepoSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ],
             'private'       => true,

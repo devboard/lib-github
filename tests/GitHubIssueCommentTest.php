@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
-use DevboardLib\GitHub\Account\AccountHtmlUrl;
 use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
@@ -70,8 +68,6 @@ class GitHubIssueCommentTest extends TestCase
             new AccountLogin('devboard-test'),
             new AccountType('Bot'),
             new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-            new AccountHtmlUrl('https://github.com/baxterthehacker'),
-            new AccountApiUrl('https://api.github.com/users/baxterthehacker'),
             false
         );
         $this->htmlUrl     = new IssueCommentHtmlUrl('htmlUrl');
@@ -112,16 +108,6 @@ class GitHubIssueCommentTest extends TestCase
         self::assertSame($this->author, $this->sut->getAuthor());
     }
 
-    public function testGetHtmlUrl()
-    {
-        self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
-    }
-
-    public function testGetApiUrl()
-    {
-        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
-    }
-
     public function testGetIssueApiUrl()
     {
         self::assertSame($this->issueApiUrl, $this->sut->getIssueApiUrl());
@@ -149,8 +135,6 @@ class GitHubIssueCommentTest extends TestCase
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ],
             'htmlUrl'     => 'htmlUrl',

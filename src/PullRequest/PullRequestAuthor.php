@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\PullRequest;
 
-use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
-use DevboardLib\GitHub\Account\AccountHtmlUrl;
 use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
@@ -32,12 +30,6 @@ class PullRequestAuthor
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var AccountHtmlUrl */
-    private $htmlUrl;
-
-    /** @var AccountApiUrl */
-    private $apiUrl;
-
     /** @var bool */
     private $siteAdmin;
 
@@ -47,8 +39,6 @@ class PullRequestAuthor
         AccountType $type,
         ?PullRequestAuthorAssociation $association,
         AccountAvatarUrl $avatarUrl,
-        AccountHtmlUrl $htmlUrl,
-        AccountApiUrl $apiUrl,
         bool $siteAdmin
     ) {
         $this->userId      = $userId;
@@ -57,8 +47,6 @@ class PullRequestAuthor
         $this->association = $association;
         $this->avatarUrl   = $avatarUrl;
 
-        $this->htmlUrl   = $htmlUrl;
-        $this->apiUrl    = $apiUrl;
         $this->siteAdmin = $siteAdmin;
     }
 
@@ -85,16 +73,6 @@ class PullRequestAuthor
     public function getAvatarUrl(): AccountAvatarUrl
     {
         return $this->avatarUrl;
-    }
-
-    public function getHtmlUrl(): AccountHtmlUrl
-    {
-        return $this->htmlUrl;
-    }
-
-    public function getApiUrl(): AccountApiUrl
-    {
-        return $this->apiUrl;
     }
 
     public function isSiteAdmin(): bool
@@ -126,8 +104,6 @@ class PullRequestAuthor
             'association' => $association,
             'avatarUrl'   => $this->avatarUrl->serialize(),
 
-            'htmlUrl'   => $this->htmlUrl->serialize(),
-            'apiUrl'    => $this->apiUrl->serialize(),
             'siteAdmin' => $this->siteAdmin,
         ];
     }
@@ -146,8 +122,6 @@ class PullRequestAuthor
             AccountType::deserialize($data['type']),
             $association,
             AccountAvatarUrl::deserialize($data['avatarUrl']),
-            AccountHtmlUrl::deserialize($data['htmlUrl']),
-            AccountApiUrl::deserialize($data['apiUrl']),
             $data['siteAdmin']
         );
     }
