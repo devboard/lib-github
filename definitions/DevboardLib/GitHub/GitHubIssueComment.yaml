@@ -29,24 +29,6 @@ definition:
       hasDefault: false
       default: null
       examples: []
-    htmlUrl:
-      instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentHtmlUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
-    apiUrl:
-      instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentApiUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
-    issueApiUrl:
-      instanceOf: DevboardLib\GitHub\Issue\IssueApiUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
     createdAt:
       instanceOf: DevboardLib\GitHub\IssueComment\IssueCommentCreatedAt
       nullable: false
