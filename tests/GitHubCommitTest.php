@@ -11,12 +11,10 @@ use DevboardLib\Git\Commit\CommitMessage;
 use DevboardLib\Git\Commit\CommitSha;
 use DevboardLib\Git\Commit\Committer\CommitterName;
 use DevboardLib\GitHub\Account\AccountType;
-use DevboardLib\GitHub\Commit\CommitApiUrl;
 use DevboardLib\GitHub\Commit\CommitAuthor;
 use DevboardLib\GitHub\Commit\CommitAuthorDetails;
 use DevboardLib\GitHub\Commit\CommitCommitter;
 use DevboardLib\GitHub\Commit\CommitCommitterDetails;
-use DevboardLib\GitHub\Commit\CommitHtmlUrl;
 use DevboardLib\GitHub\Commit\CommitParent;
 use DevboardLib\GitHub\Commit\CommitParent\ParentApiUrl;
 use DevboardLib\GitHub\Commit\CommitParent\ParentHtmlUrl;
@@ -65,12 +63,6 @@ class GitHubCommitTest extends TestCase
 
     /** @var CommitVerification|null */
     private $verification;
-
-    /** @var CommitApiUrl */
-    private $apiUrl;
-
-    /** @var CommitHtmlUrl */
-    private $htmlUrl;
 
     /** @var GitHubCommit */
     private $sut;
@@ -125,12 +117,7 @@ class GitHubCommitTest extends TestCase
             new VerificationSignature('-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----'),
             new VerificationPayload('tree 691272480426f78a0138979dd3ce63b77f706feb\n...')
         );
-        $this->apiUrl = new CommitApiUrl(
-            'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47'
-        );
-        $this->htmlUrl = new CommitHtmlUrl(
-            'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47'
-        );
+
         $this->sut = new GitHubCommit(
             $this->sha,
             $this->message,
@@ -139,9 +126,7 @@ class GitHubCommitTest extends TestCase
             $this->committer,
             $this->tree,
             $this->parents,
-            $this->verification,
-            $this->apiUrl,
-            $this->htmlUrl
+            $this->verification
         );
     }
 
@@ -183,16 +168,6 @@ class GitHubCommitTest extends TestCase
     public function testGetVerification()
     {
         self::assertSame($this->verification, $this->sut->getVerification());
-    }
-
-    public function testGetApiUrl()
-    {
-        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
-    }
-
-    public function testGetHtmlUrl()
-    {
-        self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
     }
 
     public function testHasVerification()
@@ -245,8 +220,6 @@ class GitHubCommitTest extends TestCase
                 'signature' => '-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----',
                 'payload'   => 'tree 691272480426f78a0138979dd3ce63b77f706feb\n...',
             ],
-            'apiUrl'  => 'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47',
-            'htmlUrl' => 'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47',
         ];
 
         self::assertSame($expected, $this->sut->serialize());

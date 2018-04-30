@@ -7,10 +7,8 @@ namespace DevboardLib\GitHub;
 use DevboardLib\Git\Commit\CommitDate;
 use DevboardLib\Git\Commit\CommitMessage;
 use DevboardLib\Git\Commit\CommitSha;
-use DevboardLib\GitHub\Commit\CommitApiUrl;
 use DevboardLib\GitHub\Commit\CommitAuthor;
 use DevboardLib\GitHub\Commit\CommitCommitter;
-use DevboardLib\GitHub\Commit\CommitHtmlUrl;
 use DevboardLib\GitHub\Commit\CommitParentCollection;
 use DevboardLib\GitHub\Commit\CommitTree;
 use DevboardLib\GitHub\Commit\CommitVerification;
@@ -49,12 +47,6 @@ class GitHubCommit implements Commit
     /** @var CommitVerification|null */
     private $verification;
 
-    /** @var CommitApiUrl */
-    private $apiUrl;
-
-    /** @var CommitHtmlUrl */
-    private $htmlUrl;
-
     public function __construct(
         CommitSha $sha,
         CommitMessage $message,
@@ -63,9 +55,7 @@ class GitHubCommit implements Commit
         CommitCommitter $committer,
         CommitTree $tree,
         CommitParentCollection $parents,
-        ?CommitVerification $verification = null,
-        CommitApiUrl $apiUrl,
-        CommitHtmlUrl $htmlUrl
+        ?CommitVerification $verification = null
     ) {
         $this->sha          = $sha;
         $this->message      = $message;
@@ -75,8 +65,6 @@ class GitHubCommit implements Commit
         $this->tree         = $tree;
         $this->parents      = $parents;
         $this->verification = $verification;
-        $this->apiUrl       = $apiUrl;
-        $this->htmlUrl      = $htmlUrl;
     }
 
     public function getSha(): CommitSha
@@ -119,16 +107,6 @@ class GitHubCommit implements Commit
         return $this->verification;
     }
 
-    public function getApiUrl(): CommitApiUrl
-    {
-        return $this->apiUrl;
-    }
-
-    public function getHtmlUrl(): CommitHtmlUrl
-    {
-        return $this->htmlUrl;
-    }
-
     public function hasVerification(): bool
     {
         if (null === $this->verification) {
@@ -155,8 +133,6 @@ class GitHubCommit implements Commit
             'tree'         => $this->tree->serialize(),
             'parents'      => $this->parents->serialize(),
             'verification' => $verification,
-            'apiUrl'       => $this->apiUrl->serialize(),
-            'htmlUrl'      => $this->htmlUrl->serialize(),
         ];
     }
 
@@ -176,9 +152,7 @@ class GitHubCommit implements Commit
             CommitCommitter::deserialize($data['committer']),
             CommitTree::deserialize($data['tree']),
             CommitParentCollection::deserialize($data['parents']),
-            $verification,
-            CommitApiUrl::deserialize($data['apiUrl']),
-            CommitHtmlUrl::deserialize($data['htmlUrl'])
+            $verification
         );
     }
 }
