@@ -82,7 +82,6 @@ class GitHubBranchSpec extends ObjectBehavior
                         'login'     => 'octocat',
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-
                         'siteAdmin' => true,
                     ],
                 ],
@@ -95,7 +94,6 @@ class GitHubBranchSpec extends ObjectBehavior
                         'login'     => 'octocat',
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-
                         'siteAdmin' => true,
                     ],
                 ],
@@ -132,7 +130,6 @@ class GitHubBranchSpec extends ObjectBehavior
                             'login'     => 'octocat',
                             'type'      => 'Bot',
                             'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-
                             'siteAdmin' => true,
                         ],
                     ],
@@ -145,7 +142,6 @@ class GitHubBranchSpec extends ObjectBehavior
                             'login'     => 'octocat',
                             'type'      => 'Bot',
                             'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-
                             'siteAdmin' => true,
                         ],
                     ],
@@ -191,7 +187,6 @@ class GitHubBranchSpec extends ObjectBehavior
                         'login'     => 'octocat',
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-
                         'siteAdmin' => true,
                     ],
                 ],
@@ -204,7 +199,6 @@ class GitHubBranchSpec extends ObjectBehavior
                         'login'     => 'octocat',
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-
                         'siteAdmin' => true,
                     ],
                 ],

@@ -117,7 +117,6 @@ class GitHubStatusSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ]
         );
@@ -139,7 +138,6 @@ class GitHubStatusSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'createdAt' => '2018-01-01T00:01:00+00:00',
@@ -165,7 +163,6 @@ class GitHubStatusSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ],
             'createdAt' => '2018-01-01T00:01:00+00:00',

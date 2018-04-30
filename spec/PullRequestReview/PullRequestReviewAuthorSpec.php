@@ -88,8 +88,7 @@ class PullRequestReviewAuthorSpec extends ObjectBehavior
                 'type'        => 'User',
                 'association' => 'NONE',
                 'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-
-                'siteAdmin' => false,
+                'siteAdmin'   => false,
             ]
         );
     }

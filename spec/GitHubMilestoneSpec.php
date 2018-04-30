@@ -129,7 +129,6 @@ class GitHubMilestoneSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ]
         );
@@ -149,7 +148,6 @@ class GitHubMilestoneSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'closedAt'  => '2016-08-02T17:35:14+00:00',
@@ -173,7 +171,6 @@ class GitHubMilestoneSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ],
             'closedAt'  => '2016-08-02T17:35:14+00:00',
