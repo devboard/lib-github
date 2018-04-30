@@ -28,7 +28,6 @@ use DevboardLib\GitHub\Milestone\MilestoneNumber;
 use DevboardLib\GitHub\Milestone\MilestoneState;
 use DevboardLib\GitHub\Milestone\MilestoneTitle;
 use DevboardLib\GitHub\Milestone\MilestoneUpdatedAt;
-use DevboardLib\GitHub\PullRequest\PullRequestApiUrl;
 use DevboardLib\GitHub\PullRequest\PullRequestAssignee;
 use DevboardLib\GitHub\PullRequest\PullRequestAssigneeCollection;
 use DevboardLib\GitHub\PullRequest\PullRequestAuthor;
@@ -36,7 +35,6 @@ use DevboardLib\GitHub\PullRequest\PullRequestAuthorAssociation;
 use DevboardLib\GitHub\PullRequest\PullRequestBody;
 use DevboardLib\GitHub\PullRequest\PullRequestClosedAt;
 use DevboardLib\GitHub\PullRequest\PullRequestCreatedAt;
-use DevboardLib\GitHub\PullRequest\PullRequestHtmlUrl;
 use DevboardLib\GitHub\PullRequest\PullRequestId;
 use DevboardLib\GitHub\PullRequest\PullRequestNumber;
 use DevboardLib\GitHub\PullRequest\PullRequestState;
@@ -69,12 +67,6 @@ class GitHubPullRequestTest extends TestCase
 
     /** @var PullRequestAuthor */
     private $author;
-
-    /** @var PullRequestApiUrl */
-    private $apiUrl;
-
-    /** @var PullRequestHtmlUrl */
-    private $htmlUrl;
 
     /** @var PullRequestAssignee|null */
     private $assignee;
@@ -115,8 +107,7 @@ class GitHubPullRequestTest extends TestCase
             new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
             false
         );
-        $this->apiUrl   = new PullRequestApiUrl('apiUrl');
-        $this->htmlUrl  = new PullRequestHtmlUrl('htmlUrl');
+
         $this->assignee = new PullRequestAssignee(
             new AccountId(6752317),
             new AccountLogin('devboard-test'),
@@ -176,8 +167,6 @@ class GitHubPullRequestTest extends TestCase
             $this->body,
             $this->state,
             $this->author,
-            $this->apiUrl,
-            $this->htmlUrl,
             $this->assignee,
             $this->assignees,
             $this->labels,
@@ -216,16 +205,6 @@ class GitHubPullRequestTest extends TestCase
     public function testGetAuthor()
     {
         self::assertSame($this->author, $this->sut->getAuthor());
-    }
-
-    public function testGetApiUrl()
-    {
-        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
-    }
-
-    public function testGetHtmlUrl()
-    {
-        self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
     }
 
     public function testGetAssignee()
@@ -295,8 +274,6 @@ class GitHubPullRequestTest extends TestCase
 
                 'siteAdmin' => false,
             ],
-            'apiUrl'   => 'apiUrl',
-            'htmlUrl'  => 'htmlUrl',
             'assignee' => [
                 'userId'    => 6752317,
                 'login'     => 'devboard-test',

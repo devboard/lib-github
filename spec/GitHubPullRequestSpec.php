@@ -7,14 +7,12 @@ namespace spec\DevboardLib\GitHub;
 use DevboardLib\GitHub\GitHubLabelCollection;
 use DevboardLib\GitHub\GitHubMilestone;
 use DevboardLib\GitHub\GitHubPullRequest;
-use DevboardLib\GitHub\PullRequest\PullRequestApiUrl;
 use DevboardLib\GitHub\PullRequest\PullRequestAssignee;
 use DevboardLib\GitHub\PullRequest\PullRequestAssigneeCollection;
 use DevboardLib\GitHub\PullRequest\PullRequestAuthor;
 use DevboardLib\GitHub\PullRequest\PullRequestBody;
 use DevboardLib\GitHub\PullRequest\PullRequestClosedAt;
 use DevboardLib\GitHub\PullRequest\PullRequestCreatedAt;
-use DevboardLib\GitHub\PullRequest\PullRequestHtmlUrl;
 use DevboardLib\GitHub\PullRequest\PullRequestId;
 use DevboardLib\GitHub\PullRequest\PullRequestNumber;
 use DevboardLib\GitHub\PullRequest\PullRequestState;
@@ -35,8 +33,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
         PullRequestBody $body,
         PullRequestState $state,
         PullRequestAuthor $author,
-        PullRequestApiUrl $apiUrl,
-        PullRequestHtmlUrl $htmlUrl,
         PullRequestAssignee $assignee,
         PullRequestAssigneeCollection $assignees,
         GitHubLabelCollection $labels,
@@ -52,8 +48,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
             $body,
             $state,
             $author,
-            $apiUrl,
-            $htmlUrl,
             $assignee,
             $assignees,
             $labels,
@@ -97,16 +91,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
     public function it_exposes_author(PullRequestAuthor $author)
     {
         $this->getAuthor()->shouldReturn($author);
-    }
-
-    public function it_exposes_api_url(PullRequestApiUrl $apiUrl)
-    {
-        $this->getApiUrl()->shouldReturn($apiUrl);
-    }
-
-    public function it_exposes_html_url(PullRequestHtmlUrl $htmlUrl)
-    {
-        $this->getHtmlUrl()->shouldReturn($htmlUrl);
     }
 
     public function it_exposes_assignee(PullRequestAssignee $assignee)
@@ -166,8 +150,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
         PullRequestBody $body,
         PullRequestState $state,
         PullRequestAuthor $author,
-        PullRequestApiUrl $apiUrl,
-        PullRequestHtmlUrl $htmlUrl,
         PullRequestAssignee $assignee,
         PullRequestAssigneeCollection $assignees,
         GitHubLabelCollection $labels,
@@ -192,8 +174,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                 'siteAdmin' => false,
             ]
         );
-        $apiUrl->serialize()->shouldBeCalled()->willReturn('apiUrl');
-        $htmlUrl->serialize()->shouldBeCalled()->willReturn('htmlUrl');
         $assignee->serialize()->shouldBeCalled()->willReturn(
             [
                 'userId'    => 6752317,
@@ -261,8 +241,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
 
                     'siteAdmin' => false,
                 ],
-                'apiUrl'   => 'apiUrl',
-                'htmlUrl'  => 'htmlUrl',
                 'assignee' => [
                     'userId'    => 6752317,
                     'login'     => 'devboard-test',
@@ -329,8 +307,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
 
                 'siteAdmin' => false,
             ],
-            'apiUrl'   => 'apiUrl',
-            'htmlUrl'  => 'htmlUrl',
             'assignee' => [
                 'userId'    => 6752317,
                 'login'     => 'devboard-test',

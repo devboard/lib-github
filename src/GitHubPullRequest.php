@@ -5,14 +5,12 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub;
 
 use DevboardLib\GitHub\Milestone\MilestoneId;
-use DevboardLib\GitHub\PullRequest\PullRequestApiUrl;
 use DevboardLib\GitHub\PullRequest\PullRequestAssignee;
 use DevboardLib\GitHub\PullRequest\PullRequestAssigneeCollection;
 use DevboardLib\GitHub\PullRequest\PullRequestAuthor;
 use DevboardLib\GitHub\PullRequest\PullRequestBody;
 use DevboardLib\GitHub\PullRequest\PullRequestClosedAt;
 use DevboardLib\GitHub\PullRequest\PullRequestCreatedAt;
-use DevboardLib\GitHub\PullRequest\PullRequestHtmlUrl;
 use DevboardLib\GitHub\PullRequest\PullRequestId;
 use DevboardLib\GitHub\PullRequest\PullRequestNumber;
 use DevboardLib\GitHub\PullRequest\PullRequestState;
@@ -46,12 +44,6 @@ class GitHubPullRequest
     /** @var PullRequestAuthor */
     private $author;
 
-    /** @var PullRequestApiUrl */
-    private $apiUrl;
-
-    /** @var PullRequestHtmlUrl */
-    private $htmlUrl;
-
     /** @var PullRequestAssignee|null */
     private $assignee;
 
@@ -80,8 +72,6 @@ class GitHubPullRequest
         PullRequestBody $body,
         PullRequestState $state,
         PullRequestAuthor $author,
-        PullRequestApiUrl $apiUrl,
-        PullRequestHtmlUrl $htmlUrl,
         ?PullRequestAssignee $assignee,
         PullRequestAssigneeCollection $assignees,
         GitHubLabelCollection $labels,
@@ -96,8 +86,6 @@ class GitHubPullRequest
         $this->body      = $body;
         $this->state     = $state;
         $this->author    = $author;
-        $this->apiUrl    = $apiUrl;
-        $this->htmlUrl   = $htmlUrl;
         $this->assignee  = $assignee;
         $this->assignees = $assignees;
         $this->labels    = $labels;
@@ -135,16 +123,6 @@ class GitHubPullRequest
     public function getAuthor(): PullRequestAuthor
     {
         return $this->author;
-    }
-
-    public function getApiUrl(): PullRequestApiUrl
-    {
-        return $this->apiUrl;
-    }
-
-    public function getHtmlUrl(): PullRequestHtmlUrl
-    {
-        return $this->htmlUrl;
     }
 
     public function getAssignee(): ?PullRequestAssignee
@@ -245,8 +223,6 @@ class GitHubPullRequest
             'body'      => $this->body->serialize(),
             'state'     => $this->state->serialize(),
             'author'    => $this->author->serialize(),
-            'apiUrl'    => $this->apiUrl->serialize(),
-            'htmlUrl'   => $this->htmlUrl->serialize(),
             'assignee'  => $assignee,
             'assignees' => $this->assignees->serialize(),
             'labels'    => $this->labels->serialize(),
@@ -284,8 +260,6 @@ class GitHubPullRequest
             PullRequestBody::deserialize($data['body']),
             PullRequestState::deserialize($data['state']),
             PullRequestAuthor::deserialize($data['author']),
-            PullRequestApiUrl::deserialize($data['apiUrl']),
-            PullRequestHtmlUrl::deserialize($data['htmlUrl']),
             $assignee,
             PullRequestAssigneeCollection::deserialize($data['assignees']),
             GitHubLabelCollection::deserialize($data['labels']),
