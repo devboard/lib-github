@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace spec\DevboardLib\GitHub;
 
 use DevboardLib\GitHub\GitHubMilestone;
-use DevboardLib\GitHub\Milestone\MilestoneApiUrl;
 use DevboardLib\GitHub\Milestone\MilestoneClosedAt;
 use DevboardLib\GitHub\Milestone\MilestoneCreatedAt;
 use DevboardLib\GitHub\Milestone\MilestoneCreator;
 use DevboardLib\GitHub\Milestone\MilestoneDescription;
 use DevboardLib\GitHub\Milestone\MilestoneDueOn;
-use DevboardLib\GitHub\Milestone\MilestoneHtmlUrl;
 use DevboardLib\GitHub\Milestone\MilestoneId;
 use DevboardLib\GitHub\Milestone\MilestoneNumber;
 use DevboardLib\GitHub\Milestone\MilestoneState;
@@ -33,25 +31,12 @@ class GitHubMilestoneSpec extends ObjectBehavior
         MilestoneState $state,
         MilestoneNumber $number,
         MilestoneCreator $creator,
-        MilestoneHtmlUrl $htmlUrl,
-        MilestoneApiUrl $apiUrl,
         MilestoneClosedAt $closedAt,
         MilestoneCreatedAt $createdAt,
         MilestoneUpdatedAt $updatedAt
     ) {
         $this->beConstructedWith(
-            $id,
-            $title,
-            $description,
-            $dueOn,
-            $state,
-            $number,
-            $creator,
-            $htmlUrl,
-            $apiUrl,
-            $closedAt,
-            $createdAt,
-            $updatedAt
+            $id, $title, $description, $dueOn, $state, $number, $creator, $closedAt, $createdAt, $updatedAt
         );
     }
 
@@ -95,16 +80,6 @@ class GitHubMilestoneSpec extends ObjectBehavior
         $this->getCreator()->shouldReturn($creator);
     }
 
-    public function it_exposes_html_url(MilestoneHtmlUrl $htmlUrl)
-    {
-        $this->getHtmlUrl()->shouldReturn($htmlUrl);
-    }
-
-    public function it_exposes_api_url(MilestoneApiUrl $apiUrl)
-    {
-        $this->getApiUrl()->shouldReturn($apiUrl);
-    }
-
     public function it_exposes_closed_at(MilestoneClosedAt $closedAt)
     {
         $this->getClosedAt()->shouldReturn($closedAt);
@@ -138,8 +113,6 @@ class GitHubMilestoneSpec extends ObjectBehavior
         MilestoneState $state,
         MilestoneNumber $number,
         MilestoneCreator $creator,
-        MilestoneHtmlUrl $htmlUrl,
-        MilestoneApiUrl $apiUrl,
         MilestoneClosedAt $closedAt,
         MilestoneCreatedAt $createdAt,
         MilestoneUpdatedAt $updatedAt
@@ -160,8 +133,6 @@ class GitHubMilestoneSpec extends ObjectBehavior
                 'siteAdmin' => false,
             ]
         );
-        $htmlUrl->serialize()->shouldBeCalled()->willReturn('htmlUrl');
-        $apiUrl->serialize()->shouldBeCalled()->willReturn('apiUrl');
         $closedAt->serialize()->shouldBeCalled()->willReturn('2016-08-02T17:35:14+00:00');
         $createdAt->serialize()->shouldBeCalled()->willReturn('2016-08-02T17:35:14+00:00');
         $updatedAt->serialize()->shouldBeCalled()->willReturn('2016-08-02T17:35:14+00:00');
@@ -181,8 +152,6 @@ class GitHubMilestoneSpec extends ObjectBehavior
 
                     'siteAdmin' => false,
                 ],
-                'htmlUrl'   => 'htmlUrl',
-                'apiUrl'    => 'apiUrl',
                 'closedAt'  => '2016-08-02T17:35:14+00:00',
                 'createdAt' => '2016-08-02T17:35:14+00:00',
                 'updatedAt' => '2016-08-02T17:35:14+00:00',
@@ -207,8 +176,6 @@ class GitHubMilestoneSpec extends ObjectBehavior
 
                 'siteAdmin' => false,
             ],
-            'htmlUrl'   => 'htmlUrl',
-            'apiUrl'    => 'apiUrl',
             'closedAt'  => '2016-08-02T17:35:14+00:00',
             'createdAt' => '2016-08-02T17:35:14+00:00',
             'updatedAt' => '2016-08-02T17:35:14+00:00',

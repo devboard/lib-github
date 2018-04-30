@@ -47,18 +47,6 @@ definition:
       hasDefault: false
       default: null
       examples: []
-    htmlUrl:
-      instanceOf: DevboardLib\GitHub\Milestone\MilestoneHtmlUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
-    apiUrl:
-      instanceOf: DevboardLib\GitHub\Milestone\MilestoneApiUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
     closedAt:
       instanceOf: DevboardLib\GitHub\Milestone\MilestoneClosedAt
       nullable: true

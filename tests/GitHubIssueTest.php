@@ -26,13 +26,11 @@ use DevboardLib\GitHub\Issue\IssueUpdatedAt;
 use DevboardLib\GitHub\Label\LabelColor;
 use DevboardLib\GitHub\Label\LabelId;
 use DevboardLib\GitHub\Label\LabelName;
-use DevboardLib\GitHub\Milestone\MilestoneApiUrl;
 use DevboardLib\GitHub\Milestone\MilestoneClosedAt;
 use DevboardLib\GitHub\Milestone\MilestoneCreatedAt;
 use DevboardLib\GitHub\Milestone\MilestoneCreator;
 use DevboardLib\GitHub\Milestone\MilestoneDescription;
 use DevboardLib\GitHub\Milestone\MilestoneDueOn;
-use DevboardLib\GitHub\Milestone\MilestoneHtmlUrl;
 use DevboardLib\GitHub\Milestone\MilestoneId;
 use DevboardLib\GitHub\Milestone\MilestoneNumber;
 use DevboardLib\GitHub\Milestone\MilestoneState;
@@ -140,8 +138,6 @@ class GitHubIssueTest extends TestCase
                 new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
                 false
             ),
-            new MilestoneHtmlUrl('htmlUrl'),
-            new MilestoneApiUrl('apiUrl'),
             new MilestoneClosedAt('2016-08-02T17:35:14+00:00'),
             new MilestoneCreatedAt('2016-08-02T17:35:14+00:00'),
             new MilestoneUpdatedAt('2016-08-02T17:35:14+00:00')
@@ -296,8 +292,6 @@ class GitHubIssueTest extends TestCase
 
                     'siteAdmin' => false,
                 ],
-                'htmlUrl'   => 'htmlUrl',
-                'apiUrl'    => 'apiUrl',
                 'closedAt'  => '2016-08-02T17:35:14+00:00',
                 'createdAt' => '2016-08-02T17:35:14+00:00',
                 'updatedAt' => '2016-08-02T17:35:14+00:00',
