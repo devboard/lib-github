@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\DevboardLib\GitHub;
 
 use DevboardLib\GitHub\GitHubLabel;
-use DevboardLib\GitHub\Label\LabelApiUrl;
 use DevboardLib\GitHub\Label\LabelColor;
 use DevboardLib\GitHub\Label\LabelId;
 use DevboardLib\GitHub\Label\LabelName;
@@ -29,9 +28,6 @@ class GitHubLabelTest extends TestCase
     /** @var bool */
     private $default;
 
-    /** @var LabelApiUrl */
-    private $apiUrl;
-
     /** @var GitHubLabel */
     private $sut;
 
@@ -41,8 +37,7 @@ class GitHubLabelTest extends TestCase
         $this->name    = new LabelName('value');
         $this->color   = new LabelColor('color');
         $this->default = true;
-        $this->apiUrl  = new LabelApiUrl('apiUrl');
-        $this->sut     = new GitHubLabel($this->id, $this->name, $this->color, $this->default, $this->apiUrl);
+        $this->sut     = new GitHubLabel($this->id, $this->name, $this->color, $this->default);
     }
 
     public function testGetId()
@@ -65,14 +60,9 @@ class GitHubLabelTest extends TestCase
         self::assertSame($this->default, $this->sut->isDefault());
     }
 
-    public function testGetApiUrl()
-    {
-        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
-    }
-
     public function testSerialize()
     {
-        $expected = ['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true, 'apiUrl' => 'apiUrl'];
+        $expected = ['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true];
 
         self::assertSame($expected, $this->sut->serialize());
     }

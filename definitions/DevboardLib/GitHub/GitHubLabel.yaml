@@ -29,9 +29,3 @@ definition:
       hasDefault: false
       default: null
       examples: []
-    apiUrl:
-      instanceOf: DevboardLib\GitHub\Label\LabelApiUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
