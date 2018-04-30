@@ -10,9 +10,7 @@ use DevboardLib\Git\Commit\Committer\CommitterName;
 use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\Commit\CommitCommitter;
 use DevboardLib\GitHub\Commit\CommitCommitterDetails;
-use DevboardLib\GitHub\User\UserApiUrl;
 use DevboardLib\GitHub\User\UserAvatarUrl;
-use DevboardLib\GitHub\User\UserHtmlUrl;
 use DevboardLib\GitHub\User\UserId;
 use DevboardLib\GitHub\User\UserLogin;
 use PHPUnit\Framework\TestCase;
@@ -50,8 +48,6 @@ class CommitCommitterTest extends TestCase
             new UserLogin('octocat'),
             new AccountType('Bot'),
             new UserAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4'),
-            new UserHtmlUrl('https://github.com/octocat'),
-            new UserApiUrl('https://api.github.com/users/octocat'),
             true
         );
         $this->sut = new CommitCommitter($this->name, $this->email, $this->commitDate, $this->committerDetails);
@@ -94,8 +90,6 @@ class CommitCommitterTest extends TestCase
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
 
-                'htmlUrl'   => 'https://github.com/octocat',
-                'apiUrl'    => 'https://api.github.com/users/octocat',
                 'siteAdmin' => true,
             ],
         ];

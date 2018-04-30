@@ -118,8 +118,6 @@ class GitHubStatusSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ]
         );
@@ -142,8 +140,6 @@ class GitHubStatusSpec extends ObjectBehavior
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                    'htmlUrl'   => 'https://github.com/baxterthehacker',
-                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                     'siteAdmin' => false,
                 ],
                 'createdAt' => '2018-01-01T00:01:00+00:00',
@@ -170,8 +166,6 @@ class GitHubStatusSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ],
             'createdAt' => '2018-01-01T00:01:00+00:00',

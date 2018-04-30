@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Commit;
 
 use DevboardLib\GitHub\Account\AccountType;
-use DevboardLib\GitHub\User\UserApiUrl;
 use DevboardLib\GitHub\User\UserAvatarUrl;
-use DevboardLib\GitHub\User\UserHtmlUrl;
 use DevboardLib\GitHub\User\UserId;
 use DevboardLib\GitHub\User\UserLogin;
 
@@ -29,31 +27,17 @@ class CommitCommitterDetails
     /** @var UserAvatarUrl */
     private $avatarUrl;
 
-    /** @var UserHtmlUrl */
-    private $htmlUrl;
-
-    /** @var UserApiUrl */
-    private $apiUrl;
-
     /** @var bool */
     private $siteAdmin;
 
     public function __construct(
-        UserId $userId,
-        UserLogin $login,
-        AccountType $type,
-        UserAvatarUrl $avatarUrl,
-        UserHtmlUrl $htmlUrl,
-        UserApiUrl $apiUrl,
-        bool $siteAdmin
+        UserId $userId, UserLogin $login, AccountType $type, UserAvatarUrl $avatarUrl, bool $siteAdmin
     ) {
         $this->userId    = $userId;
         $this->login     = $login;
         $this->type      = $type;
         $this->avatarUrl = $avatarUrl;
 
-        $this->htmlUrl   = $htmlUrl;
-        $this->apiUrl    = $apiUrl;
         $this->siteAdmin = $siteAdmin;
     }
 
@@ -77,16 +61,6 @@ class CommitCommitterDetails
         return $this->avatarUrl;
     }
 
-    public function getHtmlUrl(): UserHtmlUrl
-    {
-        return $this->htmlUrl;
-    }
-
-    public function getApiUrl(): UserApiUrl
-    {
-        return $this->apiUrl;
-    }
-
     public function isSiteAdmin(): bool
     {
         return $this->siteAdmin;
@@ -100,8 +74,6 @@ class CommitCommitterDetails
             'type'      => $this->type->serialize(),
             'avatarUrl' => $this->avatarUrl->serialize(),
 
-            'htmlUrl'   => $this->htmlUrl->serialize(),
-            'apiUrl'    => $this->apiUrl->serialize(),
             'siteAdmin' => $this->siteAdmin,
         ];
     }
@@ -113,8 +85,6 @@ class CommitCommitterDetails
             UserLogin::deserialize($data['login']),
             AccountType::deserialize($data['type']),
             UserAvatarUrl::deserialize($data['avatarUrl']),
-            UserHtmlUrl::deserialize($data['htmlUrl']),
-            UserApiUrl::deserialize($data['apiUrl']),
             $data['siteAdmin']
         );
     }

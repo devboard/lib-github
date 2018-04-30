@@ -34,9 +34,7 @@ use DevboardLib\GitHub\GitHubCommit;
 use DevboardLib\GitHub\GitHubTag;
 use DevboardLib\GitHub\Repo\RepoFullName;
 use DevboardLib\GitHub\Repo\RepoName;
-use DevboardLib\GitHub\User\UserApiUrl;
 use DevboardLib\GitHub\User\UserAvatarUrl;
-use DevboardLib\GitHub\User\UserHtmlUrl;
 use DevboardLib\GitHub\User\UserId;
 use DevboardLib\GitHub\User\UserLogin;
 use PHPUnit\Framework\TestCase;
@@ -78,8 +76,6 @@ class GitHubTagTest extends TestCase
                     new UserLogin('octocat'),
                     new AccountType('Bot'),
                     new UserAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4'),
-                    new UserHtmlUrl('https://github.com/octocat'),
-                    new UserApiUrl('https://api.github.com/users/octocat'),
                     true
                 )
             ),
@@ -92,8 +88,6 @@ class GitHubTagTest extends TestCase
                     new UserLogin('octocat'),
                     new AccountType('Bot'),
                     new UserAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4'),
-                    new UserHtmlUrl('https://github.com/octocat'),
-                    new UserApiUrl('https://api.github.com/users/octocat'),
                     true
                 )
             ),
@@ -162,8 +156,6 @@ class GitHubTagTest extends TestCase
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
 
-                        'htmlUrl'   => 'https://github.com/octocat',
-                        'apiUrl'    => 'https://api.github.com/users/octocat',
                         'siteAdmin' => true,
                     ],
                 ],
@@ -177,8 +169,6 @@ class GitHubTagTest extends TestCase
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
 
-                        'htmlUrl'   => 'https://github.com/octocat',
-                        'apiUrl'    => 'https://api.github.com/users/octocat',
                         'siteAdmin' => true,
                     ],
                 ],

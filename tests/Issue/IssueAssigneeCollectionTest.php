@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\DevboardLib\GitHub\Issue;
 
-use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
-use DevboardLib\GitHub\Account\AccountHtmlUrl;
 use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
@@ -36,8 +34,6 @@ class IssueAssigneeCollectionTest extends TestCase
                 new AccountLogin('devboard-test'),
                 new AccountType('Bot'),
                 new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-                new AccountHtmlUrl('https://github.com/baxterthehacker'),
-                new AccountApiUrl('https://api.github.com/users/baxterthehacker'),
                 false
             ),
         ];

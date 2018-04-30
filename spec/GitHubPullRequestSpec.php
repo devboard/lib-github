@@ -189,8 +189,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                 'association' => 'NONE',
                 'avatarUrl'   => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ]
         );
@@ -203,8 +201,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ]
         );
@@ -216,8 +212,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                    'htmlUrl'   => 'https://github.com/baxterthehacker',
-                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                     'siteAdmin' => false,
                 ],
             ]
@@ -239,8 +233,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                    'htmlUrl'   => 'https://github.com/baxterthehacker',
-                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                     'siteAdmin' => false,
                 ],
                 'htmlUrl'   => 'htmlUrl',
@@ -267,8 +259,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'association' => 'NONE',
                     'avatarUrl'   => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                    'htmlUrl'   => 'https://github.com/baxterthehacker',
-                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                     'siteAdmin' => false,
                 ],
                 'apiUrl'   => 'apiUrl',
@@ -279,8 +269,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                    'htmlUrl'   => 'https://github.com/baxterthehacker',
-                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                     'siteAdmin' => false,
                 ],
                 'assignees' => [
@@ -290,8 +278,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                        'htmlUrl'   => 'https://github.com/baxterthehacker',
-                        'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                         'siteAdmin' => false,
                     ],
                 ],
@@ -311,8 +297,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                        'htmlUrl'   => 'https://github.com/baxterthehacker',
-                        'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                         'siteAdmin' => false,
                     ],
                     'htmlUrl'   => 'htmlUrl',
@@ -343,8 +327,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                 'association' => 'NONE',
                 'avatarUrl'   => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ],
             'apiUrl'   => 'apiUrl',
@@ -355,8 +337,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ],
             'assignees' => [
@@ -366,8 +346,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                    'htmlUrl'   => 'https://github.com/baxterthehacker',
-                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                     'siteAdmin' => false,
                 ],
             ],
@@ -385,8 +363,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                    'htmlUrl'   => 'https://github.com/baxterthehacker',
-                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                     'siteAdmin' => false,
                 ],
                 'htmlUrl'   => 'htmlUrl',

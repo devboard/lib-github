@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace Tests\DevboardLib\GitHub;
 
 use DateTime;
-use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
-use DevboardLib\GitHub\Account\AccountHtmlUrl;
 use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
@@ -73,8 +71,6 @@ class GitHubStatusTest extends TestCase
             new AccountLogin('devboard-test'),
             new AccountType('Bot'),
             new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-            new AccountHtmlUrl('https://github.com/baxterthehacker'),
-            new AccountApiUrl('https://api.github.com/users/baxterthehacker'),
             false
         );
         $this->createdAt = new DateTime('2018-01-01T00:01:00+00:00');
@@ -155,8 +151,6 @@ class GitHubStatusTest extends TestCase
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
-                'htmlUrl'   => 'https://github.com/baxterthehacker',
-                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
                 'siteAdmin' => false,
             ],
             'createdAt' => '2018-01-01T00:01:00+00:00',

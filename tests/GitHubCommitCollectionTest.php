@@ -30,9 +30,7 @@ use DevboardLib\GitHub\Commit\Verification\VerificationSignature;
 use DevboardLib\GitHub\Commit\Verification\VerificationVerified;
 use DevboardLib\GitHub\GitHubCommit;
 use DevboardLib\GitHub\GitHubCommitCollection;
-use DevboardLib\GitHub\User\UserApiUrl;
 use DevboardLib\GitHub\User\UserAvatarUrl;
-use DevboardLib\GitHub\User\UserHtmlUrl;
 use DevboardLib\GitHub\User\UserId;
 use DevboardLib\GitHub\User\UserLogin;
 use PHPUnit\Framework\TestCase;
@@ -67,8 +65,6 @@ class GitHubCommitCollectionTest extends TestCase
                         new UserLogin('octocat'),
                         new AccountType('Bot'),
                         new UserAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4'),
-                        new UserHtmlUrl('https://github.com/octocat'),
-                        new UserApiUrl('https://api.github.com/users/octocat'),
                         true
                     )
                 ),
@@ -81,8 +77,6 @@ class GitHubCommitCollectionTest extends TestCase
                         new UserLogin('octocat'),
                         new AccountType('Bot'),
                         new UserAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4'),
-                        new UserHtmlUrl('https://github.com/octocat'),
-                        new UserApiUrl('https://api.github.com/users/octocat'),
                         true
                     )
                 ),

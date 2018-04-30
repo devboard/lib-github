@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace spec\DevboardLib\GitHub\PullRequest;
 
-use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
-use DevboardLib\GitHub\Account\AccountHtmlUrl;
 use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
@@ -25,13 +23,9 @@ class PullRequestAuthorSpec extends ObjectBehavior
         AccountLogin $login,
         AccountType $type,
         PullRequestAuthorAssociation $association,
-        AccountAvatarUrl $avatarUrl,
-        AccountHtmlUrl $htmlUrl,
-        AccountApiUrl $apiUrl
+        AccountAvatarUrl $avatarUrl
     ) {
-        $this->beConstructedWith(
-            $userId, $login, $type, $association, $avatarUrl, $htmlUrl, $apiUrl, $siteAdmin = false
-        );
+        $this->beConstructedWith($userId, $login, $type, $association, $avatarUrl, $siteAdmin = false);
     }
 
     public function it_is_initializable()
@@ -64,16 +58,6 @@ class PullRequestAuthorSpec extends ObjectBehavior
         $this->getAvatarUrl()->shouldReturn($avatarUrl);
     }
 
-    public function it_exposes_html_url(AccountHtmlUrl $htmlUrl)
-    {
-        $this->getHtmlUrl()->shouldReturn($htmlUrl);
-    }
-
-    public function it_exposes_api_url(AccountApiUrl $apiUrl)
-    {
-        $this->getApiUrl()->shouldReturn($apiUrl);
-    }
-
     public function it_exposes_is_site_admin()
     {
         $this->isSiteAdmin()->shouldReturn(false);
@@ -89,9 +73,7 @@ class PullRequestAuthorSpec extends ObjectBehavior
         AccountLogin $login,
         AccountType $type,
         PullRequestAuthorAssociation $association,
-        AccountAvatarUrl $avatarUrl,
-        AccountHtmlUrl $htmlUrl,
-        AccountApiUrl $apiUrl
+        AccountAvatarUrl $avatarUrl
     ) {
         $userId->serialize()->shouldBeCalled()->willReturn(583231);
         $login->serialize()->shouldBeCalled()->willReturn('octocat');
@@ -99,8 +81,6 @@ class PullRequestAuthorSpec extends ObjectBehavior
         $association->serialize()->shouldBeCalled()->willReturn('NONE');
         $avatarUrl->serialize()->shouldBeCalled()->willReturn('https://avatars3.githubusercontent.com/u/583231?v=4');
 
-        $htmlUrl->serialize()->shouldBeCalled()->willReturn('https://github.com/octocat');
-        $apiUrl->serialize()->shouldBeCalled()->willReturn('https://api.github.com/users/octocat');
         $this->serialize()->shouldReturn(
             [
                 'userId'      => 583231,
@@ -109,8 +89,6 @@ class PullRequestAuthorSpec extends ObjectBehavior
                 'association' => 'NONE',
                 'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
 
-                'htmlUrl'   => 'https://github.com/octocat',
-                'apiUrl'    => 'https://api.github.com/users/octocat',
                 'siteAdmin' => false,
             ]
         );
@@ -125,8 +103,6 @@ class PullRequestAuthorSpec extends ObjectBehavior
             'association' => 'NONE',
             'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
 
-            'htmlUrl'   => 'https://github.com/octocat',
-            'apiUrl'    => 'https://api.github.com/users/octocat',
             'siteAdmin' => false,
         ];
 

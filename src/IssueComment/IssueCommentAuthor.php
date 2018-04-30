@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\IssueComment;
 
-use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
-use DevboardLib\GitHub\Account\AccountHtmlUrl;
 use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
@@ -29,31 +27,17 @@ class IssueCommentAuthor
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var AccountHtmlUrl */
-    private $htmlUrl;
-
-    /** @var AccountApiUrl */
-    private $apiUrl;
-
     /** @var bool */
     private $siteAdmin;
 
     public function __construct(
-        AccountId $userId,
-        AccountLogin $login,
-        AccountType $type,
-        AccountAvatarUrl $avatarUrl,
-        AccountHtmlUrl $htmlUrl,
-        AccountApiUrl $apiUrl,
-        bool $siteAdmin
+        AccountId $userId, AccountLogin $login, AccountType $type, AccountAvatarUrl $avatarUrl, bool $siteAdmin
     ) {
         $this->userId    = $userId;
         $this->login     = $login;
         $this->type      = $type;
         $this->avatarUrl = $avatarUrl;
 
-        $this->htmlUrl   = $htmlUrl;
-        $this->apiUrl    = $apiUrl;
         $this->siteAdmin = $siteAdmin;
     }
 
@@ -77,16 +61,6 @@ class IssueCommentAuthor
         return $this->avatarUrl;
     }
 
-    public function getHtmlUrl(): AccountHtmlUrl
-    {
-        return $this->htmlUrl;
-    }
-
-    public function getApiUrl(): AccountApiUrl
-    {
-        return $this->apiUrl;
-    }
-
     public function isSiteAdmin(): bool
     {
         return $this->siteAdmin;
@@ -100,8 +74,6 @@ class IssueCommentAuthor
             'type'      => $this->type->serialize(),
             'avatarUrl' => $this->avatarUrl->serialize(),
 
-            'htmlUrl'   => $this->htmlUrl->serialize(),
-            'apiUrl'    => $this->apiUrl->serialize(),
             'siteAdmin' => $this->siteAdmin,
         ];
     }
@@ -113,8 +85,6 @@ class IssueCommentAuthor
             AccountLogin::deserialize($data['login']),
             AccountType::deserialize($data['type']),
             AccountAvatarUrl::deserialize($data['avatarUrl']),
-            AccountHtmlUrl::deserialize($data['htmlUrl']),
-            AccountApiUrl::deserialize($data['apiUrl']),
             $data['siteAdmin']
         );
     }

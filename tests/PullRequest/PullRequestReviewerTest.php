@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\DevboardLib\GitHub\PullRequest;
 
-use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
-use DevboardLib\GitHub\Account\AccountHtmlUrl;
 use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
@@ -31,12 +29,6 @@ class PullRequestReviewerTest extends TestCase
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var AccountHtmlUrl */
-    private $htmlUrl;
-
-    /** @var AccountApiUrl */
-    private $apiUrl;
-
     /** @var bool */
     private $siteAdmin;
 
@@ -49,17 +41,10 @@ class PullRequestReviewerTest extends TestCase
         $this->login     = new AccountLogin('octocat');
         $this->type      = new AccountType('User');
         $this->avatarUrl = new AccountAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4');
-        $this->htmlUrl   = new AccountHtmlUrl('https://github.com/octocat');
-        $this->apiUrl    = new AccountApiUrl('https://api.github.com/users/octocat');
+
         $this->siteAdmin = false;
         $this->sut       = new PullRequestReviewer(
-            $this->userId,
-            $this->login,
-            $this->type,
-            $this->avatarUrl,
-            $this->htmlUrl,
-            $this->apiUrl,
-            $this->siteAdmin
+            $this->userId, $this->login, $this->type, $this->avatarUrl, $this->siteAdmin
         );
     }
 
@@ -83,16 +68,6 @@ class PullRequestReviewerTest extends TestCase
         self::assertSame($this->avatarUrl, $this->sut->getAvatarUrl());
     }
 
-    public function testGetHtmlUrl()
-    {
-        self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
-    }
-
-    public function testGetApiUrl()
-    {
-        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
-    }
-
     public function testIsSiteAdmin()
     {
         self::assertSame($this->siteAdmin, $this->sut->isSiteAdmin());
@@ -106,8 +81,6 @@ class PullRequestReviewerTest extends TestCase
             'type'      => 'User',
             'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
 
-            'htmlUrl'   => 'https://github.com/octocat',
-            'apiUrl'    => 'https://api.github.com/users/octocat',
             'siteAdmin' => false,
         ];
 
