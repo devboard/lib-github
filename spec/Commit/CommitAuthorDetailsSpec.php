@@ -62,7 +62,6 @@ class CommitAuthorDetailsSpec extends ObjectBehavior
                 'login'     => 'baxterthehacker',
                 'type'      => 'User',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ]
         );

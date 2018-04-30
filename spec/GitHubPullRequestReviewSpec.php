@@ -99,8 +99,7 @@ class GitHubPullRequestReviewSpec extends ObjectBehavior
                     'type'        => 'User',
                     'association' => 'NONE',
                     'avatarUrl'   => 'avatarUrl',
-
-                    'siteAdmin' => true,
+                    'siteAdmin'   => true,
                 ],
                 'state'       => 'commented',
                 'commitSha'   => 'sha',
@@ -120,8 +119,7 @@ class GitHubPullRequestReviewSpec extends ObjectBehavior
                 'type'        => 'User',
                 'association' => 'NONE',
                 'avatarUrl'   => 'avatarUrl',
-
-                'siteAdmin' => true,
+                'siteAdmin'   => true,
             ],
             'state'       => 'commented',
             'commitSha'   => 'sha',

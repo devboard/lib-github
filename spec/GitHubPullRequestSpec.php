@@ -170,8 +170,7 @@ class GitHubPullRequestSpec extends ObjectBehavior
                 'type'        => 'Bot',
                 'association' => 'NONE',
                 'avatarUrl'   => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
-                'siteAdmin' => false,
+                'siteAdmin'   => false,
             ]
         );
         $assignee->serialize()->shouldBeCalled()->willReturn(
@@ -180,7 +179,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ]
         );
@@ -191,7 +189,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
             ]
@@ -212,7 +209,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'htmlUrl'   => 'htmlUrl',
@@ -238,15 +234,13 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'type'        => 'Bot',
                     'association' => 'NONE',
                     'avatarUrl'   => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
-                    'siteAdmin' => false,
+                    'siteAdmin'   => false,
                 ],
                 'assignee' => [
                     'userId'    => 6752317,
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'assignees' => [
@@ -255,7 +249,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                         'login'     => 'devboard-test',
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                         'siteAdmin' => false,
                     ],
                 ],
@@ -274,7 +267,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                         'login'     => 'devboard-test',
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                         'siteAdmin' => false,
                     ],
                     'htmlUrl'   => 'htmlUrl',
@@ -304,15 +296,13 @@ class GitHubPullRequestSpec extends ObjectBehavior
                 'type'        => 'Bot',
                 'association' => 'NONE',
                 'avatarUrl'   => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
-                'siteAdmin' => false,
+                'siteAdmin'   => false,
             ],
             'assignee' => [
                 'userId'    => 6752317,
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ],
             'assignees' => [
@@ -321,7 +311,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
             ],
@@ -338,7 +327,6 @@ class GitHubPullRequestSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'htmlUrl'   => 'htmlUrl',

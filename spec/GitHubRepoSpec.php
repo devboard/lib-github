@@ -190,7 +190,6 @@ class GitHubRepoSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ]
         );
@@ -238,7 +237,6 @@ class GitHubRepoSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'private'       => true,
@@ -283,7 +281,6 @@ class GitHubRepoSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ],
             'private'       => true,

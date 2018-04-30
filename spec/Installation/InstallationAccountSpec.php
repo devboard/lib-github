@@ -62,7 +62,6 @@ class InstallationAccountSpec extends ObjectBehavior
                 'login'     => 'octocat',
                 'type'      => 'User',
                 'avatarUrl' => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-
                 'siteAdmin' => false,
             ]
         );

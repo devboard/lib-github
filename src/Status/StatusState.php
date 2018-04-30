@@ -69,6 +69,6 @@ abstract class StatusState
 
     public static function deserialize(string $value): self
     {
-        return  self::create($value);
+        return self::create($value);
     }
 }

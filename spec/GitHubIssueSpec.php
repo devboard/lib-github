@@ -169,7 +169,6 @@ class GitHubIssueSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ]
         );
@@ -179,7 +178,6 @@ class GitHubIssueSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ]
         );
@@ -190,7 +188,6 @@ class GitHubIssueSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
             ]
@@ -211,7 +208,6 @@ class GitHubIssueSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'htmlUrl'   => 'htmlUrl',
@@ -236,7 +232,6 @@ class GitHubIssueSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'assignee' => [
@@ -244,7 +239,6 @@ class GitHubIssueSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'assignees' => [
@@ -253,7 +247,6 @@ class GitHubIssueSpec extends ObjectBehavior
                         'login'     => 'devboard-test',
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                         'siteAdmin' => false,
                     ],
                 ],
@@ -272,7 +265,6 @@ class GitHubIssueSpec extends ObjectBehavior
                         'login'     => 'devboard-test',
                         'type'      => 'Bot',
                         'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                         'siteAdmin' => false,
                     ],
                     'htmlUrl'   => 'htmlUrl',
@@ -301,7 +293,6 @@ class GitHubIssueSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ],
             'assignee' => [
@@ -309,7 +300,6 @@ class GitHubIssueSpec extends ObjectBehavior
                 'login'     => 'devboard-test',
                 'type'      => 'Bot',
                 'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                 'siteAdmin' => false,
             ],
             'assignees' => [
@@ -318,7 +308,6 @@ class GitHubIssueSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
             ],
@@ -335,7 +324,6 @@ class GitHubIssueSpec extends ObjectBehavior
                     'login'     => 'devboard-test',
                     'type'      => 'Bot',
                     'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
                     'siteAdmin' => false,
                 ],
                 'htmlUrl'   => 'htmlUrl',
