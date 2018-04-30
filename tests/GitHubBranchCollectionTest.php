@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\DevboardLib\GitHub;
 
 use DevboardLib\Generix\EmailAddress;
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\Git\Branch\BranchName;
 use DevboardLib\Git\Commit\Author\AuthorName;
 use DevboardLib\Git\Commit\CommitDate;
@@ -77,7 +76,6 @@ class GitHubBranchCollectionTest extends TestCase
                             new UserLogin('octocat'),
                             new AccountType('Bot'),
                             new UserAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4'),
-                            new GravatarId('205e460b479e2e5b48aec07710c08d50'),
                             new UserHtmlUrl('https://github.com/octocat'),
                             new UserApiUrl('https://api.github.com/users/octocat'),
                             true
@@ -92,7 +90,6 @@ class GitHubBranchCollectionTest extends TestCase
                             new UserLogin('octocat'),
                             new AccountType('Bot'),
                             new UserAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4'),
-                            new GravatarId('205e460b479e2e5b48aec07710c08d50'),
                             new UserHtmlUrl('https://github.com/octocat'),
                             new UserApiUrl('https://api.github.com/users/octocat'),
                             true

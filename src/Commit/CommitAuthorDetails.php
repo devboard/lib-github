@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Commit;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\User\UserApiUrl;
 use DevboardLib\GitHub\User\UserAvatarUrl;
@@ -30,9 +29,6 @@ class CommitAuthorDetails
     /** @var UserAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId|null */
-    private $gravatarId;
-
     /** @var UserHtmlUrl */
     private $htmlUrl;
 
@@ -47,19 +43,18 @@ class CommitAuthorDetails
         UserLogin $login,
         AccountType $type,
         UserAvatarUrl $avatarUrl,
-        ?GravatarId $gravatarId,
         UserHtmlUrl $htmlUrl,
         UserApiUrl $apiUrl,
         bool $siteAdmin
     ) {
-        $this->userId     = $userId;
-        $this->login      = $login;
-        $this->type       = $type;
-        $this->avatarUrl  = $avatarUrl;
-        $this->gravatarId = $gravatarId;
-        $this->htmlUrl    = $htmlUrl;
-        $this->apiUrl     = $apiUrl;
-        $this->siteAdmin  = $siteAdmin;
+        $this->userId    = $userId;
+        $this->login     = $login;
+        $this->type      = $type;
+        $this->avatarUrl = $avatarUrl;
+
+        $this->htmlUrl   = $htmlUrl;
+        $this->apiUrl    = $apiUrl;
+        $this->siteAdmin = $siteAdmin;
     }
 
     public function getUserId(): UserId
@@ -82,11 +77,6 @@ class CommitAuthorDetails
         return $this->avatarUrl;
     }
 
-    public function getGravatarId(): ?GravatarId
-    {
-        return $this->gravatarId;
-    }
-
     public function getHtmlUrl(): UserHtmlUrl
     {
         return $this->htmlUrl;
@@ -102,49 +92,27 @@ class CommitAuthorDetails
         return $this->siteAdmin;
     }
 
-    public function hasGravatarId(): bool
-    {
-        if (null === $this->gravatarId) {
-            return false;
-        }
-
-        return true;
-    }
-
     public function serialize(): array
     {
-        if (null === $this->gravatarId) {
-            $gravatarId = null;
-        } else {
-            $gravatarId = $this->gravatarId->serialize();
-        }
-
         return [
-            'userId'     => $this->userId->serialize(),
-            'login'      => $this->login->serialize(),
-            'type'       => $this->type->serialize(),
-            'avatarUrl'  => $this->avatarUrl->serialize(),
-            'gravatarId' => $gravatarId,
-            'htmlUrl'    => $this->htmlUrl->serialize(),
-            'apiUrl'     => $this->apiUrl->serialize(),
-            'siteAdmin'  => $this->siteAdmin,
+            'userId'    => $this->userId->serialize(),
+            'login'     => $this->login->serialize(),
+            'type'      => $this->type->serialize(),
+            'avatarUrl' => $this->avatarUrl->serialize(),
+
+            'htmlUrl'   => $this->htmlUrl->serialize(),
+            'apiUrl'    => $this->apiUrl->serialize(),
+            'siteAdmin' => $this->siteAdmin,
         ];
     }
 
     public static function deserialize(array $data): self
     {
-        if (null === $data['gravatarId']) {
-            $gravatarId = null;
-        } else {
-            $gravatarId = GravatarId::deserialize($data['gravatarId']);
-        }
-
         return new self(
             UserId::deserialize($data['userId']),
             UserLogin::deserialize($data['login']),
             AccountType::deserialize($data['type']),
             UserAvatarUrl::deserialize($data['avatarUrl']),
-            $gravatarId,
             UserHtmlUrl::deserialize($data['htmlUrl']),
             UserApiUrl::deserialize($data['apiUrl']),
             $data['siteAdmin']

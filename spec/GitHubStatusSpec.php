@@ -113,14 +113,14 @@ class GitHubStatusSpec extends ObjectBehavior
         );
         $creator->serialize()->shouldBeCalled()->willReturn(
             [
-                'userId'     => 6752317,
-                'login'      => 'devboard-test',
-                'type'       => 'Bot',
-                'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/baxterthehacker',
-                'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                'siteAdmin'  => false,
+                'userId'    => 6752317,
+                'login'     => 'devboard-test',
+                'type'      => 'Bot',
+                'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                'htmlUrl'   => 'https://github.com/baxterthehacker',
+                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                'siteAdmin' => false,
             ]
         );
         $createdAt->format('c')->shouldBeCalled()->willReturn('2018-01-01T00:01:00+00:00');
@@ -137,14 +137,14 @@ class GitHubStatusSpec extends ObjectBehavior
                     'className' => 'DevboardLib\GitHub\External\Service\ContinuousIntegration\CircleCi',
                 ],
                 'creator' => [
-                    'userId'     => 6752317,
-                    'login'      => 'devboard-test',
-                    'type'       => 'Bot',
-                    'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                    'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                    'htmlUrl'    => 'https://github.com/baxterthehacker',
-                    'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                    'siteAdmin'  => false,
+                    'userId'    => 6752317,
+                    'login'     => 'devboard-test',
+                    'type'      => 'Bot',
+                    'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                    'htmlUrl'   => 'https://github.com/baxterthehacker',
+                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                    'siteAdmin' => false,
                 ],
                 'createdAt' => '2018-01-01T00:01:00+00:00',
                 'updatedAt' => '2018-01-01T00:01:00+00:00',
@@ -165,14 +165,14 @@ class GitHubStatusSpec extends ObjectBehavior
                 'className' => 'DevboardLib\GitHub\External\Service\ContinuousIntegration\CircleCi',
             ],
             'creator' => [
-                'userId'     => 6752317,
-                'login'      => 'devboard-test',
-                'type'       => 'Bot',
-                'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/baxterthehacker',
-                'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                'siteAdmin'  => false,
+                'userId'    => 6752317,
+                'login'     => 'devboard-test',
+                'type'      => 'Bot',
+                'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                'htmlUrl'   => 'https://github.com/baxterthehacker',
+                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                'siteAdmin' => false,
             ],
             'createdAt' => '2018-01-01T00:01:00+00:00',
             'updatedAt' => '2018-01-01T00:01:00+00:00',

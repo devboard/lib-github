@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\DevboardLib\GitHub\PullRequest;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
 use DevboardLib\GitHub\Account\AccountHtmlUrl;
@@ -38,9 +37,6 @@ class PullRequestAuthorTest extends TestCase
     /** @var AccountAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId|null */
-    private $gravatarId;
-
     /** @var AccountHtmlUrl */
     private $htmlUrl;
 
@@ -60,7 +56,6 @@ class PullRequestAuthorTest extends TestCase
         $this->type        = new AccountType('User');
         $this->association = new PullRequestAuthorAssociation('NONE');
         $this->avatarUrl   = new AccountAvatarUrl('https://avatars3.githubusercontent.com/u/583231?v=4');
-        $this->gravatarId  = new GravatarId('45g23r2a');
         $this->htmlUrl     = new AccountHtmlUrl('https://github.com/octocat');
         $this->apiUrl      = new AccountApiUrl('https://api.github.com/users/octocat');
         $this->siteAdmin   = false;
@@ -70,7 +65,6 @@ class PullRequestAuthorTest extends TestCase
             $this->type,
             $this->association,
             $this->avatarUrl,
-            $this->gravatarId,
             $this->htmlUrl,
             $this->apiUrl,
             $this->siteAdmin
@@ -102,11 +96,6 @@ class PullRequestAuthorTest extends TestCase
         self::assertSame($this->avatarUrl, $this->sut->getAvatarUrl());
     }
 
-    public function testGetGravatarId()
-    {
-        self::assertSame($this->gravatarId, $this->sut->getGravatarId());
-    }
-
     public function testGetHtmlUrl()
     {
         self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
@@ -127,11 +116,6 @@ class PullRequestAuthorTest extends TestCase
         self::assertTrue($this->sut->hasAssociation());
     }
 
-    public function testHasGravatarId()
-    {
-        self::assertTrue($this->sut->hasGravatarId());
-    }
-
     public function testSerialize()
     {
         $expected = [
@@ -140,10 +124,10 @@ class PullRequestAuthorTest extends TestCase
             'type'        => 'User',
             'association' => 'NONE',
             'avatarUrl'   => 'https://avatars3.githubusercontent.com/u/583231?v=4',
-            'gravatarId'  => '45g23r2a',
-            'htmlUrl'     => 'https://github.com/octocat',
-            'apiUrl'      => 'https://api.github.com/users/octocat',
-            'siteAdmin'   => false,
+
+            'htmlUrl'   => 'https://github.com/octocat',
+            'apiUrl'    => 'https://api.github.com/users/octocat',
+            'siteAdmin' => false,
         ];
 
         self::assertSame($expected, $this->sut->serialize());

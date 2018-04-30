@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\DevboardLib\GitHub\Commit;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\Commit\CommitCommitterDetails;
 use DevboardLib\GitHub\User\UserApiUrl;
@@ -32,9 +31,6 @@ class CommitCommitterDetailsTest extends TestCase
     /** @var UserAvatarUrl */
     private $avatarUrl;
 
-    /** @var GravatarId|null */
-    private $gravatarId;
-
     /** @var UserHtmlUrl */
     private $htmlUrl;
 
@@ -49,20 +45,18 @@ class CommitCommitterDetailsTest extends TestCase
 
     public function setUp()
     {
-        $this->userId     = new UserId(6752317);
-        $this->login      = new UserLogin('baxterthehacker');
-        $this->type       = new AccountType('User');
-        $this->avatarUrl  = new UserAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3');
-        $this->gravatarId = new GravatarId('205e460b479e2e5b48aec07710c08d50');
-        $this->htmlUrl    = new UserHtmlUrl('https://github.com/baxterthehacker');
-        $this->apiUrl     = new UserApiUrl('https://api.github.com/users/baxterthehacker');
-        $this->siteAdmin  = false;
-        $this->sut        = new CommitCommitterDetails(
+        $this->userId    = new UserId(6752317);
+        $this->login     = new UserLogin('baxterthehacker');
+        $this->type      = new AccountType('User');
+        $this->avatarUrl = new UserAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3');
+        $this->htmlUrl   = new UserHtmlUrl('https://github.com/baxterthehacker');
+        $this->apiUrl    = new UserApiUrl('https://api.github.com/users/baxterthehacker');
+        $this->siteAdmin = false;
+        $this->sut       = new CommitCommitterDetails(
             $this->userId,
             $this->login,
             $this->type,
             $this->avatarUrl,
-            $this->gravatarId,
             $this->htmlUrl,
             $this->apiUrl,
             $this->siteAdmin
@@ -89,11 +83,6 @@ class CommitCommitterDetailsTest extends TestCase
         self::assertSame($this->avatarUrl, $this->sut->getAvatarUrl());
     }
 
-    public function testGetGravatarId()
-    {
-        self::assertSame($this->gravatarId, $this->sut->getGravatarId());
-    }
-
     public function testGetHtmlUrl()
     {
         self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
@@ -109,22 +98,17 @@ class CommitCommitterDetailsTest extends TestCase
         self::assertSame($this->siteAdmin, $this->sut->isSiteAdmin());
     }
 
-    public function testHasGravatarId()
-    {
-        self::assertTrue($this->sut->hasGravatarId());
-    }
-
     public function testSerialize()
     {
         $expected = [
-            'userId'     => 6752317,
-            'login'      => 'baxterthehacker',
-            'type'       => 'User',
-            'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-            'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-            'htmlUrl'    => 'https://github.com/baxterthehacker',
-            'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-            'siteAdmin'  => false,
+            'userId'    => 6752317,
+            'login'     => 'baxterthehacker',
+            'type'      => 'User',
+            'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+            'htmlUrl'   => 'https://github.com/baxterthehacker',
+            'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+            'siteAdmin' => false,
         ];
 
         self::assertSame($expected, $this->sut->serialize());

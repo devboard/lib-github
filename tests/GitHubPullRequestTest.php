@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\DevboardLib\GitHub;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
 use DevboardLib\GitHub\Account\AccountHtmlUrl;
@@ -116,7 +115,6 @@ class GitHubPullRequestTest extends TestCase
             new AccountType('Bot'),
             PullRequestAuthorAssociation::NONE(),
             new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-            new GravatarId('205e460b479e2e5b48aec07710c08d50'),
             new AccountHtmlUrl('https://github.com/baxterthehacker'),
             new AccountApiUrl('https://api.github.com/users/baxterthehacker'),
             false
@@ -128,7 +126,6 @@ class GitHubPullRequestTest extends TestCase
             new AccountLogin('devboard-test'),
             new AccountType('Bot'),
             new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-            new GravatarId('205e460b479e2e5b48aec07710c08d50'),
             new AccountHtmlUrl('https://github.com/baxterthehacker'),
             new AccountApiUrl('https://api.github.com/users/baxterthehacker'),
             false
@@ -140,7 +137,6 @@ class GitHubPullRequestTest extends TestCase
                     new AccountLogin('devboard-test'),
                     new AccountType('Bot'),
                     new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-                    new GravatarId('205e460b479e2e5b48aec07710c08d50'),
                     new AccountHtmlUrl('https://github.com/baxterthehacker'),
                     new AccountApiUrl('https://api.github.com/users/baxterthehacker'),
                     false
@@ -170,7 +166,6 @@ class GitHubPullRequestTest extends TestCase
                 new AccountLogin('devboard-test'),
                 new AccountType('Bot'),
                 new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-                new GravatarId('205e460b479e2e5b48aec07710c08d50'),
                 new AccountHtmlUrl('https://github.com/baxterthehacker'),
                 new AccountApiUrl('https://api.github.com/users/baxterthehacker'),
                 false
@@ -307,33 +302,33 @@ class GitHubPullRequestTest extends TestCase
                 'type'        => 'Bot',
                 'association' => 'NONE',
                 'avatarUrl'   => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                'gravatarId'  => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'     => 'https://github.com/baxterthehacker',
-                'apiUrl'      => 'https://api.github.com/users/baxterthehacker',
-                'siteAdmin'   => false,
+
+                'htmlUrl'   => 'https://github.com/baxterthehacker',
+                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                'siteAdmin' => false,
             ],
             'apiUrl'   => 'apiUrl',
             'htmlUrl'  => 'htmlUrl',
             'assignee' => [
-                'userId'     => 6752317,
-                'login'      => 'devboard-test',
-                'type'       => 'Bot',
-                'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/baxterthehacker',
-                'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                'siteAdmin'  => false,
+                'userId'    => 6752317,
+                'login'     => 'devboard-test',
+                'type'      => 'Bot',
+                'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                'htmlUrl'   => 'https://github.com/baxterthehacker',
+                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                'siteAdmin' => false,
             ],
             'assignees' => [
                 [
-                    'userId'     => 6752317,
-                    'login'      => 'devboard-test',
-                    'type'       => 'Bot',
-                    'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                    'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                    'htmlUrl'    => 'https://github.com/baxterthehacker',
-                    'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                    'siteAdmin'  => false,
+                    'userId'    => 6752317,
+                    'login'     => 'devboard-test',
+                    'type'      => 'Bot',
+                    'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                    'htmlUrl'   => 'https://github.com/baxterthehacker',
+                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                    'siteAdmin' => false,
                 ],
             ],
             'labels'    => [['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true, 'apiUrl' => 'apiUrl']],
@@ -345,14 +340,14 @@ class GitHubPullRequestTest extends TestCase
                 'state'       => 'closed',
                 'number'      => 1,
                 'creator'     => [
-                    'userId'     => 6752317,
-                    'login'      => 'devboard-test',
-                    'type'       => 'Bot',
-                    'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                    'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                    'htmlUrl'    => 'https://github.com/baxterthehacker',
-                    'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                    'siteAdmin'  => false,
+                    'userId'    => 6752317,
+                    'login'     => 'devboard-test',
+                    'type'      => 'Bot',
+                    'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                    'htmlUrl'   => 'https://github.com/baxterthehacker',
+                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                    'siteAdmin' => false,
                 ],
                 'htmlUrl'   => 'htmlUrl',
                 'apiUrl'    => 'apiUrl',

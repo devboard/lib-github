@@ -152,14 +152,14 @@ class GitHubMilestoneSpec extends ObjectBehavior
         $number->serialize()->shouldBeCalled()->willReturn(1);
         $creator->serialize()->shouldBeCalled()->willReturn(
             [
-                'userId'     => 6752317,
-                'login'      => 'devboard-test',
-                'type'       => 'Bot',
-                'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/baxterthehacker',
-                'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                'siteAdmin'  => false,
+                'userId'    => 6752317,
+                'login'     => 'devboard-test',
+                'type'      => 'Bot',
+                'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                'htmlUrl'   => 'https://github.com/baxterthehacker',
+                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                'siteAdmin' => false,
             ]
         );
         $htmlUrl->serialize()->shouldBeCalled()->willReturn('htmlUrl');
@@ -176,14 +176,14 @@ class GitHubMilestoneSpec extends ObjectBehavior
                 'state'       => 'closed',
                 'number'      => 1,
                 'creator'     => [
-                    'userId'     => 6752317,
-                    'login'      => 'devboard-test',
-                    'type'       => 'Bot',
-                    'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                    'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                    'htmlUrl'    => 'https://github.com/baxterthehacker',
-                    'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                    'siteAdmin'  => false,
+                    'userId'    => 6752317,
+                    'login'     => 'devboard-test',
+                    'type'      => 'Bot',
+                    'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                    'htmlUrl'   => 'https://github.com/baxterthehacker',
+                    'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                    'siteAdmin' => false,
                 ],
                 'htmlUrl'   => 'htmlUrl',
                 'apiUrl'    => 'apiUrl',
@@ -204,14 +204,14 @@ class GitHubMilestoneSpec extends ObjectBehavior
             'state'       => 'closed',
             'number'      => 1,
             'creator'     => [
-                'userId'     => 6752317,
-                'login'      => 'devboard-test',
-                'type'       => 'Bot',
-                'avatarUrl'  => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-                'gravatarId' => '205e460b479e2e5b48aec07710c08d50',
-                'htmlUrl'    => 'https://github.com/baxterthehacker',
-                'apiUrl'     => 'https://api.github.com/users/baxterthehacker',
-                'siteAdmin'  => false,
+                'userId'    => 6752317,
+                'login'     => 'devboard-test',
+                'type'      => 'Bot',
+                'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
+
+                'htmlUrl'   => 'https://github.com/baxterthehacker',
+                'apiUrl'    => 'https://api.github.com/users/baxterthehacker',
+                'siteAdmin' => false,
             ],
             'htmlUrl'   => 'htmlUrl',
             'apiUrl'    => 'apiUrl',

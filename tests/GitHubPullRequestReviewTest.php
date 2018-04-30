@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\DevboardLib\GitHub;
 
-use DevboardLib\Generix\GravatarId;
 use DevboardLib\Git\Commit\CommitSha;
 use DevboardLib\GitHub\Account\AccountApiUrl;
 use DevboardLib\GitHub\Account\AccountAvatarUrl;
@@ -60,7 +59,6 @@ class GitHubPullRequestReviewTest extends TestCase
             AccountType::USER(),
             PullRequestReviewAuthorAssociation::NONE(),
             new AccountAvatarUrl('avatarUrl'),
-            new GravatarId('id'),
             new AccountHtmlUrl('htmlUrl'),
             new AccountApiUrl('apiUrl'),
             true
@@ -119,10 +117,10 @@ class GitHubPullRequestReviewTest extends TestCase
                 'type'        => 'User',
                 'association' => 'NONE',
                 'avatarUrl'   => 'avatarUrl',
-                'gravatarId'  => 'id',
-                'htmlUrl'     => 'htmlUrl',
-                'apiUrl'      => 'apiUrl',
-                'siteAdmin'   => true,
+
+                'htmlUrl'   => 'htmlUrl',
+                'apiUrl'    => 'apiUrl',
+                'siteAdmin' => true,
             ],
             'state'       => 'commented',
             'commitSha'   => 'sha',
