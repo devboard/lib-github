@@ -7,10 +7,8 @@ namespace spec\DevboardLib\GitHub;
 use DevboardLib\Git\Commit\CommitDate;
 use DevboardLib\Git\Commit\CommitMessage;
 use DevboardLib\Git\Commit\CommitSha;
-use DevboardLib\GitHub\Commit\CommitApiUrl;
 use DevboardLib\GitHub\Commit\CommitAuthor;
 use DevboardLib\GitHub\Commit\CommitCommitter;
-use DevboardLib\GitHub\Commit\CommitHtmlUrl;
 use DevboardLib\GitHub\Commit\CommitParentCollection;
 use DevboardLib\GitHub\Commit\CommitTree;
 use DevboardLib\GitHub\Commit\CommitVerification;
@@ -32,13 +30,9 @@ class GitHubCommitSpec extends ObjectBehavior
         CommitCommitter $committer,
         CommitTree $tree,
         CommitParentCollection $parents,
-        CommitVerification $verification,
-        CommitApiUrl $apiUrl,
-        CommitHtmlUrl $htmlUrl
+        CommitVerification $verification
     ) {
-        $this->beConstructedWith(
-            $sha, $message, $commitDate, $author, $committer, $tree, $parents, $verification, $apiUrl, $htmlUrl
-        );
+        $this->beConstructedWith($sha, $message, $commitDate, $author, $committer, $tree, $parents, $verification);
     }
 
     public function it_is_initializable()
@@ -87,16 +81,6 @@ class GitHubCommitSpec extends ObjectBehavior
         $this->getVerification()->shouldReturn($verification);
     }
 
-    public function it_exposes_api_url(CommitApiUrl $apiUrl)
-    {
-        $this->getApiUrl()->shouldReturn($apiUrl);
-    }
-
-    public function it_exposes_html_url(CommitHtmlUrl $htmlUrl)
-    {
-        $this->getHtmlUrl()->shouldReturn($htmlUrl);
-    }
-
     public function it_has_verification()
     {
         $this->hasVerification()->shouldReturn(true);
@@ -110,9 +94,7 @@ class GitHubCommitSpec extends ObjectBehavior
         CommitCommitter $committer,
         CommitTree $tree,
         CommitParentCollection $parents,
-        CommitVerification $verification,
-        CommitApiUrl $apiUrl,
-        CommitHtmlUrl $htmlUrl
+        CommitVerification $verification
     ) {
         $sha->serialize()->shouldBeCalled()->willReturn('e54c3c97b4024b4a9b270b62921c6b830d780bd3');
         $message->serialize()->shouldBeCalled()->willReturn('A commit message');
@@ -164,12 +146,7 @@ class GitHubCommitSpec extends ObjectBehavior
                 'payload'   => 'tree 691272480426f78a0138979dd3ce63b77f706feb\n...',
             ]
         );
-        $apiUrl->serialize()->shouldBeCalled()->willReturn(
-            'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47'
-        );
-        $htmlUrl->serialize()->shouldBeCalled()->willReturn(
-            'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47'
-        );
+
         $this->serialize()->shouldReturn(
             [
                 'sha'        => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3',
@@ -214,8 +191,6 @@ class GitHubCommitSpec extends ObjectBehavior
                     'signature' => '-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----',
                     'payload'   => 'tree 691272480426f78a0138979dd3ce63b77f706feb\n...',
                 ],
-                'apiUrl'  => 'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47',
-                'htmlUrl' => 'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47',
             ]
         );
     }
@@ -265,8 +240,6 @@ class GitHubCommitSpec extends ObjectBehavior
                 'signature' => '-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----',
                 'payload'   => 'tree 691272480426f78a0138979dd3ce63b77f706feb\n...',
             ],
-            'apiUrl'  => 'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47',
-            'htmlUrl' => 'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47',
         ];
 
         $this->deserialize($input)->shouldReturnAnInstanceOf(GitHubCommit::class);

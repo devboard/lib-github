@@ -54,15 +54,4 @@ definition:
       hasDefault: true
       default: null
       examples: []
-    apiUrl:
-      instanceOf: DevboardLib\GitHub\Commit\CommitApiUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
-    htmlUrl:
-      instanceOf: DevboardLib\GitHub\Commit\CommitHtmlUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
+g

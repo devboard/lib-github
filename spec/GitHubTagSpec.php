@@ -89,8 +89,6 @@ class GitHubTagSpec extends ObjectBehavior
                     'signature' => '-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----',
                     'payload'   => 'tree 691272480426f78a0138979dd3ce63b77f706feb\n...',
                 ],
-                'apiUrl'  => 'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47',
-                'htmlUrl' => 'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47',
             ]
         );
         $this->serialize()->shouldReturn(
@@ -144,8 +142,6 @@ class GitHubTagSpec extends ObjectBehavior
                         'signature' => '-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----',
                         'payload'   => 'tree 691272480426f78a0138979dd3ce63b77f706feb\n...',
                     ],
-                    'apiUrl'  => 'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47',
-                    'htmlUrl' => 'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47',
                 ],
             ]
         );
@@ -199,8 +195,6 @@ class GitHubTagSpec extends ObjectBehavior
                     'signature' => '-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----',
                     'payload'   => 'tree 691272480426f78a0138979dd3ce63b77f706feb\n...',
                 ],
-                'apiUrl'  => 'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47',
-                'htmlUrl' => 'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47',
             ],
         ];
 

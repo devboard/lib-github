@@ -14,12 +14,10 @@ use DevboardLib\Git\Commit\Committer\CommitterName;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
 use DevboardLib\GitHub\Branch\BranchProtectionUrl;
-use DevboardLib\GitHub\Commit\CommitApiUrl;
 use DevboardLib\GitHub\Commit\CommitAuthor;
 use DevboardLib\GitHub\Commit\CommitAuthorDetails;
 use DevboardLib\GitHub\Commit\CommitCommitter;
 use DevboardLib\GitHub\Commit\CommitCommitterDetails;
-use DevboardLib\GitHub\Commit\CommitHtmlUrl;
 use DevboardLib\GitHub\Commit\CommitParent;
 use DevboardLib\GitHub\Commit\CommitParent\ParentApiUrl;
 use DevboardLib\GitHub\Commit\CommitParent\ParentHtmlUrl;
@@ -118,12 +116,6 @@ class GitHubBranchTest extends TestCase
                 new VerificationReason('valid'),
                 new VerificationSignature('-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----'),
                 new VerificationPayload('tree 691272480426f78a0138979dd3ce63b77f706feb\n...')
-            ),
-            new CommitApiUrl(
-                'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47'
-            ),
-            new CommitHtmlUrl(
-                'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47'
             )
         );
         $this->protected     = false;
@@ -216,8 +208,6 @@ class GitHubBranchTest extends TestCase
                     'signature' => '-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----',
                     'payload'   => 'tree 691272480426f78a0138979dd3ce63b77f706feb\n...',
                 ],
-                'apiUrl'  => 'https://api.github.com/repos/symfony/symfony-docs/git/commits/88065b04761ff810009f3379b46513640aa7dc47',
-                'htmlUrl' => 'https://github.com/symfony/symfony-docs/commit/88065b04761ff810009f3379b46513640aa7dc47',
             ],
             'protected'     => false,
             'protectionUrl' => 'protectionUrl',
