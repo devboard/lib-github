@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\IssueComment;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @see \spec\DevboardLib\GitHub\IssueComment\IssueCommentIdSpec
  * @see \Tests\DevboardLib\GitHub\IssueComment\IssueCommentIdTest
@@ -15,6 +17,7 @@ class IssueCommentId
 
     public function __construct(int $id)
     {
+        Assert::greaterThan($id, 0, 'IssueCommentId has to be greater than 0.');
         $this->id = $id;
     }
 

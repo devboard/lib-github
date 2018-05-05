@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Context;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @see \spec\DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Context\ContextIdSpec
  * @see \Tests\DevboardLib\GitHub\Branch\Protection\RequiredStatusChecks\Context\ContextIdTest
@@ -15,6 +17,7 @@ class ContextId
 
     public function __construct(int $id)
     {
+        Assert::greaterThan($id, 0, 'ContextId has to be greater than 0.');
         $this->id = $id;
     }
 

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Milestone;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @see \spec\DevboardLib\GitHub\Milestone\MilestoneIdSpec
  * @see \Tests\DevboardLib\GitHub\Milestone\MilestoneIdTest
@@ -15,6 +17,7 @@ class MilestoneId
 
     public function __construct(int $id)
     {
+        Assert::greaterThan($id, 0, 'MilestoneId has to be greater than 0.');
         $this->id = $id;
     }
 
