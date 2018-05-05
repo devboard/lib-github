@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Account;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @see \spec\DevboardLib\GitHub\Account\AccountIdSpec
  * @see \Tests\DevboardLib\GitHub\Account\AccountIdTest
@@ -15,6 +17,8 @@ class AccountId
 
     public function __construct(int $id)
     {
+        Assert::greaterThan($id, 0, 'AccountId has to be greater than 0.');
+
         $this->id = $id;
     }
 

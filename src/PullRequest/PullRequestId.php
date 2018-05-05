@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\PullRequest;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @see \spec\DevboardLib\GitHub\PullRequest\PullRequestIdSpec
  * @see \Tests\DevboardLib\GitHub\PullRequest\PullRequestIdTest
@@ -15,6 +17,7 @@ class PullRequestId
 
     public function __construct(int $id)
     {
+        Assert::greaterThan($id, 0, 'PullRequestId has to be greater than 0.');
         $this->id = $id;
     }
 

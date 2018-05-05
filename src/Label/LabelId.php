@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Label;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @see \spec\DevboardLib\GitHub\Label\LabelIdSpec
  * @see \Tests\DevboardLib\GitHub\Label\LabelIdTest
@@ -15,6 +17,7 @@ class LabelId
 
     public function __construct(int $id)
     {
+        Assert::greaterThan($id, 0, 'LabelId has to be greater than 0.');
         $this->id = $id;
     }
 

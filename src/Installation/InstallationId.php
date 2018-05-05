@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\Installation;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @see \spec\DevboardLib\GitHub\Installation\InstallationIdSpec
  * @see \Tests\DevboardLib\GitHub\Installation\InstallationIdTest
@@ -15,6 +17,7 @@ class InstallationId
 
     public function __construct(int $id)
     {
+        Assert::greaterThan($id, 0, 'InstallationId has to be greater than 0.');
         $this->id = $id;
     }
 
