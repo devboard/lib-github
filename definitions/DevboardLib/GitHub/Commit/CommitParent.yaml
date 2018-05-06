@@ -12,15 +12,3 @@ definition:
       hasDefault: false
       default: null
       examples: ['5246f51f550db504e76c98b641e3337570e84dd4']
-    apiUrl:
-      instanceOf: DevboardLib\GitHub\Commit\CommitParent\ParentApiUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: ['https://api.github.com/repos/symfony/symfony-docs/git/commits/5246f51f550db504e76c98b641e3337570e84dd4']
-    htmlUrl:
-      instanceOf: DevboardLib\GitHub\Commit\CommitParent\ParentHtmlUrl
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: ['https://github.com/symfony/symfony-docs/commit/5246f51f550db504e76c98b641e3337570e84dd4']

@@ -6,8 +6,6 @@ namespace Tests\DevboardLib\GitHub\Commit;
 
 use DevboardLib\Git\Commit\CommitSha;
 use DevboardLib\GitHub\Commit\CommitParent;
-use DevboardLib\GitHub\Commit\CommitParent\ParentApiUrl;
-use DevboardLib\GitHub\Commit\CommitParent\ParentHtmlUrl;
 use DevboardLib\GitHub\Commit\CommitParentCollection;
 use PHPUnit\Framework\TestCase;
 
@@ -25,14 +23,8 @@ class CommitParentCollectionTest extends TestCase
 
     public function setUp()
     {
-        $this->elements = [
-            new CommitParent(
-                new CommitSha('e54c3c97b4024b4a9b270b62921c6b830d780bd3'),
-                new ParentApiUrl('apiUrl'),
-                new ParentHtmlUrl('htmlUrl')
-            ),
-        ];
-        $this->sut = new CommitParentCollection($this->elements);
+        $this->elements = [new CommitParent(new CommitSha('e54c3c97b4024b4a9b270b62921c6b830d780bd3'))];
+        $this->sut      = new CommitParentCollection($this->elements);
     }
 
     public function testGetElements()

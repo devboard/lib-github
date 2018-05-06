@@ -16,8 +16,6 @@ use DevboardLib\GitHub\Commit\CommitAuthorDetails;
 use DevboardLib\GitHub\Commit\CommitCommitter;
 use DevboardLib\GitHub\Commit\CommitCommitterDetails;
 use DevboardLib\GitHub\Commit\CommitParent;
-use DevboardLib\GitHub\Commit\CommitParent\ParentApiUrl;
-use DevboardLib\GitHub\Commit\CommitParent\ParentHtmlUrl;
 use DevboardLib\GitHub\Commit\CommitParentCollection;
 use DevboardLib\GitHub\Commit\CommitTree;
 use DevboardLib\GitHub\Commit\CommitVerification;
@@ -85,13 +83,7 @@ class GitHubCommitCollectionTest extends TestCase
                     )
                 ),
                 new CommitParentCollection(
-                    [
-                        new CommitParent(
-                            new CommitSha('e54c3c97b4024b4a9b270b62921c6b830d780bd3'),
-                            new ParentApiUrl('apiUrl'),
-                            new ParentHtmlUrl('htmlUrl')
-                        ),
-                    ]
+                    [new CommitParent(new CommitSha('e54c3c97b4024b4a9b270b62921c6b830d780bd3'))]
                 ),
                 new CommitVerification(
                     new VerificationVerified(false),
