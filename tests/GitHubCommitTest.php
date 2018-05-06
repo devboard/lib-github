@@ -19,7 +19,6 @@ use DevboardLib\GitHub\Commit\CommitParent;
 use DevboardLib\GitHub\Commit\CommitParentCollection;
 use DevboardLib\GitHub\Commit\CommitTree;
 use DevboardLib\GitHub\Commit\CommitVerification;
-use DevboardLib\GitHub\Commit\Tree\TreeApiUrl;
 use DevboardLib\GitHub\Commit\Verification\VerificationPayload;
 use DevboardLib\GitHub\Commit\Verification\VerificationReason;
 use DevboardLib\GitHub\Commit\Verification\VerificationSignature;
@@ -94,12 +93,7 @@ class GitHubCommitTest extends TestCase
                 true
             )
         );
-        $this->tree = new CommitTree(
-            new CommitSha('e54c3c97b4024b4a9b270b62921c6b830d780bd3'),
-            new TreeApiUrl(
-                'https://api.github.com/repos/symfony/symfony-docs/git/trees/2cf1013cef32b574d7635169cf797b1dfcd110d2'
-            )
-        );
+        $this->tree    = new CommitTree(new CommitSha('e54c3c97b4024b4a9b270b62921c6b830d780bd3'));
         $this->parents = new CommitParentCollection(
             [new CommitParent(new CommitSha('e54c3c97b4024b4a9b270b62921c6b830d780bd3'))]
         );
@@ -199,10 +193,7 @@ class GitHubCommitTest extends TestCase
                     'siteAdmin' => true,
                 ],
             ],
-            'tree' => [
-                'sha'    => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3',
-                'apiUrl' => 'https://api.github.com/repos/symfony/symfony-docs/git/trees/2cf1013cef32b574d7635169cf797b1dfcd110d2',
-            ],
+            'tree'         => ['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3'],
             'parents'      => [['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3']],
             'verification' => [
                 'verified'  => false,

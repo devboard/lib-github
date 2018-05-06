@@ -127,12 +127,7 @@ class GitHubCommitSpec extends ObjectBehavior
                 ],
             ]
         );
-        $tree->serialize()->shouldBeCalled()->willReturn(
-            [
-                'sha'    => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3',
-                'apiUrl' => 'https://api.github.com/repos/symfony/symfony-docs/git/trees/2cf1013cef32b574d7635169cf797b1dfcd110d2',
-            ]
-        );
+        $tree->serialize()->shouldBeCalled()->willReturn(['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3']);
         $parents->serialize()->shouldBeCalled()->willReturn(
             [['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3', 'apiUrl' => 'apiUrl', 'htmlUrl' => 'htmlUrl']]
         );
@@ -174,10 +169,7 @@ class GitHubCommitSpec extends ObjectBehavior
                         'siteAdmin' => true,
                     ],
                 ],
-                'tree' => [
-                    'sha'    => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3',
-                    'apiUrl' => 'https://api.github.com/repos/symfony/symfony-docs/git/trees/2cf1013cef32b574d7635169cf797b1dfcd110d2',
-                ],
+                'tree'    => ['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3'],
                 'parents' => [
                     ['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3', 'apiUrl' => 'apiUrl', 'htmlUrl' => 'htmlUrl'],
                 ],
@@ -221,10 +213,7 @@ class GitHubCommitSpec extends ObjectBehavior
                     'siteAdmin' => true,
                 ],
             ],
-            'tree' => [
-                'sha'    => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3',
-                'apiUrl' => 'https://api.github.com/repos/symfony/symfony-docs/git/trees/2cf1013cef32b574d7635169cf797b1dfcd110d2',
-            ],
+            'tree'    => ['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3'],
             'parents' => [
                 ['sha' => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3', 'apiUrl' => 'apiUrl', 'htmlUrl' => 'htmlUrl'],
             ],

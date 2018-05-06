@@ -6,7 +6,6 @@ namespace Tests\DevboardLib\GitHub\Commit;
 
 use DevboardLib\Git\Commit\CommitSha;
 use DevboardLib\GitHub\Commit\CommitTree;
-use DevboardLib\GitHub\Commit\Tree\TreeApiUrl;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -18,19 +17,13 @@ class CommitTreeTest extends TestCase
     /** @var CommitSha */
     private $sha;
 
-    /** @var TreeApiUrl */
-    private $apiUrl;
-
     /** @var CommitTree */
     private $sut;
 
     public function setUp()
     {
-        $this->sha    = new CommitSha('02b49ad0ba4f1acd9f06531b21e16a4ac5d341d0');
-        $this->apiUrl = new TreeApiUrl(
-            'https://api.github.com/repos/baxterthehacker/public-repo/git/trees/02b49ad0ba4f1acd9f06531b21e16a4ac5d341d0'
-        );
-        $this->sut = new CommitTree($this->sha, $this->apiUrl);
+        $this->sha = new CommitSha('02b49ad0ba4f1acd9f06531b21e16a4ac5d341d0');
+        $this->sut = new CommitTree($this->sha);
     }
 
     public function testGetSha()
@@ -38,17 +31,9 @@ class CommitTreeTest extends TestCase
         self::assertSame($this->sha, $this->sut->getSha());
     }
 
-    public function testGetApiUrl()
-    {
-        self::assertSame($this->apiUrl, $this->sut->getApiUrl());
-    }
-
     public function testSerialize()
     {
-        $expected = [
-            'sha'    => '02b49ad0ba4f1acd9f06531b21e16a4ac5d341d0',
-            'apiUrl' => 'https://api.github.com/repos/baxterthehacker/public-repo/git/trees/02b49ad0ba4f1acd9f06531b21e16a4ac5d341d0',
-        ];
+        $expected = ['sha' => '02b49ad0ba4f1acd9f06531b21e16a4ac5d341d0'];
 
         self::assertSame($expected, $this->sut->serialize());
     }
