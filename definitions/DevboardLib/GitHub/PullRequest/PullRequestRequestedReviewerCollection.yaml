@@ -1,0 +1,19 @@
+definition:
+  type: SimpleCollection
+  instanceOf: DevboardLib\GitHub\PullRequest\PullRequestRequestedReviewerCollection
+  parent: null
+  interfaces: {  }
+  traits: {  }
+  constants: {  }
+  constructor:
+    elements:
+      instanceOf: array
+      nullable: false
+      hasDefault: true
+      default: {  }
+  collectionOf:
+    instanceOf: DevboardLib\GitHub\PullRequest\PullRequestRequestedReviewer
+    accessor: getUserId
+    has: DevboardLib\GitHub\User\UserId
+
+
