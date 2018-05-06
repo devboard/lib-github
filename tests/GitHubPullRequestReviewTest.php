@@ -22,7 +22,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\GitHubPullRequestReview
- * @group  todo
+ * @group  unit
  */
 class GitHubPullRequestReviewTest extends TestCase
 {
