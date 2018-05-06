@@ -41,30 +41,6 @@ definition:
       hasDefault: false
       default: null
       examples: []
-    assignee:
-      instanceOf: DevboardLib\GitHub\PullRequest\PullRequestAssignee
-      nullable: true
-      hasDefault: false
-      default: null
-      examples: []
-    assignees:
-      instanceOf: DevboardLib\GitHub\PullRequest\PullRequestAssigneeCollection
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
-    labels:
-      instanceOf: DevboardLib\GitHub\GitHubLabelCollection
-      nullable: false
-      hasDefault: false
-      default: null
-      examples: []
-    milestone:
-      instanceOf: DevboardLib\GitHub\GitHubMilestone
-      nullable: true
-      hasDefault: false
-      default: null
-      examples: []
     closedAt:
       instanceOf: DevboardLib\GitHub\PullRequest\PullRequestClosedAt
       nullable: true

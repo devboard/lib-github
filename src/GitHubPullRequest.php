@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub;
 
-use DevboardLib\GitHub\Milestone\MilestoneId;
-use DevboardLib\GitHub\PullRequest\PullRequestAssignee;
-use DevboardLib\GitHub\PullRequest\PullRequestAssigneeCollection;
 use DevboardLib\GitHub\PullRequest\PullRequestAuthor;
 use DevboardLib\GitHub\PullRequest\PullRequestBody;
 use DevboardLib\GitHub\PullRequest\PullRequestClosedAt;
@@ -44,18 +41,6 @@ class GitHubPullRequest
     /** @var PullRequestAuthor */
     private $author;
 
-    /** @var PullRequestAssignee|null */
-    private $assignee;
-
-    /** @var PullRequestAssigneeCollection */
-    private $assignees;
-
-    /** @var GitHubLabelCollection */
-    private $labels;
-
-    /** @var GitHubMilestone|null */
-    private $milestone;
-
     /** @var PullRequestClosedAt|null */
     private $closedAt;
 
@@ -72,10 +57,6 @@ class GitHubPullRequest
         PullRequestBody $body,
         PullRequestState $state,
         PullRequestAuthor $author,
-        ?PullRequestAssignee $assignee,
-        PullRequestAssigneeCollection $assignees,
-        GitHubLabelCollection $labels,
-        ?GitHubMilestone $milestone,
         ?PullRequestClosedAt $closedAt,
         PullRequestCreatedAt $createdAt,
         PullRequestUpdatedAt $updatedAt
@@ -86,10 +67,6 @@ class GitHubPullRequest
         $this->body      = $body;
         $this->state     = $state;
         $this->author    = $author;
-        $this->assignee  = $assignee;
-        $this->assignees = $assignees;
-        $this->labels    = $labels;
-        $this->milestone = $milestone;
         $this->closedAt  = $closedAt;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
@@ -125,35 +102,6 @@ class GitHubPullRequest
         return $this->author;
     }
 
-    public function getAssignee(): ?PullRequestAssignee
-    {
-        return $this->assignee;
-    }
-
-    public function getAssignees(): PullRequestAssigneeCollection
-    {
-        return $this->assignees;
-    }
-
-    public function getLabels(): GitHubLabelCollection
-    {
-        return $this->labels;
-    }
-
-    public function getMilestone(): ?GitHubMilestone
-    {
-        return $this->milestone;
-    }
-
-    public function getMilestoneId(): ?MilestoneId
-    {
-        if (null === $this->milestone) {
-            return null;
-        }
-
-        return $this->milestone->getId();
-    }
-
     public function getClosedAt(): ?PullRequestClosedAt
     {
         return $this->closedAt;
@@ -169,24 +117,6 @@ class GitHubPullRequest
         return $this->updatedAt;
     }
 
-    public function hasAssignee(): bool
-    {
-        if (null === $this->assignee) {
-            return false;
-        }
-
-        return true;
-    }
-
-    public function hasMilestone(): bool
-    {
-        if (null === $this->milestone) {
-            return false;
-        }
-
-        return true;
-    }
-
     public function hasClosedAt(): bool
     {
         if (null === $this->closedAt) {
@@ -198,18 +128,6 @@ class GitHubPullRequest
 
     public function serialize(): array
     {
-        if (null === $this->assignee) {
-            $assignee = null;
-        } else {
-            $assignee = $this->assignee->serialize();
-        }
-
-        if (null === $this->milestone) {
-            $milestone = null;
-        } else {
-            $milestone = $this->milestone->serialize();
-        }
-
         if (null === $this->closedAt) {
             $closedAt = null;
         } else {
@@ -223,10 +141,6 @@ class GitHubPullRequest
             'body'      => $this->body->serialize(),
             'state'     => $this->state->serialize(),
             'author'    => $this->author->serialize(),
-            'assignee'  => $assignee,
-            'assignees' => $this->assignees->serialize(),
-            'labels'    => $this->labels->serialize(),
-            'milestone' => $milestone,
             'closedAt'  => $closedAt,
             'createdAt' => $this->createdAt->serialize(),
             'updatedAt' => $this->updatedAt->serialize(),
@@ -235,18 +149,6 @@ class GitHubPullRequest
 
     public static function deserialize(array $data): self
     {
-        if (null === $data['assignee']) {
-            $assignee = null;
-        } else {
-            $assignee = PullRequestAssignee::deserialize($data['assignee']);
-        }
-
-        if (null === $data['milestone']) {
-            $milestone = null;
-        } else {
-            $milestone = GitHubMilestone::deserialize($data['milestone']);
-        }
-
         if (null === $data['closedAt']) {
             $closedAt = null;
         } else {
@@ -260,10 +162,6 @@ class GitHubPullRequest
             PullRequestBody::deserialize($data['body']),
             PullRequestState::deserialize($data['state']),
             PullRequestAuthor::deserialize($data['author']),
-            $assignee,
-            PullRequestAssigneeCollection::deserialize($data['assignees']),
-            GitHubLabelCollection::deserialize($data['labels']),
-            $milestone,
             $closedAt,
             PullRequestCreatedAt::deserialize($data['createdAt']),
             PullRequestUpdatedAt::deserialize($data['updatedAt'])

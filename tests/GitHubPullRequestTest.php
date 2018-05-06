@@ -8,25 +8,7 @@ use DevboardLib\GitHub\Account\AccountAvatarUrl;
 use DevboardLib\GitHub\Account\AccountId;
 use DevboardLib\GitHub\Account\AccountLogin;
 use DevboardLib\GitHub\Account\AccountType;
-use DevboardLib\GitHub\GitHubLabel;
-use DevboardLib\GitHub\GitHubLabelCollection;
-use DevboardLib\GitHub\GitHubMilestone;
 use DevboardLib\GitHub\GitHubPullRequest;
-use DevboardLib\GitHub\Label\LabelColor;
-use DevboardLib\GitHub\Label\LabelId;
-use DevboardLib\GitHub\Label\LabelName;
-use DevboardLib\GitHub\Milestone\MilestoneClosedAt;
-use DevboardLib\GitHub\Milestone\MilestoneCreatedAt;
-use DevboardLib\GitHub\Milestone\MilestoneCreator;
-use DevboardLib\GitHub\Milestone\MilestoneDescription;
-use DevboardLib\GitHub\Milestone\MilestoneDueOn;
-use DevboardLib\GitHub\Milestone\MilestoneId;
-use DevboardLib\GitHub\Milestone\MilestoneNumber;
-use DevboardLib\GitHub\Milestone\MilestoneState;
-use DevboardLib\GitHub\Milestone\MilestoneTitle;
-use DevboardLib\GitHub\Milestone\MilestoneUpdatedAt;
-use DevboardLib\GitHub\PullRequest\PullRequestAssignee;
-use DevboardLib\GitHub\PullRequest\PullRequestAssigneeCollection;
 use DevboardLib\GitHub\PullRequest\PullRequestAuthor;
 use DevboardLib\GitHub\PullRequest\PullRequestAuthorAssociation;
 use DevboardLib\GitHub\PullRequest\PullRequestBody;
@@ -65,18 +47,6 @@ class GitHubPullRequestTest extends TestCase
     /** @var PullRequestAuthor */
     private $author;
 
-    /** @var PullRequestAssignee|null */
-    private $assignee;
-
-    /** @var PullRequestAssigneeCollection */
-    private $assignees;
-
-    /** @var GitHubLabelCollection */
-    private $labels;
-
-    /** @var GitHubMilestone|null */
-    private $milestone;
-
     /** @var PullRequestClosedAt|null */
     private $closedAt;
 
@@ -104,46 +74,6 @@ class GitHubPullRequestTest extends TestCase
             new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
             false
         );
-
-        $this->assignee = new PullRequestAssignee(
-            new AccountId(6752317),
-            new AccountLogin('devboard-test'),
-            new AccountType('Bot'),
-            new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-            false
-        );
-        $this->assignees = new PullRequestAssigneeCollection(
-            [
-                new PullRequestAssignee(
-                    new AccountId(6752317),
-                    new AccountLogin('devboard-test'),
-                    new AccountType('Bot'),
-                    new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-                    false
-                ),
-            ]
-        );
-        $this->labels = new GitHubLabelCollection(
-            [new GitHubLabel(new LabelId(1), new LabelName('value'), new LabelColor('color'), true)]
-        );
-        $this->milestone = new GitHubMilestone(
-            new MilestoneId(1),
-            new MilestoneTitle('value'),
-            new MilestoneDescription('value'),
-            new MilestoneDueOn('2016-08-02T17:35:14+00:00'),
-            new MilestoneState('closed'),
-            new MilestoneNumber(1),
-            new MilestoneCreator(
-                new AccountId(6752317),
-                new AccountLogin('devboard-test'),
-                new AccountType('Bot'),
-                new AccountAvatarUrl('https://avatars.githubusercontent.com/u/6752317?v=3'),
-                false
-            ),
-            new MilestoneClosedAt('2016-08-02T17:35:14+00:00'),
-            new MilestoneCreatedAt('2016-08-02T17:35:14+00:00'),
-            new MilestoneUpdatedAt('2016-08-02T17:35:14+00:00')
-        );
         $this->closedAt  = new PullRequestClosedAt('2016-08-02T17:35:14+00:00');
         $this->createdAt = new PullRequestCreatedAt('2016-08-02T17:35:14+00:00');
         $this->updatedAt = new PullRequestUpdatedAt('2016-08-02T17:35:14+00:00');
@@ -154,10 +84,6 @@ class GitHubPullRequestTest extends TestCase
             $this->body,
             $this->state,
             $this->author,
-            $this->assignee,
-            $this->assignees,
-            $this->labels,
-            $this->milestone,
             $this->closedAt,
             $this->createdAt,
             $this->updatedAt
@@ -194,26 +120,6 @@ class GitHubPullRequestTest extends TestCase
         self::assertSame($this->author, $this->sut->getAuthor());
     }
 
-    public function testGetAssignee()
-    {
-        self::assertSame($this->assignee, $this->sut->getAssignee());
-    }
-
-    public function testGetAssignees()
-    {
-        self::assertSame($this->assignees, $this->sut->getAssignees());
-    }
-
-    public function testGetLabels()
-    {
-        self::assertSame($this->labels, $this->sut->getLabels());
-    }
-
-    public function testGetMilestone()
-    {
-        self::assertSame($this->milestone, $this->sut->getMilestone());
-    }
-
     public function testGetClosedAt()
     {
         self::assertSame($this->closedAt, $this->sut->getClosedAt());
@@ -227,16 +133,6 @@ class GitHubPullRequestTest extends TestCase
     public function testGetUpdatedAt()
     {
         self::assertSame($this->updatedAt, $this->sut->getUpdatedAt());
-    }
-
-    public function testHasAssignee()
-    {
-        self::assertTrue($this->sut->hasAssignee());
-    }
-
-    public function testHasMilestone()
-    {
-        self::assertTrue($this->sut->hasMilestone());
     }
 
     public function testHasClosedAt()
@@ -260,44 +156,6 @@ class GitHubPullRequestTest extends TestCase
                 'avatarUrl'   => 'https://avatars.githubusercontent.com/u/6752317?v=3',
 
                 'siteAdmin' => false,
-            ],
-            'assignee' => [
-                'userId'    => 6752317,
-                'login'     => 'devboard-test',
-                'type'      => 'Bot',
-                'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
-                'siteAdmin' => false,
-            ],
-            'assignees' => [
-                [
-                    'userId'    => 6752317,
-                    'login'     => 'devboard-test',
-                    'type'      => 'Bot',
-                    'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
-                    'siteAdmin' => false,
-                ],
-            ],
-            'labels'    => [['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true]],
-            'milestone' => [
-                'id'          => 1,
-                'title'       => 'value',
-                'description' => 'value',
-                'dueOn'       => '2016-08-02T17:35:14+00:00',
-                'state'       => 'closed',
-                'number'      => 1,
-                'creator'     => [
-                    'userId'    => 6752317,
-                    'login'     => 'devboard-test',
-                    'type'      => 'Bot',
-                    'avatarUrl' => 'https://avatars.githubusercontent.com/u/6752317?v=3',
-
-                    'siteAdmin' => false,
-                ],
-                'closedAt'  => '2016-08-02T17:35:14+00:00',
-                'createdAt' => '2016-08-02T17:35:14+00:00',
-                'updatedAt' => '2016-08-02T17:35:14+00:00',
             ],
             'closedAt'  => '2016-08-02T17:35:14+00:00',
             'createdAt' => '2016-08-02T17:35:14+00:00',
