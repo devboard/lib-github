@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.ExcessiveParameterList)
  * @covers \DevboardLib\GitHub\PullRequest\PullRequestAuthor
- * @group  todo
+ * @group  unit
  */
 class PullRequestAuthorTest extends TestCase
 {

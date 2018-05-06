@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DevboardLib\GitHub\PullRequest\PullRequestAuthorAssociation
- * @group  todo
+ * @group  unit
  */
 class PullRequestAuthorAssociationTest extends TestCase
 {
