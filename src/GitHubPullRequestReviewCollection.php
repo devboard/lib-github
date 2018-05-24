@@ -52,6 +52,7 @@ class GitHubPullRequestReviewCollection
         return null;
     }
 
+    /** @return GitHubPullRequestReview[] */
     public function toArray(): array
     {
         return $this->elements;

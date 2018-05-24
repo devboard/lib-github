@@ -52,6 +52,7 @@ class PullRequestRequestedReviewerCollection
         return null;
     }
 
+    /** @return PullRequestRequestedReviewer[] */
     public function toArray(): array
     {
         return $this->elements;

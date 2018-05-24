@@ -52,6 +52,7 @@ class PullRequestAssigneeCollection
         return null;
     }
 
+    /** @return PullRequestAssignee[] */
     public function toArray(): array
     {
         return $this->elements;
