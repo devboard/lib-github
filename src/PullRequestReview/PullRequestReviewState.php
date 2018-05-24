@@ -20,6 +20,8 @@ class PullRequestReviewState extends Enum
 
     const COMMENTED = 'commented';
 
+    const DISMISSED = 'dismissed';
+
     public function serialize(): string
     {
         return $this->value;
