@@ -5,6 +5,7 @@ parameters:
 	    - '#Call to an undefined static method DevboardLib\\GitHub\\PullRequest\\PullRequestAuthorAssociation::#'
 	    - '#Call to an undefined static method DevboardLib\\GitHub\\PullRequestReview\\PullRequestReviewAuthorAssociation::#'
 	    - '#Parameter .* Mockery\\MockInterface given.#'
+	    - '#Parameter \#1 \$json of function json_decode expects string, string|false given.#'
 	includes:
 	    - vendor/phpstan/phpstan-phpunit/extension.neon
 	    - vendor/phpstan/phpstan-phpunit/rules.neon
