@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DevboardLib\GitHub\Repo;
 
 use DateTime;
+use RuntimeException;
 
 /**
  * @see \spec\DevboardLib\GitHub\Repo\RepoCreatedAtSpec
@@ -20,6 +21,10 @@ class RepoCreatedAt extends DateTime
     public static function createFromFormat($format, $time, $object = null): self
     {
         $date = parent::createFromFormat($format, $time, $object);
+
+        if (false === $date) {
+            throw new RuntimeException('Unparsable date/time');
+        }
 
         return new self($date->format('c'));
     }
