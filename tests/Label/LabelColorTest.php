@@ -47,6 +47,6 @@ class LabelColorTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->color));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->color));
     }
 }

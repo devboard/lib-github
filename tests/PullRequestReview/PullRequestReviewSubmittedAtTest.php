@@ -40,6 +40,6 @@ class PullRequestReviewSubmittedAtTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize('2018-01-01T11:22:33+00:00'));
+        self::assertEquals($this->sut, $this->sut::deserialize('2018-01-01T11:22:33+00:00'));
     }
 }

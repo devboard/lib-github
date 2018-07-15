@@ -47,6 +47,6 @@ class RepoSshUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->sshUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->sshUrl));
     }
 }

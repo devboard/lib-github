@@ -47,6 +47,6 @@ class PullRequestReviewHtmlUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->htmlUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->htmlUrl));
     }
 }

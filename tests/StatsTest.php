@@ -14,14 +14,14 @@ abstract class StatsTest extends TestCase
     public function testItExposesValue(int $value)
     {
         $sut = static::createSut($value);
-        $this->assertEquals($value, $sut->getValue());
+        self::assertEquals($value, $sut->getValue());
     }
 
     /** @dataProvider provideValues */
     public function testItCanBeAutoConvertedToString(int $value)
     {
         $sut = static::createSut($value);
-        $this->assertEquals((string) $value, (string) $sut);
+        self::assertEquals((string) $value, (string) $sut);
     }
 
     public function provideValues()

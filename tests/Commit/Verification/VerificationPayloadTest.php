@@ -47,6 +47,6 @@ class VerificationPayloadTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->payload));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->payload));
     }
 }

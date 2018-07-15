@@ -47,6 +47,6 @@ class VerificationVerifiedTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->verified));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->verified));
     }
 }

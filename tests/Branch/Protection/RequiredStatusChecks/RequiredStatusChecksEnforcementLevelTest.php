@@ -47,6 +47,6 @@ class RequiredStatusChecksEnforcementLevelTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->enforcementLevel));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->enforcementLevel));
     }
 }

@@ -47,6 +47,6 @@ class RepoGitUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->gitUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->gitUrl));
     }
 }

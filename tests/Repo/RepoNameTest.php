@@ -47,6 +47,6 @@ class RepoNameTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->name));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->name));
     }
 }

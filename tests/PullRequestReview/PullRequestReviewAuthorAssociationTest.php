@@ -42,6 +42,6 @@ class PullRequestReviewAuthorAssociationTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->value));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->value));
     }
 }

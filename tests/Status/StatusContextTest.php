@@ -47,6 +47,6 @@ class StatusContextTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->description));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->description));
     }
 }

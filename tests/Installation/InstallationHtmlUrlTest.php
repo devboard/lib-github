@@ -47,6 +47,6 @@ class InstallationHtmlUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->installationHtmlUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->installationHtmlUrl));
     }
 }

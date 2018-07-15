@@ -47,6 +47,6 @@ class AccountAvatarUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->avatarUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->avatarUrl));
     }
 }

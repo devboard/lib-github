@@ -36,6 +36,6 @@ class CommitParentCollectionTest extends TestCase
     {
         $serialized     = $this->sut->serialize();
         $serializedJson = json_encode($serialized);
-        self::assertEquals($this->sut, $this->sut->deserialize(json_decode($serializedJson, true)));
+        self::assertEquals($this->sut, $this->sut::deserialize(json_decode($serializedJson, true)));
     }
 }

@@ -15,12 +15,12 @@ class AccountTypeTest extends TestCase
 {
     public function testItSupportsCreatingUserEnum(): void
     {
-        $this->assertInstanceOf(AccountType::class, AccountType::USER());
+        self::assertInstanceOf(AccountType::class, AccountType::USER());
     }
 
     public function testItSupportsCreatingOrganizationEnum(): void
     {
-        $this->assertInstanceOf(AccountType::class, AccountType::ORGANIZATION());
+        self::assertInstanceOf(AccountType::class, AccountType::ORGANIZATION());
     }
 
     /**
