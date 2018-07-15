@@ -47,6 +47,6 @@ class RepoLanguageTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->language));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->language));
     }
 }

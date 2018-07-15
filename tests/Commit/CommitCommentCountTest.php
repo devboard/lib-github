@@ -47,6 +47,6 @@ class CommitCommentCountTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->commentCount));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->commentCount));
     }
 }

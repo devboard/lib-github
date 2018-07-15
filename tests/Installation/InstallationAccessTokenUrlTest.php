@@ -47,6 +47,6 @@ class InstallationAccessTokenUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->accessTokenUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->accessTokenUrl));
     }
 }

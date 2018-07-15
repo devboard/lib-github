@@ -47,6 +47,6 @@ class BranchProtectionUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->protectionUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->protectionUrl));
     }
 }

@@ -47,6 +47,6 @@ class InstallationRepositoriesUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->installationRepositoriesUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->installationRepositoriesUrl));
     }
 }

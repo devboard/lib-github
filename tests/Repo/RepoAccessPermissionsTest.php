@@ -18,9 +18,9 @@ class RepoAccessPermissionsTest extends TestCase
     {
         $sut = new RepoAccessPermissions($admin, $pushAllowed, $pullAllowed);
 
-        $this->assertSame($admin, $sut->isAdmin());
-        $this->assertSame($pushAllowed, $sut->isPushAllowed());
-        $this->assertSame($pullAllowed, $sut->isPullAllowed());
+        self::assertSame($admin, $sut->isAdmin());
+        self::assertSame($pushAllowed, $sut->isPushAllowed());
+        self::assertSame($pullAllowed, $sut->isPullAllowed());
     }
 
     public function provideValues(): array

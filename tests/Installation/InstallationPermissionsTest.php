@@ -37,6 +37,6 @@ class InstallationPermissionsTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->values));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->values));
     }
 }

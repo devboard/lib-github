@@ -47,6 +47,6 @@ class RepoApiUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->apiUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->apiUrl));
     }
 }

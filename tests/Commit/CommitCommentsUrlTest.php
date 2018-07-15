@@ -47,6 +47,6 @@ class CommitCommentsUrlTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->commentsUrl));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->commentsUrl));
     }
 }

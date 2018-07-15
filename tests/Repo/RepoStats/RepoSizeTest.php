@@ -47,6 +47,6 @@ class RepoSizeTest extends TestCase
 
     public function testDeserialize(): void
     {
-        self::assertEquals($this->sut, $this->sut->deserialize($this->size));
+        self::assertEquals($this->sut, $this->sut::deserialize($this->size));
     }
 }
