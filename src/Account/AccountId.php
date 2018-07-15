@@ -37,7 +37,7 @@ class AccountId
         return $this->id;
     }
 
-    public static function deserialize(int $id)
+    public static function deserialize(int $id): self
     {
         return new static($id);
     }

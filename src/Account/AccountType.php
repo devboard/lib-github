@@ -23,7 +23,7 @@ class AccountType extends Enum
         return $this->value;
     }
 
-    public static function deserialize(string $value)
+    public static function deserialize(string $value): self
     {
         return new self($value);
     }

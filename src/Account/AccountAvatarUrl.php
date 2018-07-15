@@ -38,7 +38,7 @@ class AccountAvatarUrl
         return $this->avatarUrl;
     }
 
-    public static function deserialize(string $avatarUrl)
+    public static function deserialize(string $avatarUrl): self
     {
         return new static($avatarUrl);
     }
