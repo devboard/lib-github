@@ -10,6 +10,9 @@ parameters:
 	    - '#Method .*At::deserialize\(\) has parameter \$value with no typehint specified.#'
 	    - '#Method .*MilestoneDueOn::createFromFormat\(\) has parameter .* with no typehint specified.#'
 	    - '#Method .*MilestoneDueOn::deserialize\(\) has parameter \$value with no typehint specified.#'
+	    - '#Parameter \#1 \$userId of class .* constructor expects DevboardLib\\GitHub\\User\\UserId, DevboardLib\\GitHub\\Account\\AccountId given.#'
+	    - '#Parameter \#2 \$login of class .* constructor expects DevboardLib\\GitHub\\User\\UserLogin, DevboardLib\\GitHub\\Account\\AccountLogin given.#'
+	    - '#Parameter \#4 \$avatarUrl of class .* constructor expects DevboardLib\\GitHub\\User\\UserAvatarUrl, DevboardLib\\GitHub\\Account\\AccountAvatarUrl given.#'
 includes:
 	- vendor/phpstan/phpstan-phpunit/extension.neon
 	- vendor/phpstan/phpstan-phpunit/rules.neon
