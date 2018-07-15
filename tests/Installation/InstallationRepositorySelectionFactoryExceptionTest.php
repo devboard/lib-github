@@ -23,7 +23,6 @@ class InstallationRepositorySelectionFactoryExceptionTest extends TestCase
 
     public function testGetMessage(): void
     {
-        self::assertInstanceOf(InstallationRepositorySelectionFactoryException::class, $this->sut);
         self::assertEquals(
             'Unknown InstallationInstallationRepositorySelection with name: zz', $this->sut->getMessage()
         );
