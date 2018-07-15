@@ -88,7 +88,7 @@ class GitHubIssueTest extends TestCase
     /** @var GitHubIssue */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->id     = new IssueId(1);
         $this->number = new IssueNumber(1);
@@ -162,87 +162,87 @@ class GitHubIssueTest extends TestCase
         );
     }
 
-    public function testGetId()
+    public function testGetId(): void
     {
         self::assertSame($this->id, $this->sut->getId());
     }
 
-    public function testGetNumber()
+    public function testGetNumber(): void
     {
         self::assertSame($this->number, $this->sut->getNumber());
     }
 
-    public function testGetTitle()
+    public function testGetTitle(): void
     {
         self::assertSame($this->title, $this->sut->getTitle());
     }
 
-    public function testGetBody()
+    public function testGetBody(): void
     {
         self::assertSame($this->body, $this->sut->getBody());
     }
 
-    public function testGetState()
+    public function testGetState(): void
     {
         self::assertSame($this->state, $this->sut->getState());
     }
 
-    public function testGetAuthor()
+    public function testGetAuthor(): void
     {
         self::assertSame($this->author, $this->sut->getAuthor());
     }
 
-    public function testGetAssignee()
+    public function testGetAssignee(): void
     {
         self::assertSame($this->assignee, $this->sut->getAssignee());
     }
 
-    public function testGetAssignees()
+    public function testGetAssignees(): void
     {
         self::assertSame($this->assignees, $this->sut->getAssignees());
     }
 
-    public function testGetLabels()
+    public function testGetLabels(): void
     {
         self::assertSame($this->labels, $this->sut->getLabels());
     }
 
-    public function testGetMilestone()
+    public function testGetMilestone(): void
     {
         self::assertSame($this->milestone, $this->sut->getMilestone());
     }
 
-    public function testGetClosedAt()
+    public function testGetClosedAt(): void
     {
         self::assertSame($this->closedAt, $this->sut->getClosedAt());
     }
 
-    public function testGetCreatedAt()
+    public function testGetCreatedAt(): void
     {
         self::assertSame($this->createdAt, $this->sut->getCreatedAt());
     }
 
-    public function testGetUpdatedAt()
+    public function testGetUpdatedAt(): void
     {
         self::assertSame($this->updatedAt, $this->sut->getUpdatedAt());
     }
 
-    public function testHasAssignee()
+    public function testHasAssignee(): void
     {
         self::assertTrue($this->sut->hasAssignee());
     }
 
-    public function testHasMilestone()
+    public function testHasMilestone(): void
     {
         self::assertTrue($this->sut->hasMilestone());
     }
 
-    public function testHasClosedAt()
+    public function testHasClosedAt(): void
     {
         self::assertTrue($this->sut->hasClosedAt());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'id'     => 1,
@@ -304,7 +304,7 @@ class GitHubIssueTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, GitHubIssue::deserialize(json_decode($serialized, true)));

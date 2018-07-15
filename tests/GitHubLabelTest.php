@@ -31,7 +31,7 @@ class GitHubLabelTest extends TestCase
     /** @var GitHubLabel */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->id      = new LabelId(1);
         $this->name    = new LabelName('value');
@@ -40,34 +40,34 @@ class GitHubLabelTest extends TestCase
         $this->sut     = new GitHubLabel($this->id, $this->name, $this->color, $this->default);
     }
 
-    public function testGetId()
+    public function testGetId(): void
     {
         self::assertSame($this->id, $this->sut->getId());
     }
 
-    public function testGetName()
+    public function testGetName(): void
     {
         self::assertSame($this->name, $this->sut->getName());
     }
 
-    public function testGetColor()
+    public function testGetColor(): void
     {
         self::assertSame($this->color, $this->sut->getColor());
     }
 
-    public function testIsDefault()
+    public function testIsDefault(): void
     {
         self::assertSame($this->default, $this->sut->isDefault());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = ['id' => 1, 'name' => 'value', 'color' => 'color', 'default' => true];
 
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, GitHubLabel::deserialize(json_decode($serialized, true)));

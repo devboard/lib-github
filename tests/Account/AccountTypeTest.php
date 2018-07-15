@@ -13,12 +13,12 @@ use PHPUnit\Framework\TestCase;
  */
 class AccountTypeTest extends TestCase
 {
-    public function testItSupportsCreatingUserEnum()
+    public function testItSupportsCreatingUserEnum(): void
     {
         $this->assertInstanceOf(AccountType::class, AccountType::USER());
     }
 
-    public function testItSupportsCreatingOrganizationEnum()
+    public function testItSupportsCreatingOrganizationEnum(): void
     {
         $this->assertInstanceOf(AccountType::class, AccountType::ORGANIZATION());
     }
@@ -26,7 +26,7 @@ class AccountTypeTest extends TestCase
     /**
      * @expectedException \BadMethodCallException
      */
-    public function testItThrowsExceptionWhenWeTryToBuildNonExistingAccountType()
+    public function testItThrowsExceptionWhenWeTryToBuildNonExistingAccountType(): void
     {
         AccountType::ZZ();
     }

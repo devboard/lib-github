@@ -26,31 +26,31 @@ class RequiredStatusChecksTest extends TestCase
     /** @var RequiredStatusChecks */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->enforcementLevel = new RequiredStatusChecksEnforcementLevel('enforcementLevel');
         $this->contexts         = new Contexts([new Context(new ContextId(1))]);
         $this->sut              = new RequiredStatusChecks($this->enforcementLevel, $this->contexts);
     }
 
-    public function testGetEnforcementLevel()
+    public function testGetEnforcementLevel(): void
     {
         self::assertSame($this->enforcementLevel, $this->sut->getEnforcementLevel());
     }
 
-    public function testGetContexts()
+    public function testGetContexts(): void
     {
         self::assertSame($this->contexts, $this->sut->getContexts());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = ['enforcementLevel' => 'enforcementLevel', 'contexts' => [1]];
 
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, RequiredStatusChecks::deserialize(json_decode($serialized, true)));

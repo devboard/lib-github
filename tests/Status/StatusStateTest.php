@@ -20,7 +20,7 @@ class StatusStateTest extends TestCase
     /**
      * @dataProvider provideValidStates
      */
-    public function testCreate(string $name, StatusState $expectedClassInstance)
+    public function testCreate(string $name, StatusState $expectedClassInstance): void
     {
         self::assertEquals($expectedClassInstance, StatusState::create($name));
     }
@@ -28,7 +28,7 @@ class StatusStateTest extends TestCase
     /**
      * @expectedException \DomainException
      */
-    public function testCreateCantBuildUnknownStateObject()
+    public function testCreateCantBuildUnknownStateObject(): void
     {
         StatusState::create('unknown');
     }

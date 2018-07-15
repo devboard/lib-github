@@ -19,33 +19,33 @@ class RequiredStatusChecksEnforcementLevelTest extends TestCase
     /** @var RequiredStatusChecksEnforcementLevel */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->enforcementLevel = 'enforcementLevel';
         $this->sut              = new RequiredStatusChecksEnforcementLevel($this->enforcementLevel);
     }
 
-    public function testGetEnforcementLevel()
+    public function testGetEnforcementLevel(): void
     {
         self::assertSame($this->enforcementLevel, $this->sut->getEnforcementLevel());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->enforcementLevel, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->enforcementLevel, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->enforcementLevel, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->enforcementLevel));
     }

@@ -19,33 +19,33 @@ class VerificationVerifiedTest extends TestCase
     /** @var VerificationVerified */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->verified = true;
         $this->sut      = new VerificationVerified($this->verified);
     }
 
-    public function testIsVerified()
+    public function testIsVerified(): void
     {
         self::assertSame($this->verified, $this->sut->isVerified());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->verified, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame('true', $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->verified, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->verified));
     }

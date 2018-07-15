@@ -64,7 +64,7 @@ class GitHubCommitTest extends TestCase
     /** @var GitHubCommit */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sha        = new CommitSha('e54c3c97b4024b4a9b270b62921c6b830d780bd3');
         $this->message    = new CommitMessage('A commit message');
@@ -116,52 +116,52 @@ class GitHubCommitTest extends TestCase
         );
     }
 
-    public function testGetSha()
+    public function testGetSha(): void
     {
         self::assertSame($this->sha, $this->sut->getSha());
     }
 
-    public function testGetMessage()
+    public function testGetMessage(): void
     {
         self::assertSame($this->message, $this->sut->getMessage());
     }
 
-    public function testGetCommitDate()
+    public function testGetCommitDate(): void
     {
         self::assertSame($this->commitDate, $this->sut->getCommitDate());
     }
 
-    public function testGetAuthor()
+    public function testGetAuthor(): void
     {
         self::assertSame($this->author, $this->sut->getAuthor());
     }
 
-    public function testGetCommitter()
+    public function testGetCommitter(): void
     {
         self::assertSame($this->committer, $this->sut->getCommitter());
     }
 
-    public function testGetTree()
+    public function testGetTree(): void
     {
         self::assertSame($this->tree, $this->sut->getTree());
     }
 
-    public function testGetParents()
+    public function testGetParents(): void
     {
         self::assertSame($this->parents, $this->sut->getParents());
     }
 
-    public function testGetVerification()
+    public function testGetVerification(): void
     {
         self::assertSame($this->verification, $this->sut->getVerification());
     }
 
-    public function testHasVerification()
+    public function testHasVerification(): void
     {
         self::assertTrue($this->sut->hasVerification());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'sha'        => 'e54c3c97b4024b4a9b270b62921c6b830d780bd3',
@@ -206,7 +206,7 @@ class GitHubCommitTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, GitHubCommit::deserialize(json_decode($serialized, true)));

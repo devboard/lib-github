@@ -19,33 +19,33 @@ class RepoSizeTest extends TestCase
     /** @var RepoSize */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->size = 32899;
         $this->sut  = new RepoSize($this->size);
     }
 
-    public function testGetSize()
+    public function testGetSize(): void
     {
         self::assertSame($this->size, $this->sut->getSize());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->size, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame((string) $this->size, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->size, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->size));
     }

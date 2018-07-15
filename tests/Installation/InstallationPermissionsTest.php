@@ -19,23 +19,23 @@ class InstallationPermissionsTest extends TestCase
     /** @var InstallationPermissions */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->values = ['some-installation-permission', 'another-installation-permission'];
         $this->sut    = new InstallationPermissions($this->values);
     }
 
-    public function testGetValues()
+    public function testGetValues(): void
     {
         self::assertSame($this->values, $this->sut->getValues());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->values, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->values));
     }

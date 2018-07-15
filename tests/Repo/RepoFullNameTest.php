@@ -24,31 +24,31 @@ class RepoFullNameTest extends TestCase
     /** @var RepoFullName */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->owner    = new AccountLogin('octocat');
         $this->repoName = new RepoName('linguist');
         $this->sut      = new RepoFullName($this->owner, $this->repoName);
     }
 
-    public function testGetOwner()
+    public function testGetOwner(): void
     {
         self::assertSame($this->owner, $this->sut->getOwner());
     }
 
-    public function testGetRepoName()
+    public function testGetRepoName(): void
     {
         self::assertSame($this->repoName, $this->sut->getRepoName());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = ['owner' => 'octocat', 'repoName' => 'linguist'];
 
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, RepoFullName::deserialize(json_decode($serialized, true)));

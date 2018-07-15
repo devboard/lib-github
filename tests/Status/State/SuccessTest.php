@@ -19,22 +19,22 @@ class SuccessTest extends TestCase
     /** @var Success */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sut = new Success();
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertEquals('success', $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertEquals('success', $this->sut->__toString());
     }
 
-    public function testConstName()
+    public function testConstName(): void
     {
         self::assertEquals('success', $this->sut::NAME);
     }

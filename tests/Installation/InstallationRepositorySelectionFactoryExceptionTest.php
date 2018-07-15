@@ -16,12 +16,12 @@ class InstallationRepositorySelectionFactoryExceptionTest extends TestCase
     /** @var InstallationRepositorySelectionFactoryException */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sut = InstallationRepositorySelectionFactoryException::create('zz');
     }
 
-    public function testGetMessage()
+    public function testGetMessage(): void
     {
         self::assertInstanceOf(InstallationRepositorySelectionFactoryException::class, $this->sut);
         self::assertEquals(

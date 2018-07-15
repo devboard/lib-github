@@ -19,12 +19,12 @@ class InstallationRepositorySelectionFactoryTest extends TestCase
     /** @var InstallationRepositorySelectionFactory */
     private $installationRepositorySelectionFactory;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->installationRepositorySelectionFactory = new InstallationRepositorySelectionFactory();
     }
 
-    public function testCreate()
+    public function testCreate(): void
     {
         $this->markTestSkipped('Skipping');
     }

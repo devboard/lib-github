@@ -19,33 +19,33 @@ class RepoApiUrlTest extends TestCase
     /** @var RepoApiUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->apiUrl = 'https://api.github.com/repos/octocat/linguist';
         $this->sut    = new RepoApiUrl($this->apiUrl);
     }
 
-    public function testGetApiUrl()
+    public function testGetApiUrl(): void
     {
         self::assertSame($this->apiUrl, $this->sut->getApiUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->apiUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->apiUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->apiUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->apiUrl));
     }

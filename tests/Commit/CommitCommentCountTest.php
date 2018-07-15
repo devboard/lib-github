@@ -19,33 +19,33 @@ class CommitCommentCountTest extends TestCase
     /** @var CommitCommentCount */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->commentCount = 73;
         $this->sut          = new CommitCommentCount($this->commentCount);
     }
 
-    public function testGetCommentCount()
+    public function testGetCommentCount(): void
     {
         self::assertSame($this->commentCount, $this->sut->getCommentCount());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->commentCount, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame((string) $this->commentCount, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->commentCount, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->commentCount));
     }

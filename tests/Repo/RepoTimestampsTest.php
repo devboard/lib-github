@@ -28,7 +28,7 @@ class RepoTimestampsTest extends TestCase
     /** @var RepoTimestamps */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->createdAt = new RepoCreatedAt('2011-01-26T19:01:12+00:00');
         $this->updatedAt = new RepoUpdatedAt('2017-11-16T09:16:48+00:00');
@@ -36,22 +36,22 @@ class RepoTimestampsTest extends TestCase
         $this->sut       = new RepoTimestamps($this->createdAt, $this->updatedAt, $this->pushedAt);
     }
 
-    public function testGetCreatedAt()
+    public function testGetCreatedAt(): void
     {
         self::assertSame($this->createdAt, $this->sut->getCreatedAt());
     }
 
-    public function testGetUpdatedAt()
+    public function testGetUpdatedAt(): void
     {
         self::assertSame($this->updatedAt, $this->sut->getUpdatedAt());
     }
 
-    public function testGetPushedAt()
+    public function testGetPushedAt(): void
     {
         self::assertSame($this->pushedAt, $this->sut->getPushedAt());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'createdAt' => '2011-01-26T19:01:12+00:00',
@@ -62,7 +62,7 @@ class RepoTimestampsTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, RepoTimestamps::deserialize(json_decode($serialized, true)));

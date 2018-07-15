@@ -67,7 +67,7 @@ class GitHubInstallationTest extends TestCase
     /** @var GitHubInstallation */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->installationId      = new InstallationId(25235);
         $this->installationAccount = new InstallationAccount(
@@ -103,67 +103,67 @@ class GitHubInstallationTest extends TestCase
         );
     }
 
-    public function testGetInstallationId()
+    public function testGetInstallationId(): void
     {
         self::assertSame($this->installationId, $this->sut->getInstallationId());
     }
 
-    public function testGetInstallationAccount()
+    public function testGetInstallationAccount(): void
     {
         self::assertSame($this->installationAccount, $this->sut->getInstallationAccount());
     }
 
-    public function testGetApplicationId()
+    public function testGetApplicationId(): void
     {
         self::assertSame($this->applicationId, $this->sut->getApplicationId());
     }
 
-    public function testGetRepositorySelection()
+    public function testGetRepositorySelection(): void
     {
         self::assertSame($this->repositorySelection, $this->sut->getRepositorySelection());
     }
 
-    public function testGetPermissions()
+    public function testGetPermissions(): void
     {
         self::assertSame($this->permissions, $this->sut->getPermissions());
     }
 
-    public function testGetEvents()
+    public function testGetEvents(): void
     {
         self::assertSame($this->events, $this->sut->getEvents());
     }
 
-    public function testGetAccessTokenUrl()
+    public function testGetAccessTokenUrl(): void
     {
         self::assertSame($this->accessTokenUrl, $this->sut->getAccessTokenUrl());
     }
 
-    public function testGetRepositoriesUrl()
+    public function testGetRepositoriesUrl(): void
     {
         self::assertSame($this->repositoriesUrl, $this->sut->getRepositoriesUrl());
     }
 
-    public function testGetHtmlUrl()
+    public function testGetHtmlUrl(): void
     {
         self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
     }
 
-    public function testGetCreatedAt()
+    public function testGetCreatedAt(): void
     {
         self::assertSame($this->createdAt, $this->sut->getCreatedAt());
     }
 
-    public function testGetUpdatedAt()
+    public function testGetUpdatedAt(): void
     {
         self::assertSame($this->updatedAt, $this->sut->getUpdatedAt());
     }
 
-    public function testHasRepositorySelection()
+    public function testHasRepositorySelection(): void
     {
         self::assertTrue($this->sut->hasRepositorySelection());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'installationId'      => 25235,
@@ -189,7 +189,7 @@ class GitHubInstallationTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, GitHubInstallation::deserialize(json_decode($serialized, true)));

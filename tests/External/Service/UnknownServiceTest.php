@@ -20,23 +20,23 @@ class UnknownServiceTest extends TestCase
     /** @var UnknownService */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->context = new StatusContext('unknown');
         $this->sut     = new UnknownService($this->context);
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertEquals('unknown', $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertEquals('unknown', $this->sut->__toString());
     }
 
-    public function testGetContext()
+    public function testGetContext(): void
     {
         self::assertEquals($this->context, $this->sut->getContext());
     }

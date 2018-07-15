@@ -19,33 +19,33 @@ class VerificationSignatureTest extends TestCase
     /** @var VerificationSignature */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->signature = '-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----';
         $this->sut       = new VerificationSignature($this->signature);
     }
 
-    public function testGetSignature()
+    public function testGetSignature(): void
     {
         self::assertSame($this->signature, $this->sut->getSignature());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->signature, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->signature, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->signature, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->signature));
     }

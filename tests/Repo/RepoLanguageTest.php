@@ -19,33 +19,33 @@ class RepoLanguageTest extends TestCase
     /** @var RepoLanguage */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->language = 'CSS';
         $this->sut      = new RepoLanguage($this->language);
     }
 
-    public function testGetLanguage()
+    public function testGetLanguage(): void
     {
         self::assertSame($this->language, $this->sut->getLanguage());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->language, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->language, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->language, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->language));
     }

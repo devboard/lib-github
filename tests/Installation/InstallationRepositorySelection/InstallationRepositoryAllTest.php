@@ -19,27 +19,27 @@ class InstallationRepositoryAllTest extends TestCase
     /** @var InstallationRepositoryAll */
     private $installationRepositoryAll;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->installationRepositoryAll = new InstallationRepositoryAll();
     }
 
-    public function testAll()
+    public function testAll(): void
     {
         $this->markTestSkipped('Skipping');
     }
 
-    public function testSelectedOnly()
+    public function testSelectedOnly(): void
     {
         $this->markTestSkipped('Skipping');
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         $this->markTestSkipped('Skipping');
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         $this->markTestSkipped('Skipping');
     }

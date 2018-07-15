@@ -35,7 +35,7 @@ class RepoStatsTest extends TestCase
     /** @var RepoStats */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->networkCount     = 11;
         $this->watchersCount    = 12;
@@ -53,37 +53,37 @@ class RepoStatsTest extends TestCase
         );
     }
 
-    public function testGetNetworkCount()
+    public function testGetNetworkCount(): void
     {
         self::assertSame($this->networkCount, $this->sut->getNetworkCount());
     }
 
-    public function testGetWatchersCount()
+    public function testGetWatchersCount(): void
     {
         self::assertSame($this->watchersCount, $this->sut->getWatchersCount());
     }
 
-    public function testGetStargazersCount()
+    public function testGetStargazersCount(): void
     {
         self::assertSame($this->stargazersCount, $this->sut->getStargazersCount());
     }
 
-    public function testGetSubscribersCount()
+    public function testGetSubscribersCount(): void
     {
         self::assertSame($this->subscribersCount, $this->sut->getSubscribersCount());
     }
 
-    public function testGetOpenIssuesCount()
+    public function testGetOpenIssuesCount(): void
     {
         self::assertSame($this->openIssuesCount, $this->sut->getOpenIssuesCount());
     }
 
-    public function testGetSize()
+    public function testGetSize(): void
     {
         self::assertSame($this->size, $this->sut->getSize());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'networkCount'     => 11,
@@ -97,7 +97,7 @@ class RepoStatsTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, RepoStats::deserialize(json_decode($serialized, true)));

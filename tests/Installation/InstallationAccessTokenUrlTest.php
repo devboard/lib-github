@@ -19,33 +19,33 @@ class InstallationAccessTokenUrlTest extends TestCase
     /** @var InstallationAccessTokenUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->accessTokenUrl = 'access-token-url';
         $this->sut            = new InstallationAccessTokenUrl($this->accessTokenUrl);
     }
 
-    public function testGetAccessTokenUrl()
+    public function testGetAccessTokenUrl(): void
     {
         self::assertSame($this->accessTokenUrl, $this->sut->getAccessTokenUrl());
     }
 
-    public function testGetId()
+    public function testGetId(): void
     {
         self::assertSame($this->accessTokenUrl, $this->sut->getId());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->accessTokenUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->accessTokenUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->accessTokenUrl));
     }

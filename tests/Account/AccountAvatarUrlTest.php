@@ -19,33 +19,33 @@ class AccountAvatarUrlTest extends TestCase
     /** @var AccountAvatarUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->avatarUrl = 'https://avatars.githubusercontent.com/u/6752317?v=3';
         $this->sut       = new AccountAvatarUrl($this->avatarUrl);
     }
 
-    public function testGetAvatarUrl()
+    public function testGetAvatarUrl(): void
     {
         self::assertSame($this->avatarUrl, $this->sut->getAvatarUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->avatarUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->avatarUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->avatarUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->avatarUrl));
     }

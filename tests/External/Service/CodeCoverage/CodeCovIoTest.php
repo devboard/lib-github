@@ -25,23 +25,23 @@ class CodeCovIoTest extends TestCase
     /** @var CodeCovIo */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->context = Mockery::mock(StatusContext::class);
         $this->sut     = new CodeCovIo($this->context);
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertEquals('CodecovIO', $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertEquals('CodecovIO', $this->sut->__toString());
     }
 
-    public function testGetContext()
+    public function testGetContext(): void
     {
         self::assertEquals($this->context, $this->sut->getContext());
     }

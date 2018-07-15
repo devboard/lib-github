@@ -54,7 +54,7 @@ class GitHubTagTest extends TestCase
     /** @var GitHubTag */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->repoFullName = new RepoFullName(new AccountLogin('devboard-test'), new RepoName('Hello-World'));
         $this->name         = new TagName('0.3');
@@ -98,22 +98,22 @@ class GitHubTagTest extends TestCase
         $this->sut = new GitHubTag($this->repoFullName, $this->name, $this->commit);
     }
 
-    public function testGetRepoFullName()
+    public function testGetRepoFullName(): void
     {
         self::assertSame($this->repoFullName, $this->sut->getRepoFullName());
     }
 
-    public function testGetName()
+    public function testGetName(): void
     {
         self::assertSame($this->name, $this->sut->getName());
     }
 
-    public function testGetCommit()
+    public function testGetCommit(): void
     {
         self::assertSame($this->commit, $this->sut->getCommit());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'repoFullName' => ['owner' => 'devboard-test', 'repoName' => 'Hello-World'],
@@ -162,7 +162,7 @@ class GitHubTagTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, GitHubTag::deserialize(json_decode($serialized, true)));

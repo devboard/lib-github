@@ -19,22 +19,22 @@ class PendingTest extends TestCase
     /** @var Pending */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sut = new Pending();
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertEquals('pending', $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertEquals('pending', $this->sut->__toString());
     }
 
-    public function testConstName()
+    public function testConstName(): void
     {
         self::assertEquals('pending', $this->sut::NAME);
     }

@@ -19,33 +19,33 @@ class VerificationPayloadTest extends TestCase
     /** @var VerificationPayload */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->payload = 'tree 691272480426f78a0138979dd3ce63b77f706feb\n...';
         $this->sut     = new VerificationPayload($this->payload);
     }
 
-    public function testGetPayload()
+    public function testGetPayload(): void
     {
         self::assertSame($this->payload, $this->sut->getPayload());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->payload, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->payload, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->payload, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->payload));
     }

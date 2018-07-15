@@ -19,33 +19,33 @@ class RepoHomepageTest extends TestCase
     /** @var RepoHomepage */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->homepage = 'http://www.example.com/';
         $this->sut      = new RepoHomepage($this->homepage);
     }
 
-    public function testGetHomepage()
+    public function testGetHomepage(): void
     {
         self::assertSame($this->homepage, $this->sut->getHomepage());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->homepage, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->homepage, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->homepage, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->homepage));
     }

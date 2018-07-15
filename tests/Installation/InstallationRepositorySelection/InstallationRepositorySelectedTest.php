@@ -19,27 +19,27 @@ class InstallationRepositorySelectedTest extends TestCase
     /** @var InstallationRepositorySelected */
     private $installationRepositorySelected;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->installationRepositorySelected = new InstallationRepositorySelected();
     }
 
-    public function testSelectedOnly()
+    public function testSelectedOnly(): void
     {
         $this->markTestSkipped('Skipping');
     }
 
-    public function testAll()
+    public function testAll(): void
     {
         $this->markTestSkipped('Skipping');
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         $this->markTestSkipped('Skipping');
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         $this->markTestSkipped('Skipping');
     }
