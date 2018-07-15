@@ -19,33 +19,33 @@ class RepoSshUrlTest extends TestCase
     /** @var RepoSshUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sshUrl = 'git@github.com:octocat/linguist.git';
         $this->sut    = new RepoSshUrl($this->sshUrl);
     }
 
-    public function testGetSshUrl()
+    public function testGetSshUrl(): void
     {
         self::assertSame($this->sshUrl, $this->sut->getSshUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->sshUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->sshUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->sshUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->sshUrl));
     }

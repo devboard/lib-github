@@ -19,33 +19,33 @@ class InstallationRepositoriesUrlTest extends TestCase
     /** @var InstallationRepositoriesUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->installationRepositoriesUrl = 'installationRepositoriesUrl';
         $this->sut                         = new InstallationRepositoriesUrl($this->installationRepositoriesUrl);
     }
 
-    public function testGetInstallationRepositoriesUrl()
+    public function testGetInstallationRepositoriesUrl(): void
     {
         self::assertSame($this->installationRepositoriesUrl, $this->sut->getInstallationRepositoriesUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->installationRepositoriesUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->installationRepositoriesUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->installationRepositoriesUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->installationRepositoriesUrl));
     }

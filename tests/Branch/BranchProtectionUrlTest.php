@@ -19,33 +19,33 @@ class BranchProtectionUrlTest extends TestCase
     /** @var BranchProtectionUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->protectionUrl = 'protectionUrl';
         $this->sut           = new BranchProtectionUrl($this->protectionUrl);
     }
 
-    public function testGetProtectionUrl()
+    public function testGetProtectionUrl(): void
     {
         self::assertSame($this->protectionUrl, $this->sut->getProtectionUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->protectionUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->protectionUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->protectionUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->protectionUrl));
     }

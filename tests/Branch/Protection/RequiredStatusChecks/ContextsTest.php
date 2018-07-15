@@ -21,18 +21,18 @@ class ContextsTest extends TestCase
     /** @var Contexts */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->elements = [new Context(new ContextId(1))];
         $this->sut      = new Contexts($this->elements);
     }
 
-    public function testGetElements()
+    public function testGetElements(): void
     {
         self::assertSame($this->elements, $this->sut->toArray());
     }
 
-    public function testSerializeAndDeserialize()
+    public function testSerializeAndDeserialize(): void
     {
         $serialized     = $this->sut->serialize();
         $serializedJson = json_encode($serialized);

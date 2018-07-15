@@ -19,33 +19,33 @@ class StatusTargetUrlTest extends TestCase
     /** @var StatusTargetUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->targetUrl = 'https://circleci.com/gh/msvrtan/generator/231?utm_campaign=vcs-integration-link';
         $this->sut       = new StatusTargetUrl($this->targetUrl);
     }
 
-    public function testGetTargetUrl()
+    public function testGetTargetUrl(): void
     {
         self::assertSame($this->targetUrl, $this->sut->getTargetUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->targetUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->targetUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->targetUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->targetUrl));
     }

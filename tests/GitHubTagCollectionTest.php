@@ -49,7 +49,7 @@ class GitHubTagCollectionTest extends TestCase
     /** @var GitHubTagCollection */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->elements = [
             new GitHubTag(
@@ -99,12 +99,12 @@ class GitHubTagCollectionTest extends TestCase
         $this->sut = new GitHubTagCollection($this->elements);
     }
 
-    public function testGetElements()
+    public function testGetElements(): void
     {
         self::assertSame($this->elements, $this->sut->toArray());
     }
 
-    public function testSerializeAndDeserialize()
+    public function testSerializeAndDeserialize(): void
     {
         $serialized     = $this->sut->serialize();
         $serializedJson = json_encode($serialized);

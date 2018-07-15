@@ -58,7 +58,7 @@ class GitHubStatusTest extends TestCase
     /** @var GitHubStatus */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->id              = new StatusId(1);
         $this->state           = StatusState::Pending();
@@ -88,52 +88,52 @@ class GitHubStatusTest extends TestCase
         );
     }
 
-    public function testGetId()
+    public function testGetId(): void
     {
         self::assertSame($this->id, $this->sut->getId());
     }
 
-    public function testGetState()
+    public function testGetState(): void
     {
         self::assertSame($this->state, $this->sut->getState());
     }
 
-    public function testGetDescription()
+    public function testGetDescription(): void
     {
         self::assertSame($this->description, $this->sut->getDescription());
     }
 
-    public function testGetTargetUrl()
+    public function testGetTargetUrl(): void
     {
         self::assertSame($this->targetUrl, $this->sut->getTargetUrl());
     }
 
-    public function testGetContext()
+    public function testGetContext(): void
     {
         self::assertSame($this->context, $this->sut->getContext());
     }
 
-    public function testGetExternalService()
+    public function testGetExternalService(): void
     {
         self::assertSame($this->externalService, $this->sut->getExternalService());
     }
 
-    public function testGetCreator()
+    public function testGetCreator(): void
     {
         self::assertSame($this->creator, $this->sut->getCreator());
     }
 
-    public function testGetCreatedAt()
+    public function testGetCreatedAt(): void
     {
         self::assertSame($this->createdAt, $this->sut->getCreatedAt());
     }
 
-    public function testGetUpdatedAt()
+    public function testGetUpdatedAt(): void
     {
         self::assertSame($this->updatedAt, $this->sut->getUpdatedAt());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'id'              => 1,
@@ -160,7 +160,7 @@ class GitHubStatusTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, GitHubStatus::deserialize(json_decode($serialized, true)));

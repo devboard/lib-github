@@ -35,7 +35,7 @@ class MilestoneCreatorTest extends TestCase
     /** @var MilestoneCreator */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->userId    = new AccountId(583231);
         $this->login     = new AccountLogin('octocat');
@@ -48,32 +48,32 @@ class MilestoneCreatorTest extends TestCase
         );
     }
 
-    public function testGetUserId()
+    public function testGetUserId(): void
     {
         self::assertSame($this->userId, $this->sut->getUserId());
     }
 
-    public function testGetLogin()
+    public function testGetLogin(): void
     {
         self::assertSame($this->login, $this->sut->getLogin());
     }
 
-    public function testGetType()
+    public function testGetType(): void
     {
         self::assertSame($this->type, $this->sut->getType());
     }
 
-    public function testGetAvatarUrl()
+    public function testGetAvatarUrl(): void
     {
         self::assertSame($this->avatarUrl, $this->sut->getAvatarUrl());
     }
 
-    public function testIsSiteAdmin()
+    public function testIsSiteAdmin(): void
     {
         self::assertSame($this->siteAdmin, $this->sut->isSiteAdmin());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'userId'    => 583231,
@@ -87,7 +87,7 @@ class MilestoneCreatorTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, MilestoneCreator::deserialize(json_decode($serialized, true)));

@@ -19,33 +19,33 @@ class PullRequestReviewHtmlUrlTest extends TestCase
     /** @var PullRequestReviewHtmlUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->htmlUrl = 'htmlUrl';
         $this->sut     = new PullRequestReviewHtmlUrl($this->htmlUrl);
     }
 
-    public function testGetHtmlUrl()
+    public function testGetHtmlUrl(): void
     {
         self::assertSame($this->htmlUrl, $this->sut->getHtmlUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->htmlUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->htmlUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->htmlUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->htmlUrl));
     }

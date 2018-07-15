@@ -19,22 +19,22 @@ class PassedTest extends TestCase
     /** @var Passed */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sut = new Passed();
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertEquals('passed', $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertEquals('passed', $this->sut->__toString());
     }
 
-    public function testConstName()
+    public function testConstName(): void
     {
         self::assertEquals('passed', $this->sut::NAME);
     }

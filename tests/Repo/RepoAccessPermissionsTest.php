@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 class RepoAccessPermissionsTest extends TestCase
 {
     /** @dataProvider provideValues */
-    public function testIt(bool $admin, bool $pushAllowed, bool $pullAllowed)
+    public function testIt(bool $admin, bool $pushAllowed, bool $pullAllowed): void
     {
         $sut = new RepoAccessPermissions($admin, $pushAllowed, $pullAllowed);
 

@@ -19,33 +19,33 @@ class LabelColorTest extends TestCase
     /** @var LabelColor */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->color = 'color';
         $this->sut   = new LabelColor($this->color);
     }
 
-    public function testGetColor()
+    public function testGetColor(): void
     {
         self::assertSame($this->color, $this->sut->getColor());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->color, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->color, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->color, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->color));
     }

@@ -19,28 +19,28 @@ class InstallationIdTest extends TestCase
     /** @var InstallationId */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->id  = 25235;
         $this->sut = new InstallationId($this->id);
     }
 
-    public function testGetId()
+    public function testGetId(): void
     {
         self::assertSame($this->id, $this->sut->getId());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame((string) $this->id, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->id, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->id));
     }

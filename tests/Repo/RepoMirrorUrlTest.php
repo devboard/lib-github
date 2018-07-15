@@ -19,33 +19,33 @@ class RepoMirrorUrlTest extends TestCase
     /** @var RepoMirrorUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mirrorUrl = 'http://mirror.example.com';
         $this->sut       = new RepoMirrorUrl($this->mirrorUrl);
     }
 
-    public function testGetMirrorUrl()
+    public function testGetMirrorUrl(): void
     {
         self::assertSame($this->mirrorUrl, $this->sut->getMirrorUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->mirrorUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->mirrorUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->mirrorUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->mirrorUrl));
     }

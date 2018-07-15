@@ -25,23 +25,23 @@ class AppVeyorTest extends TestCase
     /** @var AppVeyor */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->context = Mockery::mock(StatusContext::class);
         $this->sut     = new AppVeyor($this->context);
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertEquals('AppVeyor', $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertEquals('AppVeyor', $this->sut->__toString());
     }
 
-    public function testGetContext()
+    public function testGetContext(): void
     {
         self::assertEquals($this->context, $this->sut->getContext());
     }

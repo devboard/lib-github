@@ -32,7 +32,7 @@ class CommitVerificationTest extends TestCase
     /** @var CommitVerification */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->verified  = new VerificationVerified(false);
         $this->reason    = new VerificationReason('valid');
@@ -41,37 +41,37 @@ class CommitVerificationTest extends TestCase
         $this->sut       = new CommitVerification($this->verified, $this->reason, $this->signature, $this->payload);
     }
 
-    public function testGetVerified()
+    public function testGetVerified(): void
     {
         self::assertSame($this->verified, $this->sut->getVerified());
     }
 
-    public function testGetReason()
+    public function testGetReason(): void
     {
         self::assertSame($this->reason, $this->sut->getReason());
     }
 
-    public function testGetSignature()
+    public function testGetSignature(): void
     {
         self::assertSame($this->signature, $this->sut->getSignature());
     }
 
-    public function testGetPayload()
+    public function testGetPayload(): void
     {
         self::assertSame($this->payload, $this->sut->getPayload());
     }
 
-    public function testHasSignature()
+    public function testHasSignature(): void
     {
         self::assertTrue($this->sut->hasSignature());
     }
 
-    public function testHasPayload()
+    public function testHasPayload(): void
     {
         self::assertTrue($this->sut->hasPayload());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'verified'  => false,
@@ -83,7 +83,7 @@ class CommitVerificationTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, CommitVerification::deserialize(json_decode($serialized, true)));

@@ -61,7 +61,7 @@ class GitHubBranchTest extends TestCase
     /** @var GitHubBranch */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->repoFullName = new RepoFullName(new AccountLogin('devboard-test'), new RepoName('Hello-World'));
         $this->name         = new BranchName('master');
@@ -109,42 +109,42 @@ class GitHubBranchTest extends TestCase
         );
     }
 
-    public function testGetRepoFullName()
+    public function testGetRepoFullName(): void
     {
         self::assertSame($this->repoFullName, $this->sut->getRepoFullName());
     }
 
-    public function testGetName()
+    public function testGetName(): void
     {
         self::assertSame($this->name, $this->sut->getName());
     }
 
-    public function testGetCommit()
+    public function testGetCommit(): void
     {
         self::assertSame($this->commit, $this->sut->getCommit());
     }
 
-    public function testIsProtected()
+    public function testIsProtected(): void
     {
         self::assertSame($this->protected, $this->sut->isProtected());
     }
 
-    public function testGetProtectionUrl()
+    public function testGetProtectionUrl(): void
     {
         self::assertSame($this->protectionUrl, $this->sut->getProtectionUrl());
     }
 
-    public function testHasProtected()
+    public function testHasProtected(): void
     {
         self::assertTrue($this->sut->hasProtected());
     }
 
-    public function testHasProtectionUrl()
+    public function testHasProtectionUrl(): void
     {
         self::assertTrue($this->sut->hasProtectionUrl());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'repoFullName' => ['owner' => 'devboard-test', 'repoName' => 'Hello-World'],
@@ -195,7 +195,7 @@ class GitHubBranchTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, GitHubBranch::deserialize(json_decode($serialized, true)));

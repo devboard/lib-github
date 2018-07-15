@@ -88,7 +88,7 @@ class GitHubRepoTest extends TestCase
     /** @var GitHubRepo */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->id       = new RepoId(1296269);
         $this->fullName = new RepoFullName(new AccountLogin('devboard-test'), new RepoName('Hello-World'));
@@ -143,122 +143,122 @@ class GitHubRepoTest extends TestCase
         );
     }
 
-    public function testGetId()
+    public function testGetId(): void
     {
         self::assertSame($this->id, $this->sut->getId());
     }
 
-    public function testGetFullName()
+    public function testGetFullName(): void
     {
         self::assertSame($this->fullName, $this->sut->getFullName());
     }
 
-    public function testGetRepoOwnerName()
+    public function testGetRepoOwnerName(): void
     {
         self::assertEquals(new AccountLogin('devboard-test'), $this->sut->getRepoOwnerName());
     }
 
-    public function testGetRepoName()
+    public function testGetRepoName(): void
     {
         self::assertEquals(new RepoName('Hello-World'), $this->sut->getRepoName());
     }
 
-    public function testGetOwner()
+    public function testGetOwner(): void
     {
         self::assertSame($this->owner, $this->sut->getOwner());
     }
 
-    public function testIsPrivate()
+    public function testIsPrivate(): void
     {
         self::assertSame($this->private, $this->sut->isPrivate());
     }
 
-    public function testGetDefaultBranch()
+    public function testGetDefaultBranch(): void
     {
         self::assertSame($this->defaultBranch, $this->sut->getDefaultBranch());
     }
 
-    public function testIsFork()
+    public function testIsFork(): void
     {
         self::assertSame($this->fork, $this->sut->isFork());
     }
 
-    public function testGetParent()
+    public function testGetParent(): void
     {
         self::assertSame($this->parent, $this->sut->getParent());
     }
 
-    public function testGetDescription()
+    public function testGetDescription(): void
     {
         self::assertSame($this->description, $this->sut->getDescription());
     }
 
-    public function testGetHomepage()
+    public function testGetHomepage(): void
     {
         self::assertSame($this->homepage, $this->sut->getHomepage());
     }
 
-    public function testGetLanguage()
+    public function testGetLanguage(): void
     {
         self::assertSame($this->language, $this->sut->getLanguage());
     }
 
-    public function testGetMirrorUrl()
+    public function testGetMirrorUrl(): void
     {
         self::assertSame($this->mirrorUrl, $this->sut->getMirrorUrl());
     }
 
-    public function testIsArchived()
+    public function testIsArchived(): void
     {
         self::assertSame($this->archived, $this->sut->isArchived());
     }
 
-    public function testGetEndpoints()
+    public function testGetEndpoints(): void
     {
         self::assertSame($this->endpoints, $this->sut->getEndpoints());
     }
 
-    public function testGetStats()
+    public function testGetStats(): void
     {
         self::assertSame($this->stats, $this->sut->getStats());
     }
 
-    public function testGetTimestamps()
+    public function testGetTimestamps(): void
     {
         self::assertSame($this->timestamps, $this->sut->getTimestamps());
     }
 
-    public function testHasParent()
+    public function testHasParent(): void
     {
         self::assertTrue($this->sut->hasParent());
     }
 
-    public function testHasDescription()
+    public function testHasDescription(): void
     {
         self::assertTrue($this->sut->hasDescription());
     }
 
-    public function testHasHomepage()
+    public function testHasHomepage(): void
     {
         self::assertTrue($this->sut->hasHomepage());
     }
 
-    public function testHasLanguage()
+    public function testHasLanguage(): void
     {
         self::assertTrue($this->sut->hasLanguage());
     }
 
-    public function testHasMirrorUrl()
+    public function testHasMirrorUrl(): void
     {
         self::assertTrue($this->sut->hasMirrorUrl());
     }
 
-    public function testHasArchived()
+    public function testHasArchived(): void
     {
         self::assertTrue($this->sut->hasArchived());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'id'       => 1296269,
@@ -304,7 +304,7 @@ class GitHubRepoTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, GitHubRepo::deserialize(json_decode($serialized, true)));

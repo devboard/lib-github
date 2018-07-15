@@ -27,7 +27,7 @@ class ProtectionTest extends TestCase
     /** @var Protection */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->enabled              = true;
         $this->requiredStatusChecks = new RequiredStatusChecks(
@@ -37,17 +37,17 @@ class ProtectionTest extends TestCase
         $this->sut = new Protection($this->enabled, $this->requiredStatusChecks);
     }
 
-    public function testIsEnabled()
+    public function testIsEnabled(): void
     {
         self::assertSame($this->enabled, $this->sut->isEnabled());
     }
 
-    public function testGetRequiredStatusChecks()
+    public function testGetRequiredStatusChecks(): void
     {
         self::assertSame($this->requiredStatusChecks, $this->sut->getRequiredStatusChecks());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'enabled'              => true,
@@ -57,7 +57,7 @@ class ProtectionTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, Protection::deserialize(json_decode($serialized, true)));

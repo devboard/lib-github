@@ -32,7 +32,7 @@ class RepoEndpointsTest extends TestCase
     /** @var RepoEndpoints */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->htmlUrl = new RepoHtmlUrl('https://github.com/octocat/Hello-World');
         $this->apiUrl  = new RepoApiUrl('https://api.github.com/repos/octocat/Hello-World');
@@ -41,17 +41,17 @@ class RepoEndpointsTest extends TestCase
         $this->sut     = new RepoEndpoints($this->htmlUrl, $this->apiUrl, $this->gitUrl, $this->sshUrl);
     }
 
-    public function testGetGitUrl()
+    public function testGetGitUrl(): void
     {
         self::assertSame($this->gitUrl, $this->sut->getGitUrl());
     }
 
-    public function testGetSshUrl()
+    public function testGetSshUrl(): void
     {
         self::assertSame($this->sshUrl, $this->sut->getSshUrl());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'htmlUrl' => 'https://github.com/octocat/Hello-World',
@@ -63,7 +63,7 @@ class RepoEndpointsTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, RepoEndpoints::deserialize(json_decode($serialized, true)));

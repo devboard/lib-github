@@ -20,25 +20,25 @@ class CommitParentTest extends TestCase
     /** @var CommitParent */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sha = new CommitSha('5246f51f550db504e76c98b641e3337570e84dd4');
         $this->sut = new CommitParent($this->sha);
     }
 
-    public function testGetSha()
+    public function testGetSha(): void
     {
         self::assertSame($this->sha, $this->sut->getSha());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = ['sha' => '5246f51f550db504e76c98b641e3337570e84dd4'];
 
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, CommitParent::deserialize(json_decode($serialized, true)));

@@ -19,33 +19,33 @@ class RepoGitUrlTest extends TestCase
     /** @var RepoGitUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->gitUrl = 'git://github.com/octocat/linguist.git';
         $this->sut    = new RepoGitUrl($this->gitUrl);
     }
 
-    public function testGetGitUrl()
+    public function testGetGitUrl(): void
     {
         self::assertSame($this->gitUrl, $this->sut->getGitUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->gitUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->gitUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->gitUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->gitUrl));
     }

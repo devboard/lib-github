@@ -19,22 +19,22 @@ class ErrorTest extends TestCase
     /** @var Error */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->sut = new Error();
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertEquals('error', $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertEquals('error', $this->sut->__toString());
     }
 
-    public function testConstName()
+    public function testConstName(): void
     {
         self::assertEquals('error', $this->sut::NAME);
     }

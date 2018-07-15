@@ -25,23 +25,23 @@ class CoverallsIoTest extends TestCase
     /** @var CoverallsIo */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->context = Mockery::mock(StatusContext::class);
         $this->sut     = new CoverallsIo($this->context);
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertEquals('CoverallsIO', $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertEquals('CoverallsIO', $this->sut->__toString());
     }
 
-    public function testGetContext()
+    public function testGetContext(): void
     {
         self::assertEquals($this->context, $this->sut->getContext());
     }

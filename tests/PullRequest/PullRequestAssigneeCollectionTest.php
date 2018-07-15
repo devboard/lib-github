@@ -26,7 +26,7 @@ class PullRequestAssigneeCollectionTest extends TestCase
     /** @var PullRequestAssigneeCollection */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->elements = [
             new PullRequestAssignee(
@@ -40,12 +40,12 @@ class PullRequestAssigneeCollectionTest extends TestCase
         $this->sut = new PullRequestAssigneeCollection($this->elements);
     }
 
-    public function testGetElements()
+    public function testGetElements(): void
     {
         self::assertSame($this->elements, $this->sut->toArray());
     }
 
-    public function testSerializeAndDeserialize()
+    public function testSerializeAndDeserialize(): void
     {
         $serialized     = $this->sut->serialize();
         $serializedJson = json_encode($serialized);

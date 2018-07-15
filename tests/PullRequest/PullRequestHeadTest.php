@@ -54,7 +54,7 @@ class PullRequestHeadTest extends TestCase
     /** @var PullRequestHead */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->targetBranchName = new BranchName('name');
         $this->repo             = new GitHubRepo(
@@ -97,27 +97,27 @@ class PullRequestHeadTest extends TestCase
         $this->sut = new PullRequestHead($this->targetBranchName, $this->repo, $this->sha);
     }
 
-    public function testGetTargetBranchName()
+    public function testGetTargetBranchName(): void
     {
         self::assertSame($this->targetBranchName, $this->sut->getTargetBranchName());
     }
 
-    public function testGetRepo()
+    public function testGetRepo(): void
     {
         self::assertSame($this->repo, $this->sut->getRepo());
     }
 
-    public function testGetSha()
+    public function testGetSha(): void
     {
         self::assertSame($this->sha, $this->sut->getSha());
     }
 
-    public function testHasRepo()
+    public function testHasRepo(): void
     {
         self::assertTrue($this->sut->hasRepo());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'targetBranchName' => 'name',
@@ -166,7 +166,7 @@ class PullRequestHeadTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, PullRequestHead::deserialize(json_decode($serialized, true)));

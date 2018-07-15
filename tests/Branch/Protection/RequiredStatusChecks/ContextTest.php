@@ -20,23 +20,23 @@ class ContextTest extends TestCase
     /** @var Context */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->id  = new ContextId(1);
         $this->sut = new Context($this->id);
     }
 
-    public function testGetId()
+    public function testGetId(): void
     {
         self::assertSame($this->id, $this->sut->getId());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->id->serialize(), $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, Context::deserialize(json_decode($serialized, true)));

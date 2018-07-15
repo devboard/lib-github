@@ -19,33 +19,33 @@ class InstallationHtmlUrlTest extends TestCase
     /** @var InstallationHtmlUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->installationHtmlUrl = 'installationHtmlUrl';
         $this->sut                 = new InstallationHtmlUrl($this->installationHtmlUrl);
     }
 
-    public function testGetInstallationHtmlUrl()
+    public function testGetInstallationHtmlUrl(): void
     {
         self::assertSame($this->installationHtmlUrl, $this->sut->getInstallationHtmlUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->installationHtmlUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->installationHtmlUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->installationHtmlUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->installationHtmlUrl));
     }

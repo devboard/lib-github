@@ -62,7 +62,7 @@ class GitHubMilestoneTest extends TestCase
     /** @var GitHubMilestone */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->id          = new MilestoneId(1);
         $this->title       = new MilestoneTitle('value');
@@ -94,67 +94,67 @@ class GitHubMilestoneTest extends TestCase
         );
     }
 
-    public function testGetId()
+    public function testGetId(): void
     {
         self::assertSame($this->id, $this->sut->getId());
     }
 
-    public function testGetTitle()
+    public function testGetTitle(): void
     {
         self::assertSame($this->title, $this->sut->getTitle());
     }
 
-    public function testGetDescription()
+    public function testGetDescription(): void
     {
         self::assertSame($this->description, $this->sut->getDescription());
     }
 
-    public function testGetDueOn()
+    public function testGetDueOn(): void
     {
         self::assertSame($this->dueOn, $this->sut->getDueOn());
     }
 
-    public function testGetState()
+    public function testGetState(): void
     {
         self::assertSame($this->state, $this->sut->getState());
     }
 
-    public function testGetNumber()
+    public function testGetNumber(): void
     {
         self::assertSame($this->number, $this->sut->getNumber());
     }
 
-    public function testGetCreator()
+    public function testGetCreator(): void
     {
         self::assertSame($this->creator, $this->sut->getCreator());
     }
 
-    public function testGetClosedAt()
+    public function testGetClosedAt(): void
     {
         self::assertSame($this->closedAt, $this->sut->getClosedAt());
     }
 
-    public function testGetCreatedAt()
+    public function testGetCreatedAt(): void
     {
         self::assertSame($this->createdAt, $this->sut->getCreatedAt());
     }
 
-    public function testGetUpdatedAt()
+    public function testGetUpdatedAt(): void
     {
         self::assertSame($this->updatedAt, $this->sut->getUpdatedAt());
     }
 
-    public function testHasClosedAt()
+    public function testHasClosedAt(): void
     {
         self::assertTrue($this->sut->hasClosedAt());
     }
 
-    public function testHasDueOn()
+    public function testHasDueOn(): void
     {
         self::assertTrue($this->sut->hasDueOn());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         $expected = [
             'id'          => 1,
@@ -179,7 +179,7 @@ class GitHubMilestoneTest extends TestCase
         self::assertSame($expected, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         $serialized = json_encode($this->sut->serialize());
         self::assertEquals($this->sut, GitHubMilestone::deserialize(json_decode($serialized, true)));

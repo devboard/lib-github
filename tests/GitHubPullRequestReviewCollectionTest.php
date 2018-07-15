@@ -33,7 +33,7 @@ class GitHubPullRequestReviewCollectionTest extends TestCase
     /** @var GitHubPullRequestReviewCollection */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->elements = [
             new GitHubPullRequestReview(
@@ -55,12 +55,12 @@ class GitHubPullRequestReviewCollectionTest extends TestCase
         $this->sut = new GitHubPullRequestReviewCollection($this->elements);
     }
 
-    public function testGetElements()
+    public function testGetElements(): void
     {
         self::assertSame($this->elements, $this->sut->toArray());
     }
 
-    public function testSerializeAndDeserialize()
+    public function testSerializeAndDeserialize(): void
     {
         $serialized     = $this->sut->serialize();
         $serializedJson = json_encode($serialized);

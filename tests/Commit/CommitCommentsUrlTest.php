@@ -19,33 +19,33 @@ class CommitCommentsUrlTest extends TestCase
     /** @var CommitCommentsUrl */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->commentsUrl = 'commentsUrl';
         $this->sut         = new CommitCommentsUrl($this->commentsUrl);
     }
 
-    public function testGetCommentsUrl()
+    public function testGetCommentsUrl(): void
     {
         self::assertSame($this->commentsUrl, $this->sut->getCommentsUrl());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->commentsUrl, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->commentsUrl, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->commentsUrl, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->commentsUrl));
     }

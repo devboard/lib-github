@@ -19,33 +19,33 @@ class VerificationReasonTest extends TestCase
     /** @var VerificationReason */
     private $sut;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->reason = 'expired_key';
         $this->sut    = new VerificationReason($this->reason);
     }
 
-    public function testGetReason()
+    public function testGetReason(): void
     {
         self::assertSame($this->reason, $this->sut->getReason());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         self::assertSame($this->reason, $this->sut->getValue());
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         self::assertSame($this->reason, $this->sut->__toString());
     }
 
-    public function testSerialize()
+    public function testSerialize(): void
     {
         self::assertEquals($this->reason, $this->sut->serialize());
     }
 
-    public function testDeserialize()
+    public function testDeserialize(): void
     {
         self::assertEquals($this->sut, $this->sut->deserialize($this->reason));
     }
