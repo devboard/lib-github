@@ -26,7 +26,7 @@ class CommitParentCollection implements CommitParentCollectionInterface
         $this->elements = $elements;
     }
 
-    public function add(CommitParent $element)
+    public function add(CommitParent $element): void
     {
         $this->elements[] = $element;
     }
@@ -42,7 +42,7 @@ class CommitParentCollection implements CommitParentCollectionInterface
         return false;
     }
 
-    public function get(CommitSha $id)
+    public function get(CommitSha $id): ?CommitParent
     {
         foreach ($this->elements as $element) {
             if ($element->getSha() == $id) {

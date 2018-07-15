@@ -25,7 +25,7 @@ class GitHubRepoCollection
         $this->elements = $elements;
     }
 
-    public function add(GitHubRepo $element)
+    public function add(GitHubRepo $element): void
     {
         $this->elements[] = $element;
     }
@@ -41,7 +41,7 @@ class GitHubRepoCollection
         return false;
     }
 
-    public function get(RepoFullName $id)
+    public function get(RepoFullName $id): ?GitHubRepo
     {
         foreach ($this->elements as $element) {
             if ($element->getFullName() == $id) {

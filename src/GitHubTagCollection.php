@@ -25,7 +25,7 @@ class GitHubTagCollection
         $this->elements = $elements;
     }
 
-    public function add(GitHubTag $element)
+    public function add(GitHubTag $element): void
     {
         $this->elements[] = $element;
     }
@@ -41,7 +41,7 @@ class GitHubTagCollection
         return false;
     }
 
-    public function get(TagName $id)
+    public function get(TagName $id): ?GitHubTag
     {
         foreach ($this->elements as $element) {
             if ($element->getName() == $id) {

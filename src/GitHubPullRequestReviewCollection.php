@@ -25,7 +25,7 @@ class GitHubPullRequestReviewCollection
         $this->elements = $elements;
     }
 
-    public function add(GitHubPullRequestReview $element)
+    public function add(GitHubPullRequestReview $element): void
     {
         $this->elements[] = $element;
     }
@@ -41,7 +41,7 @@ class GitHubPullRequestReviewCollection
         return false;
     }
 
-    public function get(PullRequestReviewId $id)
+    public function get(PullRequestReviewId $id): ?GitHubPullRequestReview
     {
         foreach ($this->elements as $element) {
             if ($element->getId() == $id) {

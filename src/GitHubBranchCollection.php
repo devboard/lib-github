@@ -25,7 +25,7 @@ class GitHubBranchCollection
         $this->elements = $elements;
     }
 
-    public function add(GitHubBranch $element)
+    public function add(GitHubBranch $element): void
     {
         $this->elements[] = $element;
     }
@@ -41,7 +41,7 @@ class GitHubBranchCollection
         return false;
     }
 
-    public function get(BranchName $id)
+    public function get(BranchName $id): ?GitHubBranch
     {
         foreach ($this->elements as $element) {
             if ($element->getName() == $id) {

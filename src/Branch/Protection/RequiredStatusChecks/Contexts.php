@@ -25,7 +25,7 @@ class Contexts
         $this->elements = $elements;
     }
 
-    public function add(Context $element)
+    public function add(Context $element): void
     {
         $this->elements[] = $element;
     }
@@ -41,7 +41,7 @@ class Contexts
         return false;
     }
 
-    public function get(ContextId $id)
+    public function get(ContextId $id): ?Context
     {
         foreach ($this->elements as $element) {
             if ($element->getId() == $id) {
