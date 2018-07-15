@@ -25,7 +25,7 @@ class PullRequestAssigneeCollection
         $this->elements = $elements;
     }
 
-    public function add(PullRequestAssignee $element)
+    public function add(PullRequestAssignee $element): void
     {
         $this->elements[] = $element;
     }
@@ -41,7 +41,7 @@ class PullRequestAssigneeCollection
         return false;
     }
 
-    public function get(AccountId $id)
+    public function get(AccountId $id): ?PullRequestAssignee
     {
         foreach ($this->elements as $element) {
             if ($element->getUserId() == $id) {

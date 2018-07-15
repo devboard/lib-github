@@ -25,7 +25,7 @@ class GitHubCommitCollection
         $this->elements = $elements;
     }
 
-    public function add(GitHubCommit $element)
+    public function add(GitHubCommit $element): void
     {
         $this->elements[] = $element;
     }
@@ -41,7 +41,7 @@ class GitHubCommitCollection
         return false;
     }
 
-    public function get(CommitSha $id)
+    public function get(CommitSha $id): ?GitHubCommit
     {
         foreach ($this->elements as $element) {
             if ($element->getSha() == $id) {

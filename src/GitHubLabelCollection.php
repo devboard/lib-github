@@ -25,7 +25,7 @@ class GitHubLabelCollection
         $this->elements = $elements;
     }
 
-    public function add(GitHubLabel $element)
+    public function add(GitHubLabel $element): void
     {
         $this->elements[] = $element;
     }
@@ -41,7 +41,7 @@ class GitHubLabelCollection
         return false;
     }
 
-    public function get(LabelId $id)
+    public function get(LabelId $id): ?GitHubLabel
     {
         foreach ($this->elements as $element) {
             if ($element->getId() == $id) {
