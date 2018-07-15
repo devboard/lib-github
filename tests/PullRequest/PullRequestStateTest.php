@@ -16,7 +16,7 @@ class PullRequestStateTest extends TestCase
     /**
      * @dataProvider provideStates
      */
-    public function testGetValue($stateName): void
+    public function testGetValue(string $stateName): void
     {
         $sut = new PullRequestState($stateName);
         self::assertEquals($stateName, $sut->getValue());
@@ -25,7 +25,7 @@ class PullRequestStateTest extends TestCase
     /**
      * @dataProvider provideStates
      */
-    public function testToString($stateName): void
+    public function testToString(string $stateName): void
     {
         $sut = new PullRequestState($stateName);
         self::assertEquals($stateName, $sut->__toString());
