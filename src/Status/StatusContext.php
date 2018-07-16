@@ -7,6 +7,7 @@ namespace DevboardLib\GitHub\Status;
 /**
  * @see \spec\DevboardLib\GitHub\Status\StatusContextSpec
  * @see \Tests\DevboardLib\GitHub\Status\StatusContextTest
+ * @deprecated Please use StatusCheck version! Remove this in version 2.0
  */
 class StatusContext
 {
