@@ -12,6 +12,7 @@ use DevboardLib\GitHub\Account\AccountType;
 /**
  * @see \spec\DevboardLib\GitHub\Status\StatusCreatorSpec
  * @see \Tests\DevboardLib\GitHub\Status\StatusCreatorTest
+ * @deprecated Please use StatusCheck version! Remove this in version 2.0
  */
 class StatusCreator
 {

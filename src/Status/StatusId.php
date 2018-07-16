@@ -9,6 +9,7 @@ use Webmozart\Assert\Assert;
 /**
  * @see \spec\DevboardLib\GitHub\Status\StatusIdSpec
  * @see \Tests\DevboardLib\GitHub\Status\StatusIdTest
+ * @deprecated Please use StatusCheck version! Remove this in version 2.0
  */
 class StatusId
 {
