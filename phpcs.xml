@@ -48,6 +48,7 @@
     <rule ref="Generic.NamingConventions.CamelCapsFunctionName">
         <exclude-pattern>src/Build/BuildStatus.php</exclude-pattern>
         <exclude-pattern>src/Status/StatusState.php</exclude-pattern>
+        <exclude-pattern>src/StatusCheck/StatusCheckState.php</exclude-pattern>
     </rule>
     <rule ref="Generic.PHP.DeprecatedFunctions"/>
     <rule ref="Generic.PHP.DisallowShortOpenTag"/>
