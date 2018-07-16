@@ -9,6 +9,7 @@
     </description>
     <exclude-pattern>src/Build/BuildStatus.php</exclude-pattern>
     <exclude-pattern>src/Status/StatusState.php</exclude-pattern>
+    <exclude-pattern>src/StatusCheck/StatusCheckState.php</exclude-pattern>
     <rule ref="rulesets/codesize.xml/CyclomaticComplexity"/>
     <rule ref="rulesets/codesize.xml/NPathComplexity"/>
     <rule ref="rulesets/codesize.xml/ExcessiveMethodLength"/>
