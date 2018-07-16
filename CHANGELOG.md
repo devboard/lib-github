@@ -1,5 +1,13 @@
 CHANGELOG
 
+Version 1.2.0 [2018-07-16]:
+
+ - add phpstan/phpstan-strict-rules
+ - fix violations reported by phpstan/phpstan-strict-rules
+ - add ExternalServiceFactory (DEV-12)
+ - Create StatusCheck (DEV-11)
+ - Deprecate Status\* towards using StatusCheck's (DEV-11)
+
 Version 1.1.0 [2018-06-25]:
  - Ugpgrading phpstan (0.10) & infection (0.9dev)
  - Upgrade devboard/lib-git, min is now 1.1 
