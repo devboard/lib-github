@@ -20,6 +20,14 @@ abstract class StatusCheckState
         return $this->getName();
     }
 
+    public function asString(): string
+    {
+        return $this->getName();
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->getName();

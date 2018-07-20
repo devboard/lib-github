@@ -37,7 +37,7 @@ class RepoLanguageTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->language, $this->sut->__toString());
+        self::assertSame($this->language, $this->sut->asString());
     }
 
     public function testSerialize(): void

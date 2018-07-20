@@ -28,6 +28,14 @@ class RepoMirrorUrl
         return $this->mirrorUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->mirrorUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->mirrorUrl;

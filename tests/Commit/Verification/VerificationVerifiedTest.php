@@ -37,7 +37,7 @@ class VerificationVerifiedTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame('true', $this->sut->__toString());
+        self::assertSame('true', $this->sut->asString());
     }
 
     public function testSerialize(): void

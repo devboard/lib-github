@@ -16,6 +16,11 @@ interface InstallationRepositorySelection
 
     public function getValue(): string;
 
+    public function asString(): string;
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string;
 
     public function serialize(): string;

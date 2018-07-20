@@ -26,7 +26,7 @@ class StatusCheckDescriptionSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('value');
+        $this->asString()->shouldReturn('value');
     }
 
     public function it_can_be_serialized()

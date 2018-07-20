@@ -28,6 +28,14 @@ class InstallationHtmlUrl
         return $this->installationHtmlUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->installationHtmlUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->installationHtmlUrl;

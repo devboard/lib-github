@@ -29,6 +29,6 @@ class InstallationRepositoryAllSpec extends ObjectBehavior
 
     public function it_should_be_castable_to_string()
     {
-        $this->__toString()->shouldReturn('all');
+        $this->asString()->shouldReturn('all');
     }
 }

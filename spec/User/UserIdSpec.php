@@ -28,7 +28,7 @@ class UserIdSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('583231');
+        $this->asString()->shouldReturn('583231');
     }
 
     public function it_can_be_serialized()

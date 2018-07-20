@@ -28,6 +28,14 @@ class CommitCommentsUrl
         return $this->commentsUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->commentsUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->commentsUrl;

@@ -28,6 +28,14 @@ class StatusCheckContext
         return $this->description;
     }
 
+    public function asString(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->description;

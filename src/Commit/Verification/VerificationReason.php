@@ -28,6 +28,14 @@ class VerificationReason
         return $this->reason;
     }
 
+    public function asString(): string
+    {
+        return $this->reason;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->reason;

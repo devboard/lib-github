@@ -28,6 +28,14 @@ class StatusCheckTargetUrl
         return $this->targetUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->targetUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->targetUrl;

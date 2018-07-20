@@ -28,6 +28,14 @@ class InstallationAccessTokenUrl
         return $this->accessTokenUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->accessTokenUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->accessTokenUrl;

@@ -28,7 +28,7 @@ class UserLoginSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('octocat');
+        $this->asString()->shouldReturn('octocat');
     }
 
     public function it_can_be_serialized()

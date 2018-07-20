@@ -28,6 +28,14 @@ class PullRequestReviewHtmlUrl
         return $this->htmlUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->htmlUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->htmlUrl;

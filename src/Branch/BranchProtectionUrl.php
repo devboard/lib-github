@@ -28,6 +28,14 @@ class BranchProtectionUrl
         return $this->protectionUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->protectionUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->protectionUrl;

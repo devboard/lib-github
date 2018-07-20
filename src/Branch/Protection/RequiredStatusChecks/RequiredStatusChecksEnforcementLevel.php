@@ -28,6 +28,14 @@ class RequiredStatusChecksEnforcementLevel
         return $this->enforcementLevel;
     }
 
+    public function asString(): string
+    {
+        return $this->enforcementLevel;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->enforcementLevel;

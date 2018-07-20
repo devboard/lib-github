@@ -31,7 +31,7 @@ class VerificationReasonSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('expired_key');
+        $this->asString()->shouldReturn('expired_key');
     }
 
     public function it_can_be_serialized()

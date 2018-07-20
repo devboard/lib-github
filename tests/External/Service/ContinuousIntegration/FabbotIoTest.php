@@ -38,7 +38,7 @@ class FabbotIoTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('fabbot.io', $this->sut->__toString());
+        self::assertEquals('fabbot.io', $this->sut->asString());
     }
 
     public function testGetContext(): void

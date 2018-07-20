@@ -28,6 +28,14 @@ class VerificationSignature
         return $this->signature;
     }
 
+    public function asString(): string
+    {
+        return $this->signature;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->signature;

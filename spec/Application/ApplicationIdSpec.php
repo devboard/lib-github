@@ -26,7 +26,7 @@ class ApplicationIdSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('177');
+        $this->asString()->shouldReturn('177');
     }
 
     public function it_can_be_serialized()

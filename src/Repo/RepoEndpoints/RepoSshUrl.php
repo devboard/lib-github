@@ -28,6 +28,14 @@ class RepoSshUrl
         return $this->sshUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->sshUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->sshUrl;

@@ -38,7 +38,7 @@ class JenkinsTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('Jenkins', $this->sut->__toString());
+        self::assertEquals('Jenkins', $this->sut->asString());
     }
 
     public function testGetContext(): void

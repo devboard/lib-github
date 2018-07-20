@@ -36,6 +36,14 @@ class RepoFullName
         return $this->owner->getValue().'/'.$this->repoName->getValue();
     }
 
+    public function asString(): string
+    {
+        return $this->getValue();
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->getValue();

@@ -31,7 +31,7 @@ class RepoSshUrlSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('git@github.com:octocat/linguist.git');
+        $this->asString()->shouldReturn('git@github.com:octocat/linguist.git');
     }
 
     public function it_can_be_serialized()

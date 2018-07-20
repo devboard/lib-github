@@ -38,7 +38,7 @@ class CodeCovIoTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('CodecovIO', $this->sut->__toString());
+        self::assertEquals('CodecovIO', $this->sut->asString());
     }
 
     public function testGetContext(): void

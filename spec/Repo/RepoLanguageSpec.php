@@ -31,7 +31,7 @@ class RepoLanguageSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('CSS');
+        $this->asString()->shouldReturn('CSS');
     }
 
     public function it_can_be_serialized()

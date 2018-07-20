@@ -37,7 +37,7 @@ class BranchProtectionUrlTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->protectionUrl, $this->sut->__toString());
+        self::assertSame($this->protectionUrl, $this->sut->asString());
     }
 
     public function testSerialize(): void

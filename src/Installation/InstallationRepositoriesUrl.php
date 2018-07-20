@@ -28,6 +28,14 @@ class InstallationRepositoriesUrl
         return $this->installationRepositoriesUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->installationRepositoriesUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->installationRepositoriesUrl;

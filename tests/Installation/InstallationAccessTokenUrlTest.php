@@ -37,7 +37,7 @@ class InstallationAccessTokenUrlTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->accessTokenUrl, $this->sut->__toString());
+        self::assertSame($this->accessTokenUrl, $this->sut->asString());
     }
 
     public function testSerialize(): void
