@@ -1,7 +1,10 @@
 CHANGELOG
 
-Version 2.x []:
+Version 2.0 [2018-07-20]:
 
+ - in ExternalServices, switch StatusContext to StatusCheckContext
+ - removing Status VOs (StatusState should be left)
+ - Deprecating __toString() in favour of asString()
 
 Version 1.2.0 [2018-07-16]:
 
