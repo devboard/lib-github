@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\DevboardLib\GitHub\External\Service\ContinuousIntegration;
 
 use DevboardLib\GitHub\External\Service\ContinuousIntegration\Shippable;
-use DevboardLib\GitHub\Status\StatusContext;
+use DevboardLib\GitHub\StatusCheck\StatusCheckContext;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use Mockery\MockInterface;
@@ -19,7 +19,7 @@ class ShippableTest extends TestCase
 {
     use MockeryPHPUnitIntegration;
 
-    /** @var MockInterface|StatusContext */
+    /** @var MockInterface|StatusCheckContext */
     private $context;
 
     /** @var Shippable */
@@ -27,7 +27,7 @@ class ShippableTest extends TestCase
 
     public function setUp(): void
     {
-        $this->context = Mockery::mock(StatusContext::class);
+        $this->context = Mockery::mock(StatusCheckContext::class);
         $this->sut     = new Shippable($this->context);
     }
 
