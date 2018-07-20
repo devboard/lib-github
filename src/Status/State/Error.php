@@ -6,8 +6,6 @@ namespace DevboardLib\GitHub\Status\State;
 
 use DevboardLib\GitHub\Status\StatusState;
 
-/**
- */
 class Error extends StatusState
 {
     const NAME = 'error';

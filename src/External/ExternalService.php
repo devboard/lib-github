@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace DevboardLib\GitHub\External;
 
-use DevboardLib\GitHub\Status\StatusContext;
+use DevboardLib\GitHub\StatusCheck\StatusCheckContext;
 
 abstract class ExternalService
 {
-    /** @var StatusContext */
+    /** @var StatusCheckContext */
     protected $context;
 
-    public function __construct(StatusContext $context)
+    public function __construct(StatusCheckContext $context)
     {
         $this->context = $context;
     }
@@ -28,7 +28,7 @@ abstract class ExternalService
         return $this->context->getValue();
     }
 
-    public function getContext(): StatusContext
+    public function getContext(): StatusCheckContext
     {
         return $this->context;
     }
@@ -42,7 +42,7 @@ abstract class ExternalService
     {
         $className = $data['className'];
 
-        $context = new StatusContext($data['context']);
+        $context = new StatusCheckContext($data['context']);
 
         return new $className($context);
     }

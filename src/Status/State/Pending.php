@@ -6,8 +6,6 @@ namespace DevboardLib\GitHub\Status\State;
 
 use DevboardLib\GitHub\Status\StatusState;
 
-/**
- */
 class Pending extends StatusState
 {
     const NAME = 'pending';

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\DevboardLib\GitHub\External\Service\CodeCoverage;
 
 use DevboardLib\GitHub\External\Service\CodeCoverage\CodeCovIo;
-use DevboardLib\GitHub\Status\StatusContext;
+use DevboardLib\GitHub\StatusCheck\StatusCheckContext;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use Mockery\MockInterface;
@@ -19,7 +19,7 @@ class CodeCovIoTest extends TestCase
 {
     use MockeryPHPUnitIntegration;
 
-    /** @var MockInterface|StatusContext */
+    /** @var MockInterface|StatusCheckContext */
     private $context;
 
     /** @var CodeCovIo */
@@ -27,7 +27,7 @@ class CodeCovIoTest extends TestCase
 
     public function setUp(): void
     {
-        $this->context = Mockery::mock(StatusContext::class);
+        $this->context = Mockery::mock(StatusCheckContext::class);
         $this->sut     = new CodeCovIo($this->context);
     }
 
