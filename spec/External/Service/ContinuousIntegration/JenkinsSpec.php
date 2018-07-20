@@ -6,12 +6,12 @@ namespace spec\DevboardLib\GitHub\External\Service\ContinuousIntegration;
 
 use DevboardLib\GitHub\External\ExternalService;
 use DevboardLib\GitHub\External\Service\ContinuousIntegration\Jenkins;
-use DevboardLib\GitHub\Status\StatusContext;
+use DevboardLib\GitHub\StatusCheck\StatusCheckContext;
 use PhpSpec\ObjectBehavior;
 
 class JenkinsSpec extends ObjectBehavior
 {
-    public function let(StatusContext $context)
+    public function let(StatusCheckContext $context)
     {
         $this->beConstructedWith($context);
     }

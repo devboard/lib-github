@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\DevboardLib\GitHub\External\Service;
 
 use DevboardLib\GitHub\External\Service\UnknownService;
-use DevboardLib\GitHub\Status\StatusContext;
+use DevboardLib\GitHub\StatusCheck\StatusCheckContext;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
  */
 class UnknownServiceTest extends TestCase
 {
-    /** @var StatusContext */
+    /** @var StatusCheckContext */
     private $context;
 
     /** @var UnknownService */
@@ -22,7 +22,7 @@ class UnknownServiceTest extends TestCase
 
     public function setUp(): void
     {
-        $this->context = new StatusContext('unknown');
+        $this->context = new StatusCheckContext('unknown');
         $this->sut     = new UnknownService($this->context);
     }
 

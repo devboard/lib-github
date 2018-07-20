@@ -14,7 +14,7 @@ use DevboardLib\GitHub\External\Service\ContinuousIntegration\Shippable;
 use DevboardLib\GitHub\External\Service\ContinuousIntegration\StyleCi;
 use DevboardLib\GitHub\External\Service\ContinuousIntegration\TravisCi;
 use DevboardLib\GitHub\External\Service\UnknownService;
-use DevboardLib\GitHub\Status\StatusContext;
+use DevboardLib\GitHub\StatusCheck\StatusCheckContext;
 
 class ExternalServiceFactory
 {
@@ -37,7 +37,7 @@ class ExternalServiceFactory
         'Shippable' => Shippable::class,
     ];
 
-    public function create(StatusContext $context): ExternalService
+    public function create(StatusCheckContext $context): ExternalService
     {
         foreach (self::$text as $pattern => $class) {
             if ($pattern === $context->getValue()) {
@@ -56,6 +56,6 @@ class ExternalServiceFactory
 
     public function createFromString(string $name): ExternalService
     {
-        return $this->create(new StatusContext($name));
+        return $this->create(new StatusCheckContext($name));
     }
 }
