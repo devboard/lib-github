@@ -28,6 +28,14 @@ class CommitCommentCount
         return $this->commentCount;
     }
 
+    public function asString(): string
+    {
+        return (string) $this->commentCount;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return (string) $this->commentCount;

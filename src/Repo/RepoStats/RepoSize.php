@@ -28,6 +28,19 @@ class RepoSize
         return $this->size;
     }
 
+    public function asInt(): int
+    {
+        return $this->size;
+    }
+
+    public function asString(): string
+    {
+        return (string) $this->size;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return (string) $this->size;

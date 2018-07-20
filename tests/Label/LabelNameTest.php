@@ -32,7 +32,7 @@ class LabelNameTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->value, $this->sut->__toString());
+        self::assertSame($this->value, $this->sut->asString());
     }
 
     public function testSerialize(): void

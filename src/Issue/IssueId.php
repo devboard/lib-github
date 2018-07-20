@@ -26,6 +26,19 @@ class IssueId
         return $this->id;
     }
 
+    public function asInt(): int
+    {
+        return $this->id;
+    }
+
+    public function asString(): string
+    {
+        return (string) $this->id;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return (string) $this->id;

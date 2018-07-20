@@ -31,7 +31,7 @@ class RepoApiUrlSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('https://api.github.com/repos/octocat/linguist');
+        $this->asString()->shouldReturn('https://api.github.com/repos/octocat/linguist');
     }
 
     public function it_can_be_serialized()

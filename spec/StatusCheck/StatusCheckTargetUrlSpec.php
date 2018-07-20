@@ -37,7 +37,7 @@ class StatusCheckTargetUrlSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn(
+        $this->asString()->shouldReturn(
             'https://circleci.com/gh/msvrtan/generator/231?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link'
         );
     }

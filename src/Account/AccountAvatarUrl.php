@@ -28,6 +28,14 @@ class AccountAvatarUrl
         return $this->avatarUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->avatarUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->avatarUrl;

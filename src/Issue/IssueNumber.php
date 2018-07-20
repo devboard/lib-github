@@ -23,6 +23,19 @@ class IssueNumber
         return $this->value;
     }
 
+    public function asInt(): int
+    {
+        return $this->value;
+    }
+
+    public function asString(): string
+    {
+        return (string) $this->value;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return (string) $this->value;

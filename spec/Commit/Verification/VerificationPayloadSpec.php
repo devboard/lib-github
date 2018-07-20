@@ -31,7 +31,7 @@ class VerificationPayloadSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('tree 691272480426f78a0138979dd3ce63b77f706feb\n...');
+        $this->asString()->shouldReturn('tree 691272480426f78a0138979dd3ce63b77f706feb\n...');
     }
 
     public function it_can_be_serialized()

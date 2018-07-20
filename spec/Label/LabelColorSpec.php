@@ -31,7 +31,7 @@ class LabelColorSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('color');
+        $this->asString()->shouldReturn('color');
     }
 
     public function it_can_be_serialized()

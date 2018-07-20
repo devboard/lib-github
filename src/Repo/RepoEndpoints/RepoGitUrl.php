@@ -28,6 +28,14 @@ class RepoGitUrl
         return $this->gitUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->gitUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->gitUrl;

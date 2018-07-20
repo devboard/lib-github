@@ -29,6 +29,14 @@ class InstallationRepositoryAll implements InstallationRepositorySelection
         return self::NAME;
     }
 
+    public function asString(): string
+    {
+        return self::NAME;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return self::NAME;

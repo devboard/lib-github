@@ -33,7 +33,7 @@ class UnknownServiceTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('unknown', $this->sut->__toString());
+        self::assertEquals('unknown', $this->sut->asString());
     }
 
     public function testGetContext(): void

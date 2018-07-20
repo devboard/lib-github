@@ -37,7 +37,7 @@ class VerificationSignatureTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->signature, $this->sut->__toString());
+        self::assertSame($this->signature, $this->sut->asString());
     }
 
     public function testSerialize(): void

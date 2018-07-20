@@ -31,7 +31,7 @@ class AccountAvatarUrlSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('https://avatars.githubusercontent.com/u/6752317?v=3');
+        $this->asString()->shouldReturn('https://avatars.githubusercontent.com/u/6752317?v=3');
     }
 
     public function it_can_be_serialized()

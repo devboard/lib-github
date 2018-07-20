@@ -37,7 +37,7 @@ class RepoDescriptionSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn(
+        $this->asString()->shouldReturn(
             'Language Savant. If your repository language is being reported incorrectly, send us a pull request!'
         );
     }

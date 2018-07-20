@@ -38,7 +38,7 @@ class AppVeyorTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('AppVeyor', $this->sut->__toString());
+        self::assertEquals('AppVeyor', $this->sut->asString());
     }
 
     public function testGetContext(): void

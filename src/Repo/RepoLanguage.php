@@ -28,6 +28,14 @@ class RepoLanguage
         return $this->language;
     }
 
+    public function asString(): string
+    {
+        return $this->language;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->language;

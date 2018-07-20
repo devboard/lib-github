@@ -38,7 +38,7 @@ class CoverallsIoTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('CoverallsIO', $this->sut->__toString());
+        self::assertEquals('CoverallsIO', $this->sut->asString());
     }
 
     public function testGetContext(): void

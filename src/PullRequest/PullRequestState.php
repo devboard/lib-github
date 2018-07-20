@@ -18,6 +18,11 @@ class PullRequestState extends Enum
 
     const MERGED = 'merged';
 
+    public function asString(): string
+    {
+        return $this->value;
+    }
+
     public function serialize(): string
     {
         return $this->value;

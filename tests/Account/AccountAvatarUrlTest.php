@@ -37,7 +37,7 @@ class AccountAvatarUrlTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->avatarUrl, $this->sut->__toString());
+        self::assertSame($this->avatarUrl, $this->sut->asString());
     }
 
     public function testSerialize(): void

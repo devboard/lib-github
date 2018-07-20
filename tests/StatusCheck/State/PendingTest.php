@@ -31,7 +31,7 @@ class PendingTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('pending', $this->sut->__toString());
+        self::assertEquals('pending', $this->sut->asString());
     }
 
     public function testConstName(): void

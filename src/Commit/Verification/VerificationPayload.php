@@ -28,6 +28,14 @@ class VerificationPayload
         return $this->payload;
     }
 
+    public function asString(): string
+    {
+        return $this->payload;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->payload;

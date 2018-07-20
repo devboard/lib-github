@@ -28,6 +28,14 @@ class LabelColor
         return $this->color;
     }
 
+    public function asString(): string
+    {
+        return $this->color;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->color;

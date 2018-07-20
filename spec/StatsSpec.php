@@ -26,6 +26,6 @@ abstract class StatsSpec extends ObjectBehavior
 
     public function it_should_be_castable_to_string()
     {
-        $this->__toString()->shouldReturn('123');
+        $this->asString()->shouldReturn('123');
     }
 }

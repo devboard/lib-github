@@ -31,7 +31,7 @@ class VerificationSignatureSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----');
+        $this->asString()->shouldReturn('-----BEGIN PGP MESSAGE-----\n...\n-----END PGP MESSAGE-----');
     }
 
     public function it_can_be_serialized()

@@ -26,7 +26,7 @@ class MilestoneStateSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('open');
+        $this->asString()->shouldReturn('open');
     }
 
     public function it_can_be_serialized()

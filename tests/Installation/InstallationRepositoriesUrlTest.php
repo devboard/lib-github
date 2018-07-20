@@ -37,7 +37,7 @@ class InstallationRepositoriesUrlTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->installationRepositoriesUrl, $this->sut->__toString());
+        self::assertSame($this->installationRepositoriesUrl, $this->sut->asString());
     }
 
     public function testSerialize(): void

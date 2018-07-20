@@ -31,7 +31,7 @@ class RepoNameSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('linguist');
+        $this->asString()->shouldReturn('linguist');
     }
 
     public function it_can_be_serialized()

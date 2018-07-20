@@ -29,6 +29,6 @@ class InstallationRepositorySelectedSpec extends ObjectBehavior
 
     public function it_should_be_castable_to_string()
     {
-        $this->__toString()->shouldReturn('selected');
+        $this->asString()->shouldReturn('selected');
     }
 }

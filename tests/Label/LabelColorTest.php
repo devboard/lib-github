@@ -37,7 +37,7 @@ class LabelColorTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->color, $this->sut->__toString());
+        self::assertSame($this->color, $this->sut->asString());
     }
 
     public function testSerialize(): void

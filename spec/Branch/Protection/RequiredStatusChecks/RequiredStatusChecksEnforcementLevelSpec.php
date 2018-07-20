@@ -31,7 +31,7 @@ class RequiredStatusChecksEnforcementLevelSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('enforcementLevel');
+        $this->asString()->shouldReturn('enforcementLevel');
     }
 
     public function it_can_be_serialized()

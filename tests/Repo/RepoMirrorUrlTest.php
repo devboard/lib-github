@@ -37,7 +37,7 @@ class RepoMirrorUrlTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->mirrorUrl, $this->sut->__toString());
+        self::assertSame($this->mirrorUrl, $this->sut->asString());
     }
 
     public function testSerialize(): void

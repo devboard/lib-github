@@ -16,6 +16,11 @@ class MilestoneState extends Enum
 
     const CLOSED = 'closed';
 
+    public function asString(): string
+    {
+        return $this->value;
+    }
+
     public function serialize(): string
     {
         return $this->value;
