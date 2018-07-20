@@ -1,5 +1,8 @@
 CHANGELOG
 
+Version 2.x []:
+
+
 Version 1.2.0 [2018-07-16]:
 
  - add phpstan/phpstan-strict-rules
