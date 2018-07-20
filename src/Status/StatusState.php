@@ -12,7 +12,6 @@ use DomainException;
 
 /**
  * @see StatusStateTest
- * @deprecated Please use StatusCheck version! Remove this in version 2.0
  */
 abstract class StatusState
 {
