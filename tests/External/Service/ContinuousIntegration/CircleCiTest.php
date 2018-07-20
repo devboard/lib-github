@@ -38,7 +38,7 @@ class CircleCiTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('CircleCI', $this->sut->__toString());
+        self::assertEquals('CircleCI', $this->sut->asString());
     }
 
     public function testGetContext(): void

@@ -31,7 +31,7 @@ class PassedTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('passed', $this->sut->__toString());
+        self::assertEquals('passed', $this->sut->asString());
     }
 
     public function testConstName(): void

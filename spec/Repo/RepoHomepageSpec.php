@@ -31,7 +31,7 @@ class RepoHomepageSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('http://www.example.com/');
+        $this->asString()->shouldReturn('http://www.example.com/');
     }
 
     public function it_can_be_serialized()

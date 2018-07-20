@@ -37,7 +37,7 @@ class PullRequestReviewHtmlUrlTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->htmlUrl, $this->sut->__toString());
+        self::assertSame($this->htmlUrl, $this->sut->asString());
     }
 
     public function testSerialize(): void

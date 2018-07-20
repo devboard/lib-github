@@ -37,7 +37,7 @@ class CommitCommentCountTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame((string) $this->commentCount, $this->sut->__toString());
+        self::assertSame((string) $this->commentCount, $this->sut->asString());
     }
 
     public function testSerialize(): void

@@ -26,7 +26,7 @@ class PullRequestAuthorAssociationSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('COLLABORATOR');
+        $this->asString()->shouldReturn('COLLABORATOR');
     }
 
     public function it_can_be_serialized()

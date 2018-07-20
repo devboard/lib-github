@@ -21,6 +21,11 @@ class IssueState extends Enum
         return $this->value;
     }
 
+    public function asString(): string
+    {
+        return $this->value;
+    }
+
     public static function deserialize(string $value): self
     {
         return new self($value);

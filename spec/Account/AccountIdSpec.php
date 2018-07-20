@@ -26,7 +26,7 @@ class AccountIdSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('6752317');
+        $this->asString()->shouldReturn('6752317');
     }
 
     public function it_can_be_serialized()

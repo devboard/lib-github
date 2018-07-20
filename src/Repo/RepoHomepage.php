@@ -28,6 +28,14 @@ class RepoHomepage
         return $this->homepage;
     }
 
+    public function asString(): string
+    {
+        return $this->homepage;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->homepage;

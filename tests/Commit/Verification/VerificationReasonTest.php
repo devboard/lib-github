@@ -37,7 +37,7 @@ class VerificationReasonTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->reason, $this->sut->__toString());
+        self::assertSame($this->reason, $this->sut->asString());
     }
 
     public function testSerialize(): void

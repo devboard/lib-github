@@ -37,7 +37,7 @@ class RepoSizeTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame((string) $this->size, $this->sut->__toString());
+        self::assertSame((string) $this->size, $this->sut->asString());
     }
 
     public function testSerialize(): void

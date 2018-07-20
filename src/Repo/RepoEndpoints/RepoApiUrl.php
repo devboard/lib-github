@@ -28,6 +28,14 @@ class RepoApiUrl
         return $this->apiUrl;
     }
 
+    public function asString(): string
+    {
+        return $this->apiUrl;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->apiUrl;

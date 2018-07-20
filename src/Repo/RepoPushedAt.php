@@ -13,6 +13,14 @@ use RuntimeException;
  */
 class RepoPushedAt extends DateTime
 {
+    public function asString(): string
+    {
+        return $this->format('c');
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->format('c');
@@ -31,7 +39,7 @@ class RepoPushedAt extends DateTime
 
     public function serialize(): string
     {
-        return $this->__toString();
+        return $this->asString();
     }
 
     public static function deserialize($value): self

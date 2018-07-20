@@ -38,7 +38,7 @@ class TravisCiTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('TravisCI', $this->sut->__toString());
+        self::assertEquals('TravisCI', $this->sut->asString());
     }
 
     public function testGetContext(): void

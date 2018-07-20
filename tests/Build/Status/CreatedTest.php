@@ -31,7 +31,7 @@ class CreatedTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('created', $this->sut->__toString());
+        self::assertEquals('created', $this->sut->asString());
     }
 
     public function testConstName(): void

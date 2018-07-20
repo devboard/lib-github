@@ -37,7 +37,7 @@ class RepoApiUrlTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->apiUrl, $this->sut->__toString());
+        self::assertSame($this->apiUrl, $this->sut->asString());
     }
 
     public function testSerialize(): void

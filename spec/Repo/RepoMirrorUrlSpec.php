@@ -31,7 +31,7 @@ class RepoMirrorUrlSpec extends ObjectBehavior
 
     public function it_is_castable_to_string()
     {
-        $this->__toString()->shouldReturn('http://mirror.example.com');
+        $this->asString()->shouldReturn('http://mirror.example.com');
     }
 
     public function it_can_be_serialized()

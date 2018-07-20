@@ -28,7 +28,7 @@ class PullRequestStateTest extends TestCase
     public function testToString(string $stateName): void
     {
         $sut = new PullRequestState($stateName);
-        self::assertEquals($stateName, $sut->__toString());
+        self::assertEquals($stateName, $sut->asString());
     }
 
     public function provideStates(): array

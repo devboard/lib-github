@@ -28,6 +28,18 @@ class VerificationVerified
         return $this->verified;
     }
 
+    public function asString(): string
+    {
+        if (true === $this->verified) {
+            return 'true';
+        } else {
+            return 'false';
+        }
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         if (true === $this->verified) {

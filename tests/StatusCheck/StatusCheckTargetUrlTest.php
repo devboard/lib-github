@@ -37,7 +37,7 @@ class StatusCheckTargetUrlTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->targetUrl, $this->sut->__toString());
+        self::assertSame($this->targetUrl, $this->sut->asString());
     }
 
     public function testSerialize(): void

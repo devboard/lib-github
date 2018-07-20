@@ -28,6 +28,14 @@ class RepoName
         return $this->name;
     }
 
+    public function asString(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->name;

@@ -37,7 +37,7 @@ class RepoNameTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->name, $this->sut->__toString());
+        self::assertSame($this->name, $this->sut->asString());
     }
 
     public function testSerialize(): void

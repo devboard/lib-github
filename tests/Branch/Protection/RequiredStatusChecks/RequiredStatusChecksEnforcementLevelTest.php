@@ -37,7 +37,7 @@ class RequiredStatusChecksEnforcementLevelTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->enforcementLevel, $this->sut->__toString());
+        self::assertSame($this->enforcementLevel, $this->sut->asString());
     }
 
     public function testSerialize(): void

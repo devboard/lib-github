@@ -38,7 +38,7 @@ class ShippableTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('Shippable', $this->sut->__toString());
+        self::assertEquals('Shippable', $this->sut->asString());
     }
 
     public function testGetContext(): void

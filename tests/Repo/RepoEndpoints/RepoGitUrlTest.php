@@ -37,7 +37,7 @@ class RepoGitUrlTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame($this->gitUrl, $this->sut->__toString());
+        self::assertSame($this->gitUrl, $this->sut->asString());
     }
 
     public function testSerialize(): void

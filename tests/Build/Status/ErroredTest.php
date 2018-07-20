@@ -31,7 +31,7 @@ class ErroredTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('errored', $this->sut->__toString());
+        self::assertEquals('errored', $this->sut->asString());
     }
 
     public function testConstName(): void

@@ -32,7 +32,7 @@ class IssueNumberTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertSame((string) $this->value, $this->sut->__toString());
+        self::assertSame((string) $this->value, $this->sut->asString());
     }
 
     public function testSerialize(): void

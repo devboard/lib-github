@@ -31,7 +31,7 @@ class InProgressTest extends TestCase
 
     public function testToString(): void
     {
-        self::assertEquals('in_progress', $this->sut->__toString());
+        self::assertEquals('in_progress', $this->sut->asString());
     }
 
     public function testConstName(): void

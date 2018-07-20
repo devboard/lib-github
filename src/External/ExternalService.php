@@ -18,6 +18,14 @@ abstract class ExternalService
 
     abstract public function getValue(): string;
 
+    public function asString(): string
+    {
+        return $this->getValue();
+    }
+
+    /**
+     * @deprecated Please use `asString()`
+     */
     public function __toString(): string
     {
         return $this->getValue();
