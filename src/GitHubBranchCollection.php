@@ -10,6 +10,7 @@ use Webmozart\Assert\Assert;
 /**
  * @see \spec\DevboardLib\GitHub\GitHubBranchCollectionSpec
  * @see \Tests\DevboardLib\GitHub\GitHubBranchCollectionTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubBranchCollection
 {

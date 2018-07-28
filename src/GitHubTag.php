@@ -11,6 +11,7 @@ use Git\Reference;
 /**
  * @see \spec\DevboardLib\GitHub\GitHubTagSpec
  * @see \Tests\DevboardLib\GitHub\GitHubTagTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubTag implements Reference
 {

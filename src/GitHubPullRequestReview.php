@@ -15,6 +15,7 @@ use DevboardLib\GitHub\PullRequestReview\PullRequestReviewSubmittedAt;
 /**
  * @see \spec\DevboardLib\GitHub\GitHubPullRequestReviewSpec
  * @see \Tests\DevboardLib\GitHub\GitHubPullRequestReviewTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubPullRequestReview
 {

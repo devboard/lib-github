@@ -12,6 +12,7 @@ use Git\Reference;
 /**
  * @see \spec\DevboardLib\GitHub\GitHubBranchSpec
  * @see \Tests\DevboardLib\GitHub\GitHubBranchTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubBranch implements Reference
 {

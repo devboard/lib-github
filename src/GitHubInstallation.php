@@ -26,6 +26,7 @@ use DevboardLib\GitHub\Installation\InstallationUpdatedAt;
  *
  * @see \spec\DevboardLib\GitHub\GitHubInstallationSpec
  * @see \Tests\DevboardLib\GitHub\GitHubInstallationTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubInstallation
 {

@@ -10,6 +10,7 @@ use Webmozart\Assert\Assert;
 /**
  * @see \spec\DevboardLib\GitHub\GitHubPullRequestReviewCollectionSpec
  * @see \Tests\DevboardLib\GitHub\GitHubPullRequestReviewCollectionTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubPullRequestReviewCollection
 {
