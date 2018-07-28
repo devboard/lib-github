@@ -1,5 +1,10 @@
 CHANGELOG
 
+Version 2.0.1 [2018-07-28]:
+
+ - Deprecating entity like value objects 
+ - Stop linting files on CI
+ 
 Version 2.0 [2018-07-20]:
 
  - in ExternalServices, switch StatusContext to StatusCheckContext
