@@ -21,6 +21,7 @@ use DevboardLib\GitHub\Milestone\MilestoneUpdatedAt;
  *
  * @see \spec\DevboardLib\GitHub\GitHubMilestoneSpec
  * @see \Tests\DevboardLib\GitHub\GitHubMilestoneTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubMilestone
 {

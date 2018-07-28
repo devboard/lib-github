@@ -14,6 +14,7 @@ use DevboardLib\GitHub\IssueComment\IssueCommentUpdatedAt;
 /**
  * @see \spec\DevboardLib\GitHub\GitHubIssueCommentSpec
  * @see \Tests\DevboardLib\GitHub\GitHubIssueCommentTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubIssueComment
 {

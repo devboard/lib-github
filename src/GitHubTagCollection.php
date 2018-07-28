@@ -10,6 +10,7 @@ use Webmozart\Assert\Assert;
 /**
  * @see \spec\DevboardLib\GitHub\GitHubTagCollectionSpec
  * @see \Tests\DevboardLib\GitHub\GitHubTagCollectionTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubTagCollection
 {

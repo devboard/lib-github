@@ -11,6 +11,7 @@ use DevboardLib\GitHub\GitHubRepo;
 /**
  * @see \spec\DevboardLib\GitHub\PullRequest\PullRequestHeadSpec
  * @see \Tests\DevboardLib\GitHub\PullRequest\PullRequestHeadTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class PullRequestHead
 {

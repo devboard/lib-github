@@ -20,6 +20,7 @@ use DevboardLib\GitHub\PullRequest\PullRequestUpdatedAt;
  *
  * @see \spec\DevboardLib\GitHub\GitHubPullRequestSpec
  * @see \Tests\DevboardLib\GitHub\GitHubPullRequestTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubPullRequest
 {

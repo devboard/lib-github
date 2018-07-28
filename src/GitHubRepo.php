@@ -25,6 +25,7 @@ use DevboardLib\GitHub\Repo\RepoTimestamps;
  *
  * @see \spec\DevboardLib\GitHub\GitHubRepoSpec
  * @see \Tests\DevboardLib\GitHub\GitHubRepoTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubRepo
 {

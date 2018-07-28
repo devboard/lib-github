@@ -11,6 +11,7 @@ use DevboardLib\GitHub\GitHubRepo;
 /**
  * @see \spec\DevboardLib\GitHub\PullRequest\PullRequestBaseSpec
  * @see \Tests\DevboardLib\GitHub\PullRequest\PullRequestBaseTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class PullRequestBase
 {

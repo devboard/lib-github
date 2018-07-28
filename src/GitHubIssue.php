@@ -22,6 +22,7 @@ use DevboardLib\GitHub\Issue\IssueUpdatedAt;
  *
  * @see \spec\DevboardLib\GitHub\GitHubIssueSpec
  * @see \Tests\DevboardLib\GitHub\GitHubIssueTest
+ * @deprecated Please stop using this 'entity' like ValueObject
  */
 class GitHubIssue
 {
