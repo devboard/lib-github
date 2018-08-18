@@ -4,7 +4,6 @@ parameters:
 	    - '#Call to an undefined static method DevboardLib\\GitHub\\Account\\AccountType::#'
 	    - '#Call to an undefined static method DevboardLib\\GitHub\\PullRequest\\PullRequestAuthorAssociation::#'
 	    - '#Call to an undefined static method DevboardLib\\GitHub\\PullRequestReview\\PullRequestReviewAuthorAssociation::#'
-	    - '#Parameter .* Mockery\\MockInterface given.#'
 	    - '#Parameter \#1 \$json of function json_decode expects string, string|false given.#'
 	    - '#Method .*At::createFromFormat\(\) has parameter .* with no typehint specified.#'
 	    - '#Method .*At::deserialize\(\) has parameter \$value with no typehint specified.#'
@@ -17,6 +16,7 @@ includes:
 	- vendor/phpstan/phpstan-phpunit/extension.neon
 	- vendor/phpstan/phpstan-phpunit/rules.neon
 	- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/phpstan/phpstan-mockery/extension.neon
 
 
 
