@@ -13,9 +13,17 @@ jobs:
           name: Disable xdebug
           command: ./etc/circleci2/disable-xdebug.sh
 
+      - restore_cache:
+          key: cache-v10-{{ checksum "composer.lock" }}
+
       - run:
           name: Composer install
           command: composer install --prefer-dist --no-interaction
+
+      - save_cache:
+          key: cache-v10-{{ checksum "composer.lock" }}
+          paths:
+            - /var/www/vendor
 
       - run:
           name: PHPSpec
@@ -63,6 +71,8 @@ jobs:
     workDir: /var/www
     steps:
       - checkout
+      - restore_cache:
+          key: cache-v10-{{ checksum "composer.lock" }}
       - run:
           name: Composer install
           command: composer install --prefer-dist --no-interaction
@@ -79,6 +89,8 @@ jobs:
     workDir: /var/www
     steps:
       - checkout
+      - restore_cache:
+          key: cache-v10-{{ checksum "composer.lock" }}
       - run:
           name: Composer install
           command: composer install --no-interaction
@@ -89,10 +101,6 @@ jobs:
       - run:
           name: Ship codecoverage to codecov.io
           command: bash <(curl -s https://codecov.io/bash)
-      - save_cache:
-          key: cache-v1-{{ checksum "composer.lock" }}
-          paths:
-            - /var/www/vendor
       - type: artifacts-store
         path: build
         destination: build
@@ -103,6 +111,8 @@ jobs:
     workDir: /var/www
     steps:
       - checkout
+      - restore_cache:
+          key: cache-v10-{{ checksum "composer.lock" }}
       - run:
           name: Composer install
           command: composer install --no-interaction
